@@ -12,11 +12,12 @@
 		35606A221DED13C200302656 /* YXFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A211DED13C200302656 /* YXFindViewController.swift */; };
 		35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A231DED13CD00302656 /* YXMeViewController.swift */; };
 		35606A261DED5EC700302656 /* YXHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A251DED5EC700302656 /* YXHomeTableViewCell.swift */; };
-		35606A291DED680B00302656 /* HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A281DED680B00302656 /* HEX.swift */; };
 		35606A2B1DED776C00302656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35606A2A1DED776C00302656 /* Assets.xcassets */; };
 		35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A2E1DED9EE700302656 /* YYFPSLabel.m */; };
 		35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A301DED9EE700302656 /* YYWeakProxy.m */; };
 		35606A341DEDA15800302656 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A331DEDA15800302656 /* YXHomeDataManager.swift */; };
+		35606A361DEDAD1800302656 /* home.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35606A351DEDAD1800302656 /* home.plist */; };
+		35606A381DEDB0E700302656 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A371DEDB0E700302656 /* YXHomeModel.swift */; };
 		3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D2201DEC62A000179730 /* AppDelegate.swift */; };
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
@@ -29,7 +30,6 @@
 		35606A211DED13C200302656 /* YXFindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXFindViewController.swift; sourceTree = "<group>"; };
 		35606A231DED13CD00302656 /* YXMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMeViewController.swift; sourceTree = "<group>"; };
 		35606A251DED5EC700302656 /* YXHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeTableViewCell.swift; sourceTree = "<group>"; };
-		35606A281DED680B00302656 /* HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HEX.swift; sourceTree = "<group>"; };
 		35606A2A1DED776C00302656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35606A2C1DED9EE600302656 /* Determined-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Determined-Bridging-Header.h"; sourceTree = "<group>"; };
 		35606A2D1DED9EE700302656 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
@@ -37,6 +37,8 @@
 		35606A2F1DED9EE700302656 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		35606A301DED9EE700302656 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
 		35606A331DEDA15800302656 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
+		35606A351DEDAD1800302656 /* home.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = home.plist; sourceTree = "<group>"; };
+		35606A371DEDB0E700302656 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
 		3595D1FE1DEC61FA00179730 /* Determined.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Determined.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3595D20D1DEC61FA00179730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3595D2201DEC62A000179730 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +72,6 @@
 		35606A271DED67AE00302656 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
-				35606A281DED680B00302656 /* HEX.swift */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -176,6 +177,7 @@
 				3595D21C1DEC629900179730 /* Controller */,
 				3595D21D1DEC629900179730 /* Mode */,
 				3595D21E1DEC629900179730 /* View */,
+				35606A351DEDAD1800302656 /* home.plist */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -192,6 +194,7 @@
 			isa = PBXGroup;
 			children = (
 				35606A331DEDA15800302656 /* YXHomeDataManager.swift */,
+				35606A371DEDB0E700302656 /* YXHomeModel.swift */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -329,6 +332,7 @@
 			files = (
 				35606A2B1DED776C00302656 /* Assets.xcassets in Resources */,
 				3595D22D1DEC62A000179730 /* Main.storyboard in Resources */,
+				35606A361DEDAD1800302656 /* home.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -389,7 +393,7 @@
 			files = (
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
-				35606A291DED680B00302656 /* HEX.swift in Sources */,
+				35606A381DEDB0E700302656 /* YXHomeModel.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,

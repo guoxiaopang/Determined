@@ -109,5 +109,18 @@ class YXHomeTableViewCell: UITableViewCell
     {
         print("mark");
     }
+    
+    // 加载数据
+    func changeValueWithModel(person : Person) -> Void
+    {
+        iconView.image = UIImage.init(named: person.image!);
+        nameLabel.text = person.name;
+        workLabel.text = person.work;
+       
+        let dateFormat = DateFormatter();
+        dateFormat.dateFormat = "yyyy年MM月dd日 hh:mm:ss"
+        let dateString = dateFormat.string(from: person.lasttime as! Date);
+        timeLabel.text = dateString;
+    }
 
 }

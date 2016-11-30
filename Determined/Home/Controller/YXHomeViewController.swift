@@ -33,12 +33,6 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         tableView.register(YXHomeTableViewCell.classForCoder() , forCellReuseIdentifier: "cell");
         return tableView;
     }();
-
-    private lazy var item : [Int] =
-    {
-        let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19 ,20 ,21, 22, 23];
-        return array;
-    }();
     
     private lazy var dataManager : YXHomeDataManager =
     {
@@ -47,19 +41,37 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }()
     
     // MARK: - UITableViewDelegate,UITableViewDataSource
+    public func numberOfSections(in tableView: UITableView) -> Int
+    {
+        return dataManager.numberOfSection();
+    }
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return item.count;
+        return dataManager.numofRow(section: section);
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell : YXHomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! YXHomeTableViewCell;
+        let person : Person = dataManager.modelWithIndex(index: indexPath);
+        cell.changeValueWithModel(person: person);
         return cell;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         tableView .deselectRow(at: indexPath, animated: true);
+    }
+    
+    // 返回索引数组
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        return dataManager.groupTitle() as? [String];
+    }
+    
+    // 返回每个索引内容
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let group : YXHomeModel = dataManager.groupWithSection(section: section);
+        return group.group;
     }
 }
