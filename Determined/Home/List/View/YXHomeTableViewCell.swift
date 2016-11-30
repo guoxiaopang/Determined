@@ -51,7 +51,6 @@ class YXHomeTableViewCell: UITableViewCell
         workLabel.text = "这是工作";
         workLabel.font = UIFont.systemFont(ofSize: 17);
         workLabel.textColor? = UIColor.init(red: 0.534, green: 0.534, blue: 0.534, alpha: 0.534);
-       // workLabel.textColor = UIColor.colorWithHex(0x888888);
         return workLabel;
     }()
     

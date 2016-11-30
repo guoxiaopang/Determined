@@ -19,6 +19,11 @@
 		359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */; };
 		359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */; };
 		359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */; };
+		359206D61DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */; };
+		359206D81DEEC95D007C77A3 /* HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D71DEEC95D007C77A3 /* HEX.swift */; };
+		359206DA1DEECE75007C77A3 /* detail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359206D91DEECE75007C77A3 /* detail.plist */; };
+		359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206DB1DEED483007C77A3 /* YXHomeDetailDataManager.swift */; };
+		359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206DD1DEED54D007C77A3 /* YXRecording.swift */; };
 		3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D2201DEC62A000179730 /* AppDelegate.swift */; };
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
@@ -41,6 +46,11 @@
 		359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
 		359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeTableViewCell.swift; sourceTree = "<group>"; };
 		359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailViewController.swift; sourceTree = "<group>"; };
+		359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailHeadView.swift; sourceTree = "<group>"; };
+		359206D71DEEC95D007C77A3 /* HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HEX.swift; sourceTree = "<group>"; };
+		359206D91DEECE75007C77A3 /* detail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = detail.plist; sourceTree = "<group>"; };
+		359206DB1DEED483007C77A3 /* YXHomeDetailDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailDataManager.swift; sourceTree = "<group>"; };
+		359206DD1DEED54D007C77A3 /* YXRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXRecording.swift; sourceTree = "<group>"; };
 		3595D1FE1DEC61FA00179730 /* Determined.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Determined.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3595D20D1DEC61FA00179730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3595D2201DEC62A000179730 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +84,7 @@
 		35606A271DED67AE00302656 /* 分类 */ = {
 			isa = PBXGroup;
 			children = (
+				359206D71DEEC95D007C77A3 /* HEX.swift */,
 			);
 			path = "分类";
 			sourceTree = "<group>";
@@ -99,6 +110,8 @@
 		359206C31DEEAE44007C77A3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				359206DB1DEED483007C77A3 /* YXHomeDetailDataManager.swift */,
+				359206DD1DEED54D007C77A3 /* YXRecording.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -106,6 +119,8 @@
 		359206C41DEEAE44007C77A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */,
+				359206D91DEECE75007C77A3 /* detail.plist */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -374,6 +389,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				35606A2B1DED776C00302656 /* Assets.xcassets in Resources */,
+				359206DA1DEECE75007C77A3 /* detail.plist in Resources */,
 				3595D22D1DEC62A000179730 /* Main.storyboard in Resources */,
 				359206CF1DEEAE44007C77A3 /* home.plist in Resources */,
 			);
@@ -434,6 +450,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */,
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
@@ -441,10 +458,13 @@
 				359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */,
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
+				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
+				359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
 				359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */,
+				359206D61DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift in Sources */,
 				359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
