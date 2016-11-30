@@ -134,5 +134,10 @@ class YXHomeDetailHeadView: UIView
             make.right.equalTo(self).offset(-10);
         }
     }
+    
+    func loadData(model : Person) -> Void
+    {
+        nameLabel.text = model.name;
+    }
 
 }

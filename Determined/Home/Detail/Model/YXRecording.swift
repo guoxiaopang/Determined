@@ -12,8 +12,8 @@ import ObjectMapper
 // 用户信息
 class YXRecordPersonModel: Mappable
 {
-    var title : [String]?;
-    var info : [String]?
+    var title : String?;
+    var info : String?
     
     required init?(map: Map)
     {

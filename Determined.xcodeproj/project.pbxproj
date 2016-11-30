@@ -27,6 +27,7 @@
 		3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D2201DEC62A000179730 /* AppDelegate.swift */; };
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
+		35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */; };
 		DA2F57B53ADD13DFB9A1F5E9 /* Pods_Determined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		3595D2201DEC62A000179730 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3595D2251DEC62A000179730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3595D22E1DEC632600179730 /* YXMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainTabbarController.swift; sourceTree = "<group>"; };
+		35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailPersonCell.swift; sourceTree = "<group>"; };
 		657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Determined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B157EBC8E5E984DD8B99E0F2 /* Pods-Determined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.release.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.release.xcconfig"; sourceTree = "<group>"; };
 		E24BB88BFF16E4D024637115 /* Pods-Determined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.debug.xcconfig"; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */,
 				359206D91DEECE75007C77A3 /* detail.plist */,
+				35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -455,6 +458,7 @@
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
+				35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */,
 				359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */,
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<array>
+<dict>
+	<key>info</key>
 	<dict>
 		<key>list</key>
 		<array>
@@ -39,6 +40,7 @@
 		<key>groupName</key>
 		<string>记录</string>
 	</dict>
+	<key>person</key>
 	<dict>
 		<key>list</key>
 		<array>
@@ -50,37 +52,37 @@
 			</dict>
 			<dict>
 				<key>info</key>
-				<string>电话</string>
-				<key>title</key>
 				<string>130625356445</string>
+				<key>title</key>
+				<string>电话</string>
 			</dict>
 			<dict>
 				<key>info</key>
-				<string>邮箱</string>
-				<key>title</key>
 				<string>200832144@qq.com</string>
+				<key>title</key>
+				<string>邮箱</string>
 			</dict>
 			<dict>
 				<key>info</key>
+				<string>重庆市渝中区伴河路90号3单元2楼11-4-5</string>
+				<key>title</key>
 				<string>家庭地址</string>
-				<key>title</key>
-				<string>重庆市渝中区伴河路90号</string>
 			</dict>
 			<dict>
 				<key>info</key>
-				<string>公司</string>
-				<key>title</key>
 				<string>重庆市猪八戒网</string>
+				<key>title</key>
+				<string>公司</string>
 			</dict>
 			<dict>
 				<key>info</key>
-				<string>公司地址</string>
-				<key>title</key>
 				<string>重庆市渝北区光电园</string>
+				<key>title</key>
+				<string>公司地址</string>
 			</dict>
 		</array>
 		<key>groupName</key>
 		<string>我的信息</string>
 	</dict>
-</array>
+</dict>
 </plist>
