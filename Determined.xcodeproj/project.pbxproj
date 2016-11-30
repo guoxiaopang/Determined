@@ -7,17 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		35606A1E1DED13A400302656 /* YXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A1D1DED13A400302656 /* YXHomeViewController.swift */; };
 		35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A1F1DED13B600302656 /* YXHistoryViewController.swift */; };
 		35606A221DED13C200302656 /* YXFindViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A211DED13C200302656 /* YXFindViewController.swift */; };
 		35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A231DED13CD00302656 /* YXMeViewController.swift */; };
-		35606A261DED5EC700302656 /* YXHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A251DED5EC700302656 /* YXHomeTableViewCell.swift */; };
 		35606A2B1DED776C00302656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35606A2A1DED776C00302656 /* Assets.xcassets */; };
 		35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A2E1DED9EE700302656 /* YYFPSLabel.m */; };
 		35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A301DED9EE700302656 /* YYWeakProxy.m */; };
-		35606A341DEDA15800302656 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A331DEDA15800302656 /* YXHomeDataManager.swift */; };
-		35606A361DEDAD1800302656 /* home.plist in Resources */ = {isa = PBXBuildFile; fileRef = 35606A351DEDAD1800302656 /* home.plist */; };
-		35606A381DEDB0E700302656 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A371DEDB0E700302656 /* YXHomeModel.swift */; };
+		359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */; };
+		359206CF1DEEAE44007C77A3 /* home.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359206C81DEEAE44007C77A3 /* home.plist */; };
+		359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */; };
+		359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */; };
+		359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */; };
+		359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */; };
 		3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D2201DEC62A000179730 /* AppDelegate.swift */; };
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
@@ -25,20 +26,21 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		35606A1D1DED13A400302656 /* YXHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeViewController.swift; sourceTree = "<group>"; };
 		35606A1F1DED13B600302656 /* YXHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryViewController.swift; sourceTree = "<group>"; };
 		35606A211DED13C200302656 /* YXFindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXFindViewController.swift; sourceTree = "<group>"; };
 		35606A231DED13CD00302656 /* YXMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMeViewController.swift; sourceTree = "<group>"; };
-		35606A251DED5EC700302656 /* YXHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeTableViewCell.swift; sourceTree = "<group>"; };
 		35606A2A1DED776C00302656 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		35606A2C1DED9EE600302656 /* Determined-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Determined-Bridging-Header.h"; sourceTree = "<group>"; };
 		35606A2D1DED9EE700302656 /* YYFPSLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYFPSLabel.h; sourceTree = "<group>"; };
 		35606A2E1DED9EE700302656 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		35606A2F1DED9EE700302656 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		35606A301DED9EE700302656 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
-		35606A331DEDA15800302656 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
-		35606A351DEDAD1800302656 /* home.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = home.plist; sourceTree = "<group>"; };
-		35606A371DEDB0E700302656 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
+		359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeViewController.swift; sourceTree = "<group>"; };
+		359206C81DEEAE44007C77A3 /* home.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = home.plist; sourceTree = "<group>"; };
+		359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
+		359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
+		359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeTableViewCell.swift; sourceTree = "<group>"; };
+		359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailViewController.swift; sourceTree = "<group>"; };
 		3595D1FE1DEC61FA00179730 /* Determined.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Determined.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3595D20D1DEC61FA00179730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3595D2201DEC62A000179730 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -74,6 +76,74 @@
 			children = (
 			);
 			path = "分类";
+			sourceTree = "<group>";
+		};
+		359206C11DEEAE44007C77A3 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				359206C21DEEAE44007C77A3 /* Controller */,
+				359206C31DEEAE44007C77A3 /* Model */,
+				359206C41DEEAE44007C77A3 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		359206C21DEEAE44007C77A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		359206C31DEEAE44007C77A3 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		359206C41DEEAE44007C77A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		359206C51DEEAE44007C77A3 /* List */ = {
+			isa = PBXGroup;
+			children = (
+				359206C61DEEAE44007C77A3 /* Controller */,
+				359206C81DEEAE44007C77A3 /* home.plist */,
+				359206C91DEEAE44007C77A3 /* Mode */,
+				359206CC1DEEAE44007C77A3 /* View */,
+			);
+			path = List;
+			sourceTree = "<group>";
+		};
+		359206C61DEEAE44007C77A3 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		359206C91DEEAE44007C77A3 /* Mode */ = {
+			isa = PBXGroup;
+			children = (
+				359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */,
+				359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */,
+			);
+			path = Mode;
+			sourceTree = "<group>";
+		};
+		359206CC1DEEAE44007C77A3 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3595D1F51DEC61FA00179730 = {
@@ -174,37 +244,10 @@
 		3595D21B1DEC629900179730 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				3595D21C1DEC629900179730 /* Controller */,
-				3595D21D1DEC629900179730 /* Mode */,
-				3595D21E1DEC629900179730 /* View */,
-				35606A351DEDAD1800302656 /* home.plist */,
+				359206C11DEEAE44007C77A3 /* Detail */,
+				359206C51DEEAE44007C77A3 /* List */,
 			);
 			path = Home;
-			sourceTree = "<group>";
-		};
-		3595D21C1DEC629900179730 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				35606A1D1DED13A400302656 /* YXHomeViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		3595D21D1DEC629900179730 /* Mode */ = {
-			isa = PBXGroup;
-			children = (
-				35606A331DEDA15800302656 /* YXHomeDataManager.swift */,
-				35606A371DEDB0E700302656 /* YXHomeModel.swift */,
-			);
-			path = Mode;
-			sourceTree = "<group>";
-		};
-		3595D21E1DEC629900179730 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				35606A251DED5EC700302656 /* YXHomeTableViewCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		3595D21F1DEC62A000179730 /* Main */ = {
@@ -332,7 +375,7 @@
 			files = (
 				35606A2B1DED776C00302656 /* Assets.xcassets in Resources */,
 				3595D22D1DEC62A000179730 /* Main.storyboard in Resources */,
-				35606A361DEDAD1800302656 /* home.plist in Resources */,
+				359206CF1DEEAE44007C77A3 /* home.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,15 +436,16 @@
 			files = (
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
-				35606A381DEDB0E700302656 /* YXHomeModel.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
+				359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */,
+				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
+				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
-				35606A261DED5EC700302656 /* YXHomeTableViewCell.swift in Sources */,
-				35606A1E1DED13A400302656 /* YXHomeViewController.swift in Sources */,
-				35606A341DEDA15800302656 /* YXHomeDataManager.swift in Sources */,
+				359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */,
+				359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

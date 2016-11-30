@@ -61,7 +61,11 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        tableView .deselectRow(at: indexPath, animated: true);
+        let detailController : YXHomeDetailViewController = YXHomeDetailViewController();
+        let person : Person = dataManager.modelWithIndex(index: indexPath);
+        detailController.postModel(model: person);
+        navigationController?.pushViewController(detailController, animated: true);
+//        tableView.deselectRow(at: indexPath, animated: true);
     }
     
     // 返回索引数组
