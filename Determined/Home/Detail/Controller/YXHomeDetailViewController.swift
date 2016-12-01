@@ -11,7 +11,7 @@ import UIKit
 let onecell : String = "cell1";
 let twocell : String = "cell2";
 
-class YXHomeDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class YXHomeDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, YXHomeDetailHeadViewDelegate
 {
     var person : Person?;
     
@@ -42,6 +42,7 @@ class YXHomeDetailViewController: UIViewController, UITableViewDelegate, UITable
     private lazy var detailHeadView : YXHomeDetailHeadView = {
         let headView : YXHomeDetailHeadView = YXHomeDetailHeadView();
         headView.frame = CGRect(x: 0, y: 0, width: 375, height: 110);
+        headView.delegate = self;
         return headView;
     }();
     
@@ -52,34 +53,22 @@ class YXHomeDetailViewController: UIViewController, UITableViewDelegate, UITable
 
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == 0
-        {
             return dataManager.numofSectionOne();
-        }
-        else
-        {
-            return dataManager.numofSectionTwo();
-        }
+     
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int {
-        return 2;
+        return 1;
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        if indexPath.section == 0
-        {
+
             let cell : YXHomeDetailPersonCell = tableView.dequeueReusableCell(withIdentifier: onecell) as! YXHomeDetailPersonCell;
             let model = dataManager.personModelWithIndex(index: indexPath.row);
             cell.reloadData(model: model);
             return cell;
-        }
-        else
-        {
-            let cell = tableView.dequeueReusableCell(withIdentifier: twocell);
-            return cell!;
-        }
+
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?
@@ -100,5 +89,12 @@ class YXHomeDetailViewController: UIViewController, UITableViewDelegate, UITable
     {
         person = model;
         detailHeadView.loadData(model: model);
+    }
+    
+    func clickDetail(headView: YXHomeDetailHeadView) {
+        
+        let controller : YXHomeInfoViewController = YXHomeInfoViewController();
+        controller.hidesBottomBarWhenPushed = true;
+        navigationController?.pushViewController(controller, animated: true);
     }
 }

@@ -13,6 +13,8 @@
 		35606A2B1DED776C00302656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35606A2A1DED776C00302656 /* Assets.xcassets */; };
 		35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A2E1DED9EE700302656 /* YYFPSLabel.m */; };
 		35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A301DED9EE700302656 /* YYWeakProxy.m */; };
+		3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */; };
+		3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */; };
 		359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */; };
 		359206CF1DEEAE44007C77A3 /* home.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359206C81DEEAE44007C77A3 /* home.plist */; };
 		359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */; };
@@ -41,6 +43,8 @@
 		35606A2E1DED9EE700302656 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		35606A2F1DED9EE700302656 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		35606A301DED9EE700302656 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXHomeDetailTextCell.swift; path = ../../List/View/YXHomeDetailTextCell.swift; sourceTree = "<group>"; };
+		3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeInfoViewController.swift; sourceTree = "<group>"; };
 		359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeViewController.swift; sourceTree = "<group>"; };
 		359206C81DEEAE44007C77A3 /* home.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = home.plist; sourceTree = "<group>"; };
 		359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
@@ -105,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */,
+				3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -121,6 +126,7 @@
 		359206C41DEEAE44007C77A3 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */,
 				359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */,
 				359206D91DEECE75007C77A3 /* detail.plist */,
 				35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */,
@@ -454,6 +460,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */,
+				3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */,
+				3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */,
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,

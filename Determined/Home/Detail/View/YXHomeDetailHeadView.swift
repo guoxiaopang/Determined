@@ -10,9 +10,15 @@ import UIKit
 import SnapKit
 import UIColor_Hex_Swift
 
+protocol YXHomeDetailHeadViewDelegate
+{
+    func clickDetail(headView : YXHomeDetailHeadView);
+}
+
 class YXHomeDetailHeadView: UIView
 {
-
+    var delegate : YXHomeDetailHeadViewDelegate?;
+    
     override init(frame: CGRect)
     {
         super.init(frame: frame);
@@ -24,6 +30,7 @@ class YXHomeDetailHeadView: UIView
         self.addSubview(heartView);
         self.addSubview(likeLabel);
         self.addSubview(shareButton);
+        self.addSubview(detailButton);
         self.addLayout();
     }
     
@@ -92,6 +99,16 @@ class YXHomeDetailHeadView: UIView
         return shareButton;
     }()
     
+    private lazy var detailButton : UIButton = {
+        let detailButton = UIButton();
+        detailButton.setTitle("记录", for: UIControlState.normal);
+        detailButton.titleLabel?.font = UIFont.systemFont(ofSize: 14);
+        detailButton.setTitleColor(UIColor(hex6:0x888888), for: UIControlState.normal);
+        detailButton.setTitleColor(UIColor(hex6:0x515151), for: UIControlState.highlighted);
+        detailButton .addTarget(self, action: #selector(YXHomeDetailHeadView.detailButtonClick), for: UIControlEvents.touchUpInside);
+        return detailButton;
+    }()
+    
     func addLayout() -> Void {
         nameLabel.snp.makeConstraints { (make) in
             make.left.equalTo(self).offset(15);
@@ -133,11 +150,23 @@ class YXHomeDetailHeadView: UIView
             make.top.equalTo(lineView).offset(10);
             make.right.equalTo(self).offset(-10);
         }
+        
+        detailButton.snp.makeConstraints { (make) in
+            make.right.equalTo(self).offset(-10);
+            make.top.equalTo(self).offset(20);
+        }
     }
     
     func loadData(model : Person) -> Void
     {
         nameLabel.text = model.name;
+    }
+    
+    func detailButtonClick() -> Void {
+        if delegate != nil
+        {
+            delegate?.clickDetail(headView: self);
+        }
     }
 
 }

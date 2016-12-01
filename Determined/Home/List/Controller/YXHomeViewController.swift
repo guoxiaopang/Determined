@@ -30,6 +30,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 44.0;
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
+        tableView.sectionIndexColor = UIColor.init(hex6: 0x888888);
         tableView.register(YXHomeTableViewCell.classForCoder() , forCellReuseIdentifier: "cell");
         return tableView;
     }();

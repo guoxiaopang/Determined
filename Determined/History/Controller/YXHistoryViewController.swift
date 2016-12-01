@@ -8,28 +8,32 @@
 
 import UIKit
 
-class YXHistoryViewController: UIViewController {
+class YXHistoryViewController: UIViewController
+{
 
-    override func viewDidLoad() {
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        let p = People();
+        p.name = "天蓝";
+        print(p.name);
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+}
+
+class People
+{
+    var name : String = ""
+    {
+        willSet
+        {
+            print("名字将要设置 \(name)");
+        }
+        
+        didSet
+        {
+            print("名字已经设置完 \(name)");
+        }
     }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
 }
