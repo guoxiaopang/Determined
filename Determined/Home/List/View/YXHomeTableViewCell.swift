@@ -40,7 +40,7 @@ class YXHomeTableViewCell: UITableViewCell
     {
         let nameLabel = UILabel();
         nameLabel.text = "名字";
-        nameLabel.font = UIFont.systemFont(ofSize: 20);
+        nameLabel.font = UIFont(name: "STHeiti-Light", size: 20);
         return nameLabel;
             
     }()
@@ -49,7 +49,8 @@ class YXHomeTableViewCell: UITableViewCell
     {
         let workLabel = UILabel();
         workLabel.text = "这是工作";
-        workLabel.font = UIFont.systemFont(ofSize: 17);
+//        workLabel.font = UIFont.systemFont(ofSize: 17);
+        workLabel.font = UIFont(name: "STHeiti-Light", size: 17);
         workLabel.textColor? = UIColor.init(red: 0.534, green: 0.534, blue: 0.534, alpha: 0.534);
         return workLabel;
     }()
