@@ -13,6 +13,12 @@
 		35606A2B1DED776C00302656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35606A2A1DED776C00302656 /* Assets.xcassets */; };
 		35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A2E1DED9EE700302656 /* YYFPSLabel.m */; };
 		35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A301DED9EE700302656 /* YYWeakProxy.m */; };
+		3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578B5B01DF122EB0012C5A1 /* CoreData.framework */; };
+		3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */; };
+		3578B5C01DF127420012C5A1 /* PersonInfo+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BD1DF127420012C5A1 /* PersonInfo+CoreDataClass.swift */; };
+		3578B5C11DF127420012C5A1 /* PersonInfo+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BE1DF127420012C5A1 /* PersonInfo+CoreDataProperties.swift */; };
+		3578B5C31DF1286C0012C5A1 /* YXCoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5C21DF1286C0012C5A1 /* YXCoreDataManager.swift */; };
+		3578B5EB1DF16FE40012C5A1 /* YXPersonInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5EA1DF16FE40012C5A1 /* YXPersonInfo.swift */; };
 		3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */; };
 		3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */; };
 		3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */; };
@@ -45,6 +51,14 @@
 		35606A2E1DED9EE700302656 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		35606A2F1DED9EE700302656 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		35606A301DED9EE700302656 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		3578B5B01DF122EB0012C5A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		3578B5BC1DF127420012C5A1 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
+		3578B5BD1DF127420012C5A1 /* PersonInfo+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersonInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3578B5BE1DF127420012C5A1 /* PersonInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "PersonInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3578B5C21DF1286C0012C5A1 /* YXCoreDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXCoreDataManager.swift; sourceTree = "<group>"; };
+		3578B5E81DF16BE00012C5A1 /* PersonData+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonData+CoreDataClass.swift"; sourceTree = "<group>"; };
+		3578B5E91DF16BE00012C5A1 /* PersonData+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PersonData+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		3578B5EA1DF16FE40012C5A1 /* YXPersonInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXPersonInfo.swift; sourceTree = "<group>"; };
 		3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXHomeDetailTextCell.swift; path = ../../List/View/YXHomeDetailTextCell.swift; sourceTree = "<group>"; };
 		3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeInfoViewController.swift; sourceTree = "<group>"; };
 		3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryMainCell.swift; sourceTree = "<group>"; };
@@ -76,6 +90,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */,
 				DA2F57B53ADD13DFB9A1F5E9 /* Pods_Determined.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +101,7 @@
 		34A306BCBB5A808E599B394A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				3578B5B01DF122EB0012C5A1 /* CoreData.framework */,
 				657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */,
 			);
 			name = Frameworks;
@@ -97,6 +113,20 @@
 				359206D71DEEC95D007C77A3 /* HEX.swift */,
 			);
 			path = "分类";
+			sourceTree = "<group>";
+		};
+		3578B5BA1DF127420012C5A1 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				3578B5E81DF16BE00012C5A1 /* PersonData+CoreDataClass.swift */,
+				3578B5E91DF16BE00012C5A1 /* PersonData+CoreDataProperties.swift */,
+				3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */,
+				3578B5BD1DF127420012C5A1 /* PersonInfo+CoreDataClass.swift */,
+				3578B5BE1DF127420012C5A1 /* PersonInfo+CoreDataProperties.swift */,
+				3578B5C21DF1286C0012C5A1 /* YXCoreDataManager.swift */,
+				3578B5EA1DF16FE40012C5A1 /* YXPersonInfo.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		359206C11DEEAE44007C77A3 /* Detail */ = {
@@ -282,6 +312,7 @@
 		3595D21F1DEC62A000179730 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				3578B5BA1DF127420012C5A1 /* CoreData */,
 				3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */,
 				35606A2D1DED9EE700302656 /* YYFPSLabel.h */,
 				35606A2E1DED9EE700302656 /* YYFPSLabel.m */,
@@ -468,9 +499,11 @@
 			files = (
 				359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */,
 				3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */,
+				3578B5C01DF127420012C5A1 /* PersonInfo+CoreDataClass.swift in Sources */,
 				3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */,
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
+				3578B5EB1DF16FE40012C5A1 /* YXPersonInfo.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
@@ -480,12 +513,15 @@
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
+				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
 				359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */,
+				3578B5C31DF1286C0012C5A1 /* YXCoreDataManager.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
 				359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */,
 				359206D61DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift in Sources */,
 				359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */,
+				3578B5C11DF127420012C5A1 /* PersonInfo+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +693,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				3578B5BC1DF127420012C5A1 /* data.xcdatamodel */,
+			);
+			currentVersion = 3578B5BC1DF127420012C5A1 /* data.xcdatamodel */;
+			path = data.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3595D1F61DEC61FA00179730 /* Project object */;
 }

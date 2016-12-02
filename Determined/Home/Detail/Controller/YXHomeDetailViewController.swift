@@ -23,6 +23,7 @@ class YXHomeDetailViewController: UIViewController, UITableViewDelegate, UITable
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
        
+
     }
 
     private lazy var tableView : UITableView = {

@@ -9,16 +9,16 @@
 import UIKit
 
 let historyCell : String = "historyCell";
+
 class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-
+    var dataSource = 50;
     override func viewDidLoad()
-    {
+    {   
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
-    
-
+        self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
     private lazy var tableView : UITableView = {
         let rect : CGRect = CGRect(x: 15, y: 0, width: self.view.frame.width - 30, height: self.view.frame.height);
@@ -43,7 +43,7 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     
     public func numberOfSections(in tableView: UITableView) -> Int
     {
-        return 20;
+        return dataSource;
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -58,8 +58,11 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
-        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "DELETE", handler: { (UITableViewRowAction, IndexPath) in
-            print("hj")
+        let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "DELETE", handler: { [weak weakSelf = self](UITableViewRowAction, IndexPath) in
+//            [self.dataSource removeObjectAtIndex:indexPath.row];
+//            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+            weakSelf?.dataSource = (weakSelf?.dataSource)! - 1;
+            tableView.deleteSections(IndexSet.init(integer: indexPath.section), with: UITableViewRowAnimation.automatic);
         })
         deleteAction.backgroundColor = UIColor(hex6: 0xe74c3c)
         return [deleteAction];

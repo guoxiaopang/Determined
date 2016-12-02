@@ -19,6 +19,19 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         self.view.addSubview(tableView);
         
         dataManager.request();
+        
+        let test = YXCoreDataManager.shareManager();
+    
+
+        
+        test.insert("123", ["name" : "guoyu"]);
+        test.insert("234", ["name" : "guoyu"]);
+        
+        for item in test.selected()
+        {
+            let p = item as! PersonData;
+            print(p.uuid!);
+        }
     }
 
     private lazy var tableView : UITableView =
