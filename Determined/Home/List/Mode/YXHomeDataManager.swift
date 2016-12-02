@@ -26,11 +26,26 @@ class YXHomeDataManager: NSObject
                 groupItem.append(user?.group! as Any);
                 item.append(user as Any);
             }
-            // 排序
-    
     
         }
+        
+        let coreData = YXCoreDataManager.shareManager();
+        let arr : NSArray = coreData.selected();
+        for item in arr
+        {
+            let personData = item as! PersonData;
+            let model = Mapper<YXPersonInfo>().map(JSON: personData.data as! [String : Any]);
+            model?.uuid = personData.uuid;
+            personItem.append(model!);
+        }
+        print(personItem.count);
+        
     }
+    
+    private lazy var personItem : [YXPersonInfo] = {
+        var item = [YXPersonInfo]();
+        return item;
+    }()
     
     // 排序方法
 

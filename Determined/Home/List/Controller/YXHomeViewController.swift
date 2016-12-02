@@ -20,18 +20,26 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         dataManager.request();
         
-        let test = YXCoreDataManager.shareManager();
-    
-
-        
-        test.insert("123", ["name" : "guoyu"]);
-        test.insert("234", ["name" : "guoyu"]);
-        
-        for item in test.selected()
-        {
-            let p = item as! PersonData;
-            print(p.uuid!);
-        }
+//        let test = YXCoreDataManager.shareManager();
+//    
+//
+//        
+//        test.insert("1", ["name" : "guoyu"]);
+//        test.insert("2", ["name" : "guoyu"]);
+//        test.insert("3", ["name" : "guoyu"]);
+//        test.insert("4", ["name" : "guoyu"]);
+//        test.insert("5", ["name" : "guoyu"]);
+//        test.insert("6", ["name" : "guoyu"]);
+//        test.insert("7", ["name" : "guoyu"]);
+//        test.insert("8", ["name" : "guoyu"]);
+//        test.insert("9", ["name" : "guoyu"]);
+//        test.insert("10", ["name" : "guoyu"]);
+//        
+//        for item in test.selected()
+//        {
+//            let p = item as! PersonData;
+//            print(p.uuid!);
+//        }
     }
 
     private lazy var tableView : UITableView =

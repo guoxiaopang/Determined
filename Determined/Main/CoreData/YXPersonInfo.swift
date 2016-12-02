@@ -14,11 +14,12 @@ class YXPersonInfo: Mappable
     var icon : String?;
     var name : String?
     var birthday : NSDate?;
-    var age : NSString?;
-    var constellation : NSString?;
+    var age : String?;
+    var constellation : String?;
     var lastContact : [YXLastContact]?;
     var basicinformation : [Basicinformation]?;
     var contextInfo : [ContextInfo]?;
+    var uuid : String?;
     
     required init?(map: Map)
     {
@@ -35,6 +36,7 @@ class YXPersonInfo: Mappable
         lastContact <- map["lastContact"]
         basicinformation <- map["basicinformation"]
         contextInfo <- map["contextInfo"]
+        uuid <- map["uuid"]
     }
 }
 
