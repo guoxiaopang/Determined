@@ -30,14 +30,13 @@
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="group" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserGroup" syncable="YES"/>
     </entity>
     <entity name="UserGroup" representedClassName="UserGroup" syncable="YES" codeGenerationType="class">
         <attribute name="groupItem" optional="YES" attributeType="Transformable" customClassName="NSMutableArray" syncable="YES"/>
         <attribute name="groupString" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-531" positionY="-45" width="128" height="255"/>
+        <element name="User" positionX="-531" positionY="-45" width="128" height="30"/>
         <element name="UserGroup" positionX="-531" positionY="54" width="128" height="75"/>
         <element name="BasicInfo" positionX="-522" positionY="63" width="128" height="75"/>
         <element name="ContactInfo" positionX="-504" positionY="72" width="128" height="135"/>
