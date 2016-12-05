@@ -102,6 +102,7 @@ class YXCoreDataManager: NSObject
             {
                 managedObjectContext?.delete(personData);
                 self.save();
+                print("删除成功\(personData.uuid)");
             }
             else
             {
@@ -116,9 +117,6 @@ class YXCoreDataManager: NSObject
         {
             print("未知错误");
         }
-
-      
-     
     }
 
 }

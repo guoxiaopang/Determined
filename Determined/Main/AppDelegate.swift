@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -27,9 +28,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         label.frame = CGRect.init(x: 50, y: 20, width: 50, height: 30);
         self.window?.addSubview(label);
         
+        MagicalRecord.setupCoreDataStack(withStoreNamed: "Determined");
+        self.addData();
         return true
     }
 
-
+    public func applicationWillTerminate(_ application: UIApplication)
+    {
+        MagicalRecord.cleanUp();
+    }
+    
+    func addData()
+    {
+        
+    }
 }
 

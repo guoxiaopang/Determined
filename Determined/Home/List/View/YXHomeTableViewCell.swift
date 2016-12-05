@@ -111,16 +111,30 @@ class YXHomeTableViewCell: UITableViewCell
     }
     
     // 加载数据
-    func changeValueWithModel(person : Person) -> Void
+    func changeValueWithModel(person : YXPersonInfo) -> Void
     {
-        iconView.image = UIImage.init(named: person.image!);
+        if (person.icon == nil)
+        {
+            iconView.image = UIImage.init(named: "icon");
+        }
+        else
+        {
+            iconView.image = UIImage.init(named: person.icon!);
+        }
+        
         nameLabel.text = person.name;
-        workLabel.text = person.work;
-       
-        let dateFormat = DateFormatter();
-        dateFormat.dateFormat = "yyyy年MM月dd日 hh:mm:ss"
-        let dateString = dateFormat.string(from: person.lasttime as! Date);
-        timeLabel.text = dateString;
+        workLabel.text = person.companyName;
+      
+        let array = person.lastContact;
+        if array != nil
+        {
+            let time : YXLastContact = array![0];
+            let dateFormat = DateFormatter();
+            dateFormat.dateFormat = "yyyy年MM月dd日 hh:mm:ss"
+            let dateString = dateFormat.string(from: time.lastContactTime as! Date);
+            timeLabel.text = dateString;
+        }
+
     }
 
 }
