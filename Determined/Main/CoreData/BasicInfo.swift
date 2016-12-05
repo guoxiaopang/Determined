@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-
+@objc(BasicInfo)
 class BasicInfo: NSManagedObject
 {
      public var title: String?

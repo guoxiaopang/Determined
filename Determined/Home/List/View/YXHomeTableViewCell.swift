@@ -111,6 +111,11 @@ class YXHomeTableViewCell: UITableViewCell
     }
     
     // 加载数据
-
+    func reloadData(user : User) -> Void
+    {
+        iconView.image = UIImage.init(named: user.icon!);
+        nameLabel.text = user.name;
+        workLabel.text = user.companyName;
+    }
 
 }

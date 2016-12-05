@@ -19,7 +19,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
         
-        dataManager.request();
+        dataManager.requestData();
         
 
     }
@@ -46,40 +46,52 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        return 2;
+        return dataManager.rowOfSection(section);
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return dataManager.numOfSection();
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell : YXHomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! YXHomeTableViewCell;
+        let user = dataManager.modelWithIndexPath(indexPath: indexPath);
+        cell .reloadData(user: user!);
         return cell;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
         let detailController : YXHomeDetailViewController = YXHomeDetailViewController();
-//        let person : Person = dataManager.modelWithIndex(index: indexPath);
-//        detailController.postModel(model: person);
         navigationController?.pushViewController(detailController, animated: true);
-//        tableView.deselectRow(at: indexPath, animated: true);
+        tableView.deselectRow(at: indexPath, animated: true);
     }
     
     // 返回索引数组
-//    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
-//        return dataManager.groupTitle() as? [String];
-//    }
-//    
-    // 返回每个索引内容
-//    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-//        let group : YXHomeModel = dataManager.groupWithSection(section: section);
-//        return group.group;
-//    }
+    func sectionIndexTitles(for tableView: UITableView) -> [String]? {
+        let array : [String] = dataManager.itemTitle as! Array<String>;
+        return array;
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "aa";
+    }
+    
+    
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "DELETE", handler: { [weak weakSelf = self](UITableViewRowAction, IndexPath) in
-//            let person : YXPersonInfo = weakSelf!.dataManager.modelWithIndex(index: indexPath);
-//            weakSelf?.dataManager.removeModel(model: person);
-//            tableView.deleteSections(IndexSet.init(integer: indexPath.section), with: UITableViewRowAnimation.automatic);
+            let user = weakSelf?.dataManager.modelWithIndexPath(indexPath: indexPath);
+            let group : UserGroup =  (weakSelf?.dataManager.remove(user: user!))!;
             tableView.deleteRows(at: [indexPath], with: UITableViewRowAnimation.automatic);
+            if group.groupItem?.count == 0
+            {
+                // 组成员为0 删除组 删除title
+                weakSelf?.dataManager.deleteSection(group: group);
+                tableView.deleteSections(IndexSet.init(integer: indexPath.section), with: UITableViewRowAnimation.automatic);
+            }
+            
+            
         })
         deleteAction.backgroundColor = UIColor(hex6: 0xe74c3c)
         return [deleteAction];

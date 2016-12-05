@@ -12,6 +12,7 @@ import CoreData
 @objc(UserGroup)
 class UserGroup: NSManagedObject
 {
-    var groupItem : [User]?;
+    var groupItem : NSMutableArray?;
     var groupString : String?;
+    
 }
