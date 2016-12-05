@@ -40,7 +40,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func addData()
     {
+        let user1 = User.mr_createEntity();
+        user1?.name = "aa";
+        user1?.icon = "icon";
+        let user2 = User.mr_createEntity();
+        user1?.name = "bb";
+        user1?.icon = "icon";
         
+        let group1 = UserGroup.mr_createEntity();
+        group1?.groupString = "第一组";
+        group1?.groupItem = [user1!, user2!];
+        
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore(completion: nil);
+        
+        let array : [NSManagedObject] = UserGroup.mr_findAllSorted(by: "groupString", ascending: true)!;
+        print(array.count);
     }
 }
 

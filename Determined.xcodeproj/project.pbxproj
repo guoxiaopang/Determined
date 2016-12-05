@@ -34,6 +34,11 @@
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
 		35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */; };
+		35AF45CF1DF5427C003B8B56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45CE1DF5427C003B8B56 /* User.swift */; };
+		35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D01DF54402003B8B56 /* UserGroup.swift */; };
+		35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D21DF547C6003B8B56 /* LastContact.swift */; };
+		35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D41DF5480D003B8B56 /* BasicInfo.swift */; };
+		35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D61DF5482B003B8B56 /* ContactInfo.swift */; };
 		DA2F57B53ADD13DFB9A1F5E9 /* Pods_Determined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,16 +75,11 @@
 		3595D2251DEC62A000179730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3595D22E1DEC632600179730 /* YXMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainTabbarController.swift; sourceTree = "<group>"; };
 		35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailPersonCell.swift; sourceTree = "<group>"; };
-		35AF45C41DF54131003B8B56 /* UserGroup+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserGroup+CoreDataClass.swift"; sourceTree = "<group>"; };
-		35AF45C51DF54131003B8B56 /* UserGroup+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserGroup+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		35AF45C61DF54131003B8B56 /* LastContact+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LastContact+CoreDataClass.swift"; sourceTree = "<group>"; };
-		35AF45C71DF54131003B8B56 /* LastContact+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "LastContact+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		35AF45C81DF54131003B8B56 /* User+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataClass.swift"; sourceTree = "<group>"; };
-		35AF45C91DF54131003B8B56 /* User+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "User+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		35AF45CA1DF54131003B8B56 /* BasicInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		35AF45CB1DF54131003B8B56 /* BasicInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BasicInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		35AF45CC1DF54131003B8B56 /* ContactInfo+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactInfo+CoreDataClass.swift"; sourceTree = "<group>"; };
-		35AF45CD1DF54131003B8B56 /* ContactInfo+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContactInfo+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		35AF45CE1DF5427C003B8B56 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		35AF45D01DF54402003B8B56 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
+		35AF45D21DF547C6003B8B56 /* LastContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastContact.swift; sourceTree = "<group>"; };
+		35AF45D41DF5480D003B8B56 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
+		35AF45D61DF5482B003B8B56 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Determined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B157EBC8E5E984DD8B99E0F2 /* Pods-Determined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.release.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.release.xcconfig"; sourceTree = "<group>"; };
 		E24BB88BFF16E4D024637115 /* Pods-Determined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.debug.xcconfig"; sourceTree = "<group>"; };
@@ -118,17 +118,12 @@
 		3578B5BA1DF127420012C5A1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				35AF45C41DF54131003B8B56 /* UserGroup+CoreDataClass.swift */,
-				35AF45C51DF54131003B8B56 /* UserGroup+CoreDataProperties.swift */,
-				35AF45C61DF54131003B8B56 /* LastContact+CoreDataClass.swift */,
-				35AF45C71DF54131003B8B56 /* LastContact+CoreDataProperties.swift */,
-				35AF45C81DF54131003B8B56 /* User+CoreDataClass.swift */,
-				35AF45C91DF54131003B8B56 /* User+CoreDataProperties.swift */,
-				35AF45CA1DF54131003B8B56 /* BasicInfo+CoreDataClass.swift */,
-				35AF45CB1DF54131003B8B56 /* BasicInfo+CoreDataProperties.swift */,
-				35AF45CC1DF54131003B8B56 /* ContactInfo+CoreDataClass.swift */,
-				35AF45CD1DF54131003B8B56 /* ContactInfo+CoreDataProperties.swift */,
 				3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */,
+				35AF45CE1DF5427C003B8B56 /* User.swift */,
+				35AF45D01DF54402003B8B56 /* UserGroup.swift */,
+				35AF45D21DF547C6003B8B56 /* LastContact.swift */,
+				35AF45D41DF5480D003B8B56 /* BasicInfo.swift */,
+				35AF45D61DF5482B003B8B56 /* ContactInfo.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -509,14 +504,19 @@
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
+				35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */,
 				35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */,
 				359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */,
+				35AF45CF1DF5427C003B8B56 /* User.swift in Sources */,
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
+				35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
+				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
 				359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */,
+				35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
 				359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */,
