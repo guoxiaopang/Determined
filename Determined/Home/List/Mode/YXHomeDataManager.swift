@@ -16,9 +16,9 @@ class YXHomeDataManager: NSObject
 
     func requestData() -> Void
     {
-        let array = [UserGroup.mr_findAllSorted(by: "groupString", ascending: true)];
+        let array = UserGroup.mr_findAllSorted(by: "groupString", ascending: true);
         item.removeAllObjects();
-        for i in array[0]!
+        for i in array!
         {
             item.add(i);
             let group : UserGroup = i as! UserGroup; 

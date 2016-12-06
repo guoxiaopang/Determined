@@ -12,7 +12,6 @@ let historyCell : String = "historyCell";
 
 class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-    var dataSource = 50;
     override func viewDidLoad()
     {   
         super.viewDidLoad()
@@ -42,21 +41,22 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         return data;
     }()
     
-    
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
-    {
-        return 1 ;
+
+    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1;
     }
     
     public func numberOfSections(in tableView: UITableView) -> Int
     {
-        return dataSource;
+        return dataManager.numOfRow();
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell : YXHistoryMainCell = tableView.dequeueReusableCell(withIdentifier: historyCell) as! YXHistoryMainCell;
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
+        let model = dataManager.modelWithRow(indexPath.section);
+        cell.reloadData(model!);
         return cell;
     }
     
@@ -66,7 +66,8 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "DELETE", handler: { [weak weakSelf = self](UITableViewRowAction, IndexPath) in
-            weakSelf?.dataSource = (weakSelf?.dataSource)! - 1;
+            let model = weakSelf?.dataManager.modelWithRow(indexPath.row);
+            weakSelf?.dataManager.delete(model: model!);
             tableView.deleteSections(IndexSet.init(integer: indexPath.section), with: UITableViewRowAnimation.automatic);
         })
         deleteAction.backgroundColor = UIColor(hex6: 0xe74c3c)

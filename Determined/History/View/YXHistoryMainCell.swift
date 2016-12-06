@@ -55,6 +55,14 @@ class YXHistoryMainCell: UITableViewCell
             return iconView;
     }()
     
+    // MARK: - Void
+    func reloadData(_ model : LastContact) -> Void
+    {
+        iconView.image = self.type(type: model);
+        timeLabel.text = self.timeToString(time: model.lastContactTime!);
+        nameLabel.text = model.name;
+    }
+    
     func addLayout() -> Void
     {
         timeLabel.snp.makeConstraints { (make) in
@@ -68,7 +76,6 @@ class YXHistoryMainCell: UITableViewCell
             make.top.equalTo(timeLabel.snp.bottom).offset(15);
             make.right.equalTo(timeLabel);
             make.bottom.equalTo(self.contentView).offset(-14);
-            
         }
         
         iconView.snp.makeConstraints { (make) in
@@ -78,6 +85,32 @@ class YXHistoryMainCell: UITableViewCell
         }
     }
     
+    // 返回图片
+    func type(type : LastContact) -> UIImage
+    {
+        let tempType = type.contactType;
+        switch tempType
+        {
+        case .QQ:
+            return #imageLiteral(resourceName: "qq_space");
+        case .FaceToFace:
+            return #imageLiteral(resourceName: "facetoface");
+        case .Message:
+            return #imageLiteral(resourceName: "message");
+        case .Phone:
+            return #imageLiteral(resourceName: "phone");
+        }
+    }
     
+    // 返回格式化后时间
+    func timeToString(time : String) -> String
+    {
+        let fmt = DateFormatter();
+        fmt.dateFormat = "YYYY年MM月dd日 HH:mm ";
+        let timeInterval = TimeInterval(time);
+        let t = Date.init(timeIntervalSince1970: timeInterval!);
+        let str = fmt.string(from: t);
+        return str;
+    }
 
 }

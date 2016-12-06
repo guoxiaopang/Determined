@@ -124,33 +124,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         group5?.groupItem = [user10!, user11!, user12!];
         
         
+        let last1 = LastContact.mr_createEntity();
+        last1?.contactType = ContactType.QQ;
+        last1?.lastContactTime = String(Date().timeIntervalSince1970);
+        last1?.uuid = user9?.uuid;
+        last1?.name = user9?.name;
         
-        let last1 = LastContact();
-        last1.contactType = ContactType.QQ;
-        last1.lastContactTime = "1481009638";
-        last1.uuid = user9?.uuid;
+        let last2 = LastContact.mr_createEntity();
+        last2?.contactType = ContactType.Phone;
+        last2?.lastContactTime = String(Date().timeIntervalSince1970);
+        last2?.uuid = user3?.uuid;
+        last2?.name = user3?.name;
         
-        let last2 = LastContact();
-        last2.contactType = ContactType.Phone;
-        last2.lastContactTime = "1481009640";
-        last2.uuid = user3?.uuid;
+        let last3 = LastContact.mr_createEntity();
+        last3?.contactType = ContactType.FaceToFace;
+        last3?.lastContactTime = String(Date().timeIntervalSince1970);
+        last3?.uuid = user2?.uuid;
+        last3?.name = user2?.name;
         
-        let last3 = LastContact();
-        last3.contactType = ContactType.FaceToFace;
-        last3.lastContactTime = "1481009655";
-        last3.uuid = user2?.uuid;
-        let last4 = LastContact();
-        last4.contactType = ContactType.QQ;
-        last4.lastContactTime = "1481009639";
-        last4.uuid = user5?.uuid;
-        let last5 = LastContact();
-        last5.contactType = ContactType.Phone;
-        last5.lastContactTime = "1481009642";
-        last5.uuid = user11?.uuid;
-        let last6 = LastContact();
-        last6.contactType = ContactType.FaceToFace;
-        last6.lastContactTime = "1481009656";
-        last6.uuid = user12?.uuid;
+        let last4 = LastContact.mr_createEntity();
+        last4?.contactType = ContactType.QQ;
+        last4?.lastContactTime = String(Date().timeIntervalSince1970);
+        last4?.uuid = user5?.uuid;
+        last4?.name = user5?.name;
+        
+        let last5 = LastContact.mr_createEntity();
+        last5?.contactType = ContactType.Message;
+        last5?.lastContactTime = String(Date().timeIntervalSince1970);
+        last5?.uuid = user11?.uuid;
+        last5?.name = user11?.name;
+        let last6 = LastContact.mr_createEntity();
+        last6?.contactType = ContactType.FaceToFace;
+        last6?.lastContactTime = String(Date().timeIntervalSince1970);
+        last6?.uuid = user12?.uuid;
+        last6?.name = user12?.name;
         
         NSManagedObjectContext.mr_default().mr_save(blockAndWait: { (cxt) in
             print("保存完成");
