@@ -50,12 +50,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         user2?.companyName = "公司名字";
         
         let group1 = UserGroup.mr_createEntity();
-        group1?.groupString = "a";
+        group1?.groupString = "A";
         group1?.groupItem = [user1!, user2!];
         
         
         let user3 = User.mr_createEntity();
-        user3?.name = "cc";
+        user3?.name = "B";
         user3?.icon = "icon";
         user3?.companyName = "公司名字";
         let user4 = User.mr_createEntity();
@@ -64,7 +64,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         user4?.companyName = "公司名字";
         
         let group2 = UserGroup.mr_createEntity();
-        group2?.groupString = "b";
+        group2?.groupString = "C";
         group2?.groupItem = [user3!, user4!];
         
         let user5 = User.mr_createEntity();
@@ -77,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         user6?.companyName = "公司名字";
         
         let group3 = UserGroup.mr_createEntity();
-        group3?.groupString = "c";
+        group3?.groupString = "D";
         group3?.groupItem = [user5!, user6!];
         
         let user8 = User.mr_createEntity();
@@ -90,7 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         user9?.companyName = "公司名字";
         
         let group4 = UserGroup.mr_createEntity();
-        group4?.groupString = "d";
+        group4?.groupString = "E";
         group4?.groupItem = [user8!, user9!];
         
         let user10 = User.mr_createEntity();
@@ -106,7 +106,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         user12?.icon = "icon";
         user12?.companyName = "公司名字";
         let group5 = UserGroup.mr_createEntity();
-        group5?.groupString = "e";
+        group5?.groupString = "F";
         group5?.groupItem = [user10!, user11!, user12!];
         
         NSManagedObjectContext.mr_default().mr_save(blockAndWait: { (cxt) in

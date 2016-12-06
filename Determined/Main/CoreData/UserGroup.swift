@@ -12,7 +12,16 @@ import CoreData
 @objc(UserGroup)
 class UserGroup: NSManagedObject
 {
-    var groupItem : NSMutableArray?;
+//    var groupItem : NSMutableArray!;
     var groupString : String?;
+    lazy var groupItem : NSMutableArray = {
+        let array = NSMutableArray();
+        return array;
+    }()
     
+    func compareGroupItem(group : UserGroup) -> ComparisonResult
+    {
+        let result : ComparisonResult = group.groupString!.compare(self.groupString!);
+        return result;
+    }
 }
