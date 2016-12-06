@@ -21,13 +21,13 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         dataManager.requestData();
         navigationItem.rightBarButtonItem = rightButton;
-        self.navigationController?.setNavigationBarHidden(true, animated: false);
+//        self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
 // MARK: - 懒加载
     private lazy var tableView : UITableView =
     {
         let tableView = UITableView();
-        tableView.frame = CGRect(x: 0, y: 0, width: 375, height: self.view.frame.height);
+        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height);
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.rowHeight = UITableViewAutomaticDimension;
@@ -127,8 +127,10 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
         var c = charSet.characters.map { String($0) }
         var s:String = ""
-        for _ in (1...length) {
-            s.append(c[Int(arc4random()) % c.count])
+        for _ in (1...length)
+        {
+            let temp = Int(arc4random())%(c.count);
+            s.append(c[temp])
         }
         return s
     }

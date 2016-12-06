@@ -15,11 +15,14 @@ class YXHomeTableViewCell: UITableViewCell
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
+        
         self.contentView.addSubview(iconView);
         self.contentView.addSubview(nameLabel);
         self.contentView.addSubview(workLabel);
         self.contentView.addSubview(button);
         self.contentView.addSubview(timeLabel);
+        self.isOpaque = true;
+        self.backgroundColor = UIColor.white;
         self.addLayout();
     }
     
@@ -41,6 +44,8 @@ class YXHomeTableViewCell: UITableViewCell
         let nameLabel = UILabel();
         nameLabel.text = "名字";
         nameLabel.font = UIFont(name: "STHeiti-Light", size: 20);
+        nameLabel.isOpaque = true;
+        nameLabel.backgroundColor = UIColor.white;
         return nameLabel;
             
     }()
@@ -52,6 +57,7 @@ class YXHomeTableViewCell: UITableViewCell
 //        workLabel.font = UIFont.systemFont(ofSize: 17);
         workLabel.font = UIFont(name: "STHeiti-Light", size: 17);
         workLabel.textColor? = UIColor.init(red: 0.534, green: 0.534, blue: 0.534, alpha: 0.534);
+        workLabel.backgroundColor = UIColor.white;
         return workLabel;
     }()
     
@@ -61,8 +67,10 @@ class YXHomeTableViewCell: UITableViewCell
         button.setTitle("Mark", for: UIControlState.normal);
         button.setBackgroundImage(#imageLiteral(resourceName: "button"), for: UIControlState.normal)
         button.setTitleColor(UIColor.black, for: UIControlState.normal);
+        button.backgroundColor = UIColor.white;
         button.titleLabel?.font = UIFont.systemFont(ofSize: 13);
         button.addTarget(self, action: #selector(YXHomeTableViewCell.clickMark), for: UIControlEvents.touchUpInside);
+        button.isOpaque = true;
         return button;
     }()
     
@@ -71,6 +79,8 @@ class YXHomeTableViewCell: UITableViewCell
         let timeLabel = UILabel();
         timeLabel.text = "2016.11.11 15:12";
         timeLabel.font = UIFont.systemFont(ofSize: 12);
+        timeLabel.isOpaque = true;
+        timeLabel.backgroundColor = UIColor.white;
         return timeLabel;
     }()
     

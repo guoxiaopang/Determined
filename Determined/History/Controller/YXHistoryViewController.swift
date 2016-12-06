@@ -20,8 +20,9 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.addSubview(tableView);
         self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
+    
     private lazy var tableView : UITableView = {
-        let rect : CGRect = CGRect(x: 15, y: 0, width: self.view.frame.width - 30, height: self.view.frame.height);
+        let rect : CGRect = CGRect(x: 15, y: 0, width: self.view.frame.width - 30, height: self.view.frame.height - 49);
         let tableView = UITableView.init(frame: rect, style: UITableViewStyle.grouped);
         tableView.delegate = self;
         tableView.dataSource = self;

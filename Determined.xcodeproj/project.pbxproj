@@ -39,6 +39,8 @@
 		35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D21DF547C6003B8B56 /* LastContact.swift */; };
 		35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D41DF5480D003B8B56 /* BasicInfo.swift */; };
 		35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D61DF5482B003B8B56 /* ContactInfo.swift */; };
+		35B5E7AF1DF696A800A30EDB /* YXTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */; };
+		35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */; };
 		DA2F57B53ADD13DFB9A1F5E9 /* Pods_Determined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */; };
 /* End PBXBuildFile section */
 
@@ -80,6 +82,8 @@
 		35AF45D21DF547C6003B8B56 /* LastContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastContact.swift; sourceTree = "<group>"; };
 		35AF45D41DF5480D003B8B56 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		35AF45D61DF5482B003B8B56 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXTabBar.swift; path = "分类/YXTabBar.swift"; sourceTree = "<group>"; };
+		35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddViewController.swift; sourceTree = "<group>"; };
 		657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Determined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B157EBC8E5E984DD8B99E0F2 /* Pods-Determined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.release.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.release.xcconfig"; sourceTree = "<group>"; };
 		E24BB88BFF16E4D024637115 /* Pods-Determined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.debug.xcconfig"; sourceTree = "<group>"; };
@@ -224,6 +228,7 @@
 		3595D2001DEC61FA00179730 /* Determined */ = {
 			isa = PBXGroup;
 			children = (
+				35B5E7B01DF6983600A30EDB /* Add */,
 				3595D21F1DEC62A000179730 /* Main */,
 				3595D2261DEC62A000179730 /* Me */,
 				3595D2131DEC629900179730 /* Find */,
@@ -311,6 +316,7 @@
 		3595D21F1DEC62A000179730 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */,
 				3578B5BA1DF127420012C5A1 /* CoreData */,
 				3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */,
 				35606A2D1DED9EE700302656 /* YYFPSLabel.h */,
@@ -353,6 +359,38 @@
 			sourceTree = "<group>";
 		};
 		3595D2291DEC62A000179730 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35B5E7B01DF6983600A30EDB /* Add */ = {
+			isa = PBXGroup;
+			children = (
+				35B5E7B11DF6983600A30EDB /* Controller */,
+				35B5E7B21DF6983600A30EDB /* Model */,
+				35B5E7B31DF6983600A30EDB /* View */,
+			);
+			path = Add;
+			sourceTree = "<group>";
+		};
+		35B5E7B11DF6983600A30EDB /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35B5E7B21DF6983600A30EDB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35B5E7B31DF6983600A30EDB /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -500,6 +538,7 @@
 				3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */,
 				3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */,
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
+				35B5E7AF1DF696A800A30EDB /* YXTabBar.swift in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
@@ -512,6 +551,7 @@
 				35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
+				35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,

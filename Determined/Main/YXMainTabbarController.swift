@@ -8,23 +8,27 @@
 
 import UIKit
 
-class YXMainTabbarController: UITabBarController
+class YXMainTabbarController: UITabBarController, YXTabBarDelegate
 {
     
     var history : YXHistoryViewController?;
     var home : YXHomeViewController?;
     var find : YXFindViewController?;
     var me : YXMeViewController?;
-    
+    var tabbar : YXTabBar?;
     override func viewDidLoad()
     {
         super.viewDidLoad()
 
         self.addController(YXHistoryViewController(), "historyNormal", "history", "历史");
-        self.addController(YXHomeViewController(), "homeNormal", "home", "朋友");
-        self.addController(YXFindViewController(), "findNormal", "find", "发现");
-        self.addController(YXMeViewController(), "meNormal", "me", "我的");
-        self.changeTabbar();
+        self.addController(YXHomeViewController(), "homeNormal", "home", "加");
+        
+        tabbar = YXTabBar()
+        tabbar?.dele = self;
+        self.setValue(tabbar, forKey: "tabBar")
+        tabbar?.backgroundImage = UIImage(named : "tabbar_background");
+        
+       
     }
 
     private func addController(_ controller : UIViewController,_ imageName : String,_ hightImageName: String,_ title : String) -> Void
@@ -38,9 +42,11 @@ class YXMainTabbarController: UITabBarController
         self.addChildViewController(navigation)
     }
     
-    func changeTabbar() -> Void
+    func click(tabbar: YXTabBar)
     {
-        let tabbar : UITabBar = UITabBar.appearance();
-        tabbar.isTranslucent = true;
+        print("点击中间按钮")
+        let controller = YXAddViewController();
+        self.present(controller, animated: true, completion: nil);
     }
+    
 }
