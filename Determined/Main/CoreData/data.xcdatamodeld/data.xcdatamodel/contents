@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="11542" systemVersion="15G1108" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="BasicInfo" representedClassName="BasicInfo" syncable="YES" codeGenerationType="class">
+    <entity name="BasicInfo" representedClassName="BasicInfo" syncable="YES">
         <attribute name="info" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="ContactInfo" representedClassName="ContactInfo" syncable="YES" codeGenerationType="class">
+    <entity name="ContactInfo" representedClassName="ContactInfo" syncable="YES">
         <attribute name="gps" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="imageLocal" optional="YES" attributeType="Transformable" syncable="YES"/>
         <attribute name="imageRemote" optional="YES" attributeType="Transformable" syncable="YES"/>
@@ -12,7 +12,7 @@
         <attribute name="time" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="LastContact" representedClassName="LastContact" syncable="YES" codeGenerationType="class">
+    <entity name="LastContact" representedClassName="LastContact" syncable="YES">
         <attribute name="contactType" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="lastContactTime" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
@@ -26,20 +26,19 @@
         <attribute name="constellation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="contactInfo" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="lastContact" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
-    <entity name="UserGroup" representedClassName="UserGroup" syncable="YES" codeGenerationType="class">
+    <entity name="UserGroup" representedClassName="UserGroup" syncable="YES">
         <attribute name="groupItem" optional="YES" attributeType="Transformable" customClassName="NSMutableArray" syncable="YES"/>
         <attribute name="groupString" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <elements>
-        <element name="User" positionX="-531" positionY="-45" width="128" height="30"/>
-        <element name="UserGroup" positionX="-531" positionY="54" width="128" height="75"/>
-        <element name="BasicInfo" positionX="-522" positionY="63" width="128" height="75"/>
-        <element name="ContactInfo" positionX="-504" positionY="72" width="128" height="135"/>
-        <element name="LastContact" positionX="-486" positionY="90" width="128" height="75"/>
+        <element name="BasicInfo" positionX="-522" positionY="63" width="128" height="73"/>
+        <element name="ContactInfo" positionX="-720" positionY="180" width="128" height="133"/>
+        <element name="LastContact" positionX="-486" positionY="204" width="128" height="73"/>
+        <element name="User" positionX="-576" positionY="-63" width="128" height="43"/>
+        <element name="UserGroup" positionX="-783" positionY="-0" width="128" height="73"/>
     </elements>
 </model>

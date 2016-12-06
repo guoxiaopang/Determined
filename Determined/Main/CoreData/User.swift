@@ -21,7 +21,7 @@ class User: NSManagedObject
      public var constellation: String?
      public var icon: String?
      public var contactInfo: NSArray?
-     public var lastContact: NSArray?
+//     public var lastContact: NSArray?
      public var name: String?
      public var phone: String?
      public var uuid: String?

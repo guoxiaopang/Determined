@@ -37,7 +37,7 @@ class YXMainTabbarController: UITabBarController, YXTabBarDelegate
         controller.tabBarItem.image = UIImage(named: imageName);
         controller.tabBarItem.selectedImage = UIImage(named : hightImageName);
         controller.navigationItem.title = title;
-        controller.tabBarItem.imageInsets = UIEdgeInsetsMake(6, 0, -6, 0);
+        controller.tabBarItem.imageInsets = UIEdgeInsetsMake(8, 0, -8, 0);
         navigation.tabBarItem.setTitleTextAttributes([NSForegroundColorAttributeName: UIColor.red], for: UIControlState.highlighted)
         self.addChildViewController(navigation)
     }

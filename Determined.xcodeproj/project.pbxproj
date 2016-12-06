@@ -20,7 +20,6 @@
 		3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */; };
 		3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */; };
 		359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */; };
-		359206CF1DEEAE44007C77A3 /* home.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359206C81DEEAE44007C77A3 /* home.plist */; };
 		359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */; };
 		359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */; };
 		359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */; };
@@ -41,6 +40,7 @@
 		35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D61DF5482B003B8B56 /* ContactInfo.swift */; };
 		35B5E7AF1DF696A800A30EDB /* YXTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */; };
 		35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */; };
+		35B5E7B71DF6A39000A30EDB /* YXHistoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7B61DF6A39000A30EDB /* YXHistoryDataManager.swift */; };
 		DA2F57B53ADD13DFB9A1F5E9 /* Pods_Determined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */; };
 /* End PBXBuildFile section */
 
@@ -61,7 +61,6 @@
 		3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryMainCell.swift; sourceTree = "<group>"; };
 		3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.TTF"; sourceTree = "<group>"; };
 		359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeViewController.swift; sourceTree = "<group>"; };
-		359206C81DEEAE44007C77A3 /* home.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = home.plist; sourceTree = "<group>"; };
 		359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
 		359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
 		359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeTableViewCell.swift; sourceTree = "<group>"; };
@@ -84,6 +83,7 @@
 		35AF45D61DF5482B003B8B56 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXTabBar.swift; path = "分类/YXTabBar.swift"; sourceTree = "<group>"; };
 		35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddViewController.swift; sourceTree = "<group>"; };
+		35B5E7B61DF6A39000A30EDB /* YXHistoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryDataManager.swift; sourceTree = "<group>"; };
 		657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Determined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B157EBC8E5E984DD8B99E0F2 /* Pods-Determined.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.release.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.release.xcconfig"; sourceTree = "<group>"; };
 		E24BB88BFF16E4D024637115 /* Pods-Determined.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Determined.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Determined/Pods-Determined.debug.xcconfig"; sourceTree = "<group>"; };
@@ -175,7 +175,6 @@
 			isa = PBXGroup;
 			children = (
 				359206C61DEEAE44007C77A3 /* Controller */,
-				359206C81DEEAE44007C77A3 /* home.plist */,
 				359206C91DEEAE44007C77A3 /* Mode */,
 				359206CC1DEEAE44007C77A3 /* View */,
 			);
@@ -292,6 +291,7 @@
 		3595D2191DEC629900179730 /* Mode */ = {
 			isa = PBXGroup;
 			children = (
+				35B5E7B61DF6A39000A30EDB /* YXHistoryDataManager.swift */,
 			);
 			path = Mode;
 			sourceTree = "<group>";
@@ -475,7 +475,6 @@
 				3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */,
 				359206DA1DEECE75007C77A3 /* detail.plist in Resources */,
 				3595D22D1DEC62A000179730 /* Main.storyboard in Resources */,
-				359206CF1DEEAE44007C77A3 /* home.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -534,6 +533,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35B5E7B71DF6A39000A30EDB /* YXHistoryDataManager.swift in Sources */,
 				359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */,
 				3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */,
 				3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */,

@@ -19,6 +19,7 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
         self.navigationController?.setNavigationBarHidden(true, animated: false);
+        dataManager.requestData();
     }
     
     private lazy var tableView : UITableView = {
@@ -35,6 +36,11 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.backgroundColor = UIColor.white;
         return tableView;
     }();
+    
+    private lazy var dataManager : YXHistoryDataManager = {
+        let data = YXHistoryDataManager();
+        return data;
+    }()
     
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int

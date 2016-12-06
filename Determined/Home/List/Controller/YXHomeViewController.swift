@@ -18,7 +18,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
-        
+           
         dataManager.requestData();
         navigationItem.rightBarButtonItem = rightButton;
 //        self.navigationController?.setNavigationBarHidden(true, animated: false);
