@@ -13,7 +13,7 @@ let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
 let YXAddFriendTwoTableViewCellIdent = "YXAddFriendTwoTableViewCellIdent";
 let YXAddFriendThreeTableViewCellIdent = "YXAddFriendThreeTableViewCellIdent";
 
-class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate
+class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate
 {
 
     override func viewDidLoad()
@@ -101,6 +101,7 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         else if indexPath.section == 2
         {
             let cell : YXAddFriendThreeTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendThreeTableViewCellIdent)! as! YXAddFriendThreeTableViewCell;
+            cell.delegate = self;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }
@@ -119,5 +120,10 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     func closeKeyboard()
     {
         self.view.endEditing(true);
+    }
+    
+    func submit(cell: YXAddFriendThreeTableViewCell)
+    {
+        print("提交");
     }
 }

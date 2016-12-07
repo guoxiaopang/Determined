@@ -8,13 +8,18 @@
 
 import UIKit
 
+protocol YXAddFriendThreeTableViewCellDelegate
+{
+    func submit( cell : YXAddFriendThreeTableViewCell);
+}
+
 class YXAddFriendThreeTableViewCell: UITableViewCell
 {
-
+    var delegate : YXAddFriendThreeTableViewCellDelegate?;
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor.white;
+        self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(button);
         self.addLayout();
     }
@@ -29,6 +34,7 @@ class YXAddFriendThreeTableViewCell: UITableViewCell
         button.setTitleColor(UIColor.white, for: UIControlState.normal);
         button.imageView?.contentMode = UIViewContentMode.scaleToFill;
         button.setBackgroundImage(#imageLiteral(resourceName: "navagationBar"), for: UIControlState.normal);
+        button.addTarget(self, action: #selector(click), for: UIControlEvents.touchUpInside);
         return button;
     }()
     
@@ -41,5 +47,10 @@ class YXAddFriendThreeTableViewCell: UITableViewCell
             make.top.equalTo(self.contentView).offset(5);
             make.bottom.equalTo(self.contentView).offset(-5);
         }
+    }
+    
+    func click()
+    {
+        self.delegate?.submit(cell: self);
     }
 }

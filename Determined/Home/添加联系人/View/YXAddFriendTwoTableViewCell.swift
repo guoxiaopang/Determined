@@ -14,7 +14,7 @@ class YXAddFriendTwoTableViewCell: UITableViewCell
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor.white;
+        self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(titleField);
       
         self.addLayout();
@@ -28,7 +28,7 @@ class YXAddFriendTwoTableViewCell: UITableViewCell
         let field = YXTextField();
         field.placeholder = "";
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
-
+        field.backgroundColor = UIColor.white;
         field.layer.borderWidth = 1;
         return field;
     }()

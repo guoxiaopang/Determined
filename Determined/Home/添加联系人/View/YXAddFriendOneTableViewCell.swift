@@ -14,7 +14,7 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        self.backgroundColor = UIColor.white;
+        self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         
         self.contentView.addSubview(iconView);
         self.contentView.addSubview(nameField);
@@ -28,6 +28,7 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     
     private lazy var nameField : YXTextField = {
         let field = YXTextField();
+        field.backgroundColor = UIColor.white;
         field.placeholder = "姓名, 必填";
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
 //        field.font = UIFont(name: "Roboto-Bold", size: 18);
@@ -38,6 +39,7 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     private lazy var phoneField : YXTextField = {
         let field = YXTextField();
         field.placeholder = "电话";
+        field.backgroundColor = UIColor.white;
 //        field.font = UIFont(name: "Roboto-Bold", size: 18);
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
         field.layer.borderWidth = 1;
