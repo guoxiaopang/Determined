@@ -21,6 +21,9 @@
 		356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */; };
 		356123C81DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C71DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift */; };
 		356123CA1DF82AF200EED1D4 /* YXTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C91DF82AF200EED1D4 /* YXTextField.swift */; };
+		356123CC1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */; };
+		356123CE1DF833BD00EED1D4 /* YXAddFriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CD1DF833BD00EED1D4 /* YXAddFriendDataManager.swift */; };
+		356123D01DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */; };
 		3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578B5B01DF122EB0012C5A1 /* CoreData.framework */; };
 		3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */; };
 		3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */; };
@@ -63,6 +66,9 @@
 		356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendHeadView.swift; sourceTree = "<group>"; };
 		356123C71DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendOneTableViewCell.swift; sourceTree = "<group>"; };
 		356123C91DF82AF200EED1D4 /* YXTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTextField.swift; sourceTree = "<group>"; };
+		356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendTwoTableViewCell.swift; sourceTree = "<group>"; };
+		356123CD1DF833BD00EED1D4 /* YXAddFriendDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendDataManager.swift; sourceTree = "<group>"; };
+		356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendThreeTableViewCell.swift; sourceTree = "<group>"; };
 		3578B5B01DF122EB0012C5A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3578B5BC1DF127420012C5A1 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 		3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryMainCell.swift; sourceTree = "<group>"; };
@@ -175,6 +181,7 @@
 		356123C11DF80E0100EED1D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				356123CD1DF833BD00EED1D4 /* YXAddFriendDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -185,6 +192,8 @@
 				356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */,
 				356123C71DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift */,
 				356123C91DF82AF200EED1D4 /* YXTextField.swift */,
+				356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */,
+				356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -572,6 +581,7 @@
 				356123C41DF80E2500EED1D4 /* YXAddFriendViewController.swift in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				356123C81DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift in Sources */,
+				356123CC1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift in Sources */,
 				356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
@@ -588,6 +598,7 @@
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
 				35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */,
 				356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */,
+				356123D01DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
@@ -595,6 +606,7 @@
 				35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
+				356123CE1DF833BD00EED1D4 /* YXAddFriendDataManager.swift in Sources */,
 				359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -28,7 +28,7 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     
     private lazy var nameField : YXTextField = {
         let field = YXTextField();
-        field.placeholder = "名字, 必填";
+        field.placeholder = "姓名, 必填";
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
 //        field.font = UIFont(name: "Roboto-Bold", size: 18);
         field.layer.borderWidth = 1;

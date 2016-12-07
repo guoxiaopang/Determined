@@ -10,8 +10,10 @@ import UIKit
 
 let YXAddFriendViewCellIdent = "YXAddFriendViewCellIdent";
 let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
+let YXAddFriendTwoTableViewCellIdent = "YXAddFriendTwoTableViewCellIdent";
+let YXAddFriendThreeTableViewCellIdent = "YXAddFriendThreeTableViewCellIdent";
 
-class YXAddFriendViewController: UITableViewController
+class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate
 {
 
     override func viewDidLoad()
@@ -19,7 +21,9 @@ class YXAddFriendViewController: UITableViewController
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.setTableView();
-//        self.view.addSubview(tableView)
+        let tap = UITapGestureRecognizer();
+        tap.addTarget(self, action: #selector(YXAddFriendViewController.closeKeyboard));
+        self.view.addGestureRecognizer(tap);
     }
     
     func setTableView()
@@ -30,9 +34,11 @@ class YXAddFriendViewController: UITableViewController
         tableView.dataSource = self;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 55.0;
-        //tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendViewCellIdent);
         tableView.register(YXAddFriendOneTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendOneTableViewCellIdent);
+        tableView.register(YXAddFriendTwoTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendTwoTableViewCellIdent);
+        tableView.register(YXAddFriendThreeTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendThreeTableViewCellIdent);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
@@ -40,12 +46,22 @@ class YXAddFriendViewController: UITableViewController
         tableView.tableHeaderView = headView;
     }
     
+    //MARK: - 懒加载
+    
     private lazy var headView : YXAddFriendHeadView = {
         let view = YXAddFriendHeadView();
+        view.delegate = self;
         view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.width, height: 200);
         return view;
     }()
+    
+    private lazy var dataManager : YXAddFriendDataManager = {
+        let dataManager = YXAddFriendDataManager();
+        return dataManager;
+    }()
 
+    //MARK: - UITableViewDelegate, UITableViewDataSource
+    
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0
         {
@@ -53,7 +69,7 @@ class YXAddFriendViewController: UITableViewController
         }
         else if section == 1
         {
-            return 4;
+            return dataManager.num();
         }
         else
         {
@@ -74,9 +90,34 @@ class YXAddFriendViewController: UITableViewController
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }
+        else if indexPath.section == 1
+        {
+            let cell : YXAddFriendTwoTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendTwoTableViewCellIdent)! as! YXAddFriendTwoTableViewCell;
+            let title = dataManager.numofRow(index: indexPath.row);
+            cell.changePlaceholder(str: title!);
+            cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            return cell;
+        }
+        else if indexPath.section == 2
+        {
+            let cell : YXAddFriendThreeTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendThreeTableViewCellIdent)! as! YXAddFriendThreeTableViewCell;
+            cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            return cell;
+        }
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendViewCellIdent)!;
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
         return cell;
     }
-
+    
+    //MARK: - YXAddFriendHeadViewDelegate
+    func dissMiss(headView: YXAddFriendHeadView)
+    {
+        self.dismiss(animated: true, completion: nil);
+    }
+    
+    // MARK: - Void
+    func closeKeyboard()
+    {
+        self.view.endEditing(true);
+    }
 }
