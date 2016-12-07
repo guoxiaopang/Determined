@@ -30,7 +30,18 @@ class YXHistoryDataManager: NSObject
         {
             item.add(i);
         }
-        
+        self.delegate?.reloadData(self);
+    }
+    
+    // 下拉刷新
+    func refreshData()
+    {
+        let array = LastContact.mr_findAllSorted(by: "lastContactTime", ascending: false);
+        item.removeAllObjects();
+        for i in array!
+        {
+            item.add(i);
+        }
         self.delegate?.reloadData(self);
     }
     

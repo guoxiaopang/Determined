@@ -21,6 +21,7 @@ class YXHistoryMainCell: UITableViewCell
         self.contentView.addSubview(timeLabel);
         self.contentView.addSubview(nameLabel);
         self.contentView.addSubview(iconView);
+        self.contentView.addSubview(timeIconView);
         self.backgroundView = backgroundImageView;
         self.contentView.isOpaque = true;
         self.addLayout();
@@ -57,9 +58,15 @@ class YXHistoryMainCell: UITableViewCell
             return iconView;
     }()
     
+    private lazy var timeIconView : UIImageView =
+        {
+            let iconView = UIImageView();
+            iconView.image = #imageLiteral(resourceName: "time");
+            return iconView;
+    }()
+    
     private lazy var backgroundImageView : UIImageView = {
         let imageView = UIImageView();
-        //imageView.frame = CGRect.init(x: 0, y: 0, width: self.contentView.frame.size.width, height: self.contentView.frame.size.height)
         var image = #imageLiteral(resourceName: "base");
         let edge = UIEdgeInsets.init(top: 5, left: 5, bottom: 5, right: 5);
         image = image.resizableImage(withCapInsets: edge, resizingMode: UIImageResizingMode.stretch);
@@ -78,17 +85,24 @@ class YXHistoryMainCell: UITableViewCell
     
     func addLayout() -> Void
     {
-        timeLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(self.contentView).offset(14 + 14);
-            make.top.equalTo(self.contentView).offset(15 + 10);
-            make.right.equalTo(self.contentView).offset(-14-14);
+        nameLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(self.contentView).offset(28);
+            make.top.equalTo(self.contentView).offset(25);
+            make.right.equalTo(self.contentView).offset(-28);
         }
         
-        nameLabel.snp.makeConstraints { (make) in
-            make.left.equalTo(timeLabel);
-            make.top.equalTo(timeLabel.snp.bottom).offset(15);
-            make.right.equalTo(timeLabel).offset(-15-15);
-            make.bottom.equalTo(self.contentView).offset(-14-14);
+        timeLabel.snp.makeConstraints { (make) in
+            make.left.equalTo(timeIconView.snp.right).offset(5);
+            make.top.equalTo(nameLabel.snp.bottom).offset(15);
+            make.bottom.equalTo(self.contentView).offset(-27);
+            make.right.equalTo(self.contentView).offset(-30);
+        }
+        
+        timeIconView.snp.makeConstraints { (make) in
+            make.left.equalTo(nameLabel);
+            make.centerY.equalTo(timeLabel);
+            make.width.equalTo(18);
+            make.height.equalTo(19);
         }
         
         iconView.snp.makeConstraints { (make) in
@@ -119,12 +133,34 @@ class YXHistoryMainCell: UITableViewCell
     // 返回格式化后时间
     func timeToString(time : String) -> String
     {
-        let fmt = DateFormatter();
-        fmt.dateFormat = "YYYY年MM月dd日 HH:mm ";
+        // 历史时间搓
         let timeInterval = TimeInterval(time);
-        let t = Date.init(timeIntervalSince1970: timeInterval!);
-        let str = fmt.string(from: t);
-        return str;
+        // 当前时间搓
+        let now = Date();
+        let currTime : TimeInterval = now.timeIntervalSince1970;
+        let c : TimeInterval = currTime - timeInterval!;
+        if (c / 60 < 1)
+        {
+            let str = "刚刚";
+            return str;
+        }
+        else if (c / 3600) < 1
+        {
+            // 时间小于1小时
+            let str = "\(Int(c/60))分钟前";
+            return str;
+        }
+        else if ((c / 3600) > 1 && (c / 86400 < 1))
+        {
+            let str = "\(Int(c/3600))小时前";
+            return str;
+        }
+        else
+        {
+            let str = "\(Int(c/86400))天前";
+            return str;
+        }
+        
     }
 
 }

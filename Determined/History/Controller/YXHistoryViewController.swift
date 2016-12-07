@@ -18,7 +18,7 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
         self.navigationController?.setNavigationBarHidden(true, animated: false);
-//        dataManager.requestData();
+        tableView.addSubview(refreshControl);
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -27,8 +27,16 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: - 懒加载
+    
+    private lazy var refreshControl : UIRefreshControl = {
+        let refreshControl = UIRefreshControl();
+        refreshControl.addTarget(self, action: #selector(YXHistoryViewController.refreshHead), for: UIControlEvents.valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新数据")
+        return refreshControl;
+    }()
+    
     private lazy var tableView : UITableView = {
-        let rect : CGRect = CGRect(x: 15, y: 0, width: self.view.frame.width - 30, height: self.view.frame.height - 49);
+        let rect : CGRect = CGRect(x: 5, y: 0, width: self.view.frame.width - 10, height: self.view.frame.height - 49);
         let tableView = UITableView.init(frame: rect, style: UITableViewStyle.grouped);
         tableView.delegate = self;
         tableView.dataSource = self;
@@ -36,7 +44,7 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.estimatedRowHeight = 55.0;
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
         tableView.register(YXHistoryMainCell.classForCoder(), forCellReuseIdentifier: historyCell);
-        tableView.sectionHeaderHeight = 20;
+        tableView.sectionHeaderHeight = 5;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.white;
         tableView.showsVerticalScrollIndicator = false;
@@ -69,14 +77,18 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 15;
+        return 0.1;
     }
     
     func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
         let deleteAction = UITableViewRowAction(style: UITableViewRowActionStyle.normal, title: "DELETE", handler: { [weak weakSelf = self](UITableViewRowAction, IndexPath) in
             let model = weakSelf?.dataManager.modelWithRow(indexPath.row);
-            weakSelf?.dataManager.delete(model: model!);
-            tableView.deleteSections(IndexSet.init(integer: indexPath.section), with: UITableViewRowAnimation.automatic);
+            if model != nil
+            {
+                weakSelf?.dataManager.delete(model: model!);
+               
+            }
+           tableView.deleteSections(IndexSet.init(integer: indexPath.section), with: UITableViewRowAnimation.fade);
         })
         deleteAction.backgroundColor = UIColor(hex6: 0xe74c3c)
         return [deleteAction];
@@ -86,6 +98,13 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     func reloadData(_ manager: YXHistoryDataManager)
     {
         self.tableView.reloadData()
+    }
+    
+    // MARK: - Void
+    func refreshHead()
+    {
+        dataManager.refreshData();
+        refreshControl.endRefreshing();
     }
 }
 

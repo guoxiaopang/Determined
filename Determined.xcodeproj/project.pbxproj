@@ -16,26 +16,21 @@
 		356123B71DF7A87A00EED1D4 /* YXNewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123B61DF7A87A00EED1D4 /* YXNewDetailViewController.swift */; };
 		356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123B81DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift */; };
 		356123BB1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123BA1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift */; };
+		356123BE1DF7F2E300EED1D4 /* YXNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123BD1DF7F2E300EED1D4 /* YXNavigationController.swift */; };
+		356123C41DF80E2500EED1D4 /* YXAddFriendViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C31DF80E2500EED1D4 /* YXAddFriendViewController.swift */; };
+		356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */; };
 		3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578B5B01DF122EB0012C5A1 /* CoreData.framework */; };
 		3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */; };
-		3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */; };
-		3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */; };
 		3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */; };
 		3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */; };
 		359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */; };
 		359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */; };
 		359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */; };
 		359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */; };
-		359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */; };
-		359206D61DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */; };
 		359206D81DEEC95D007C77A3 /* HEX.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206D71DEEC95D007C77A3 /* HEX.swift */; };
-		359206DA1DEECE75007C77A3 /* detail.plist in Resources */ = {isa = PBXBuildFile; fileRef = 359206D91DEECE75007C77A3 /* detail.plist */; };
-		359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206DB1DEED483007C77A3 /* YXHomeDetailDataManager.swift */; };
-		359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206DD1DEED54D007C77A3 /* YXRecording.swift */; };
 		3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D2201DEC62A000179730 /* AppDelegate.swift */; };
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
-		35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */; };
 		35AF45CF1DF5427C003B8B56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45CE1DF5427C003B8B56 /* User.swift */; };
 		35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D01DF54402003B8B56 /* UserGroup.swift */; };
 		35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D21DF547C6003B8B56 /* LastContact.swift */; };
@@ -61,28 +56,23 @@
 		356123B81DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXNewDetailHeadView.swift; sourceTree = "<group>"; };
 		356123BA1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXNewDetailTableViewCell.swift; sourceTree = "<group>"; };
 		356123BC1DF7D88F00EED1D4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
+		356123BD1DF7F2E300EED1D4 /* YXNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXNavigationController.swift; sourceTree = "<group>"; };
+		356123C31DF80E2500EED1D4 /* YXAddFriendViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendViewController.swift; sourceTree = "<group>"; };
+		356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendHeadView.swift; sourceTree = "<group>"; };
 		3578B5B01DF122EB0012C5A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3578B5BC1DF127420012C5A1 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
-		3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXHomeDetailTextCell.swift; path = ../../List/View/YXHomeDetailTextCell.swift; sourceTree = "<group>"; };
-		3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeInfoViewController.swift; sourceTree = "<group>"; };
 		3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryMainCell.swift; sourceTree = "<group>"; };
 		3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.TTF"; sourceTree = "<group>"; };
 		359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeViewController.swift; sourceTree = "<group>"; };
 		359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
 		359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
 		359206CD1DEEAE44007C77A3 /* YXHomeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeTableViewCell.swift; sourceTree = "<group>"; };
-		359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailViewController.swift; sourceTree = "<group>"; };
-		359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailHeadView.swift; sourceTree = "<group>"; };
 		359206D71DEEC95D007C77A3 /* HEX.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HEX.swift; sourceTree = "<group>"; };
-		359206D91DEECE75007C77A3 /* detail.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = detail.plist; sourceTree = "<group>"; };
-		359206DB1DEED483007C77A3 /* YXHomeDetailDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailDataManager.swift; sourceTree = "<group>"; };
-		359206DD1DEED54D007C77A3 /* YXRecording.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXRecording.swift; sourceTree = "<group>"; };
 		3595D1FE1DEC61FA00179730 /* Determined.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Determined.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3595D20D1DEC61FA00179730 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3595D2201DEC62A000179730 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3595D2251DEC62A000179730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3595D22E1DEC632600179730 /* YXMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainTabbarController.swift; sourceTree = "<group>"; };
-		35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailPersonCell.swift; sourceTree = "<group>"; };
 		35AF45CE1DF5427C003B8B56 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		35AF45D01DF54402003B8B56 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
 		35AF45D21DF547C6003B8B56 /* LastContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastContact.swift; sourceTree = "<group>"; };
@@ -160,6 +150,39 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		356123BF1DF80E0100EED1D4 /* 添加联系人 */ = {
+			isa = PBXGroup;
+			children = (
+				356123C01DF80E0100EED1D4 /* Controller */,
+				356123C11DF80E0100EED1D4 /* Model */,
+				356123C21DF80E0100EED1D4 /* View */,
+			);
+			path = "添加联系人";
+			sourceTree = "<group>";
+		};
+		356123C01DF80E0100EED1D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				356123C31DF80E2500EED1D4 /* YXAddFriendViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		356123C11DF80E0100EED1D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		356123C21DF80E0100EED1D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		3578B5BA1DF127420012C5A1 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,45 +194,6 @@
 				35AF45D61DF5482B003B8B56 /* ContactInfo.swift */,
 			);
 			path = CoreData;
-			sourceTree = "<group>";
-		};
-		359206C11DEEAE44007C77A3 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				359206C21DEEAE44007C77A3 /* Controller */,
-				359206C31DEEAE44007C77A3 /* Model */,
-				359206C41DEEAE44007C77A3 /* View */,
-			);
-			path = Detail;
-			sourceTree = "<group>";
-		};
-		359206C21DEEAE44007C77A3 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				359206D31DEEAE6A007C77A3 /* YXHomeDetailViewController.swift */,
-				3582D7F81DEFD72C00FBA86D /* YXHomeInfoViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		359206C31DEEAE44007C77A3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				359206DB1DEED483007C77A3 /* YXHomeDetailDataManager.swift */,
-				359206DD1DEED54D007C77A3 /* YXRecording.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		359206C41DEEAE44007C77A3 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */,
-				359206D51DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift */,
-				359206D91DEECE75007C77A3 /* detail.plist */,
-				35A4BED41DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift */,
-			);
-			path = View;
 			sourceTree = "<group>";
 		};
 		359206C51DEEAE44007C77A3 /* List */ = {
@@ -348,8 +332,8 @@
 		3595D21B1DEC629900179730 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				356123BF1DF80E0100EED1D4 /* 添加联系人 */,
 				356123B21DF7A86500EED1D4 /* NewDetail */,
-				359206C11DEEAE44007C77A3 /* Detail */,
 				359206C51DEEAE44007C77A3 /* List */,
 			);
 			path = Home;
@@ -372,6 +356,7 @@
 				3595D2241DEC62A000179730 /* Main.storyboard */,
 				3595D22E1DEC632600179730 /* YXMainTabbarController.swift */,
 				35606A2C1DED9EE600302656 /* Determined-Bridging-Header.h */,
+				356123BD1DF7F2E300EED1D4 /* YXNavigationController.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -516,7 +501,6 @@
 			files = (
 				35606A2B1DED776C00302656 /* Assets.xcassets in Resources */,
 				3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */,
-				359206DA1DEECE75007C77A3 /* detail.plist in Resources */,
 				3595D22D1DEC62A000179730 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,11 +561,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				35B5E7B71DF6A39000A30EDB /* YXHistoryDataManager.swift in Sources */,
-				359206DC1DEED483007C77A3 /* YXHomeDetailDataManager.swift in Sources */,
-				3582D7F91DEFD72C00FBA86D /* YXHomeInfoViewController.swift in Sources */,
-				3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */,
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				35B5E7AF1DF696A800A30EDB /* YXTabBar.swift in Sources */,
+				356123C41DF80E2500EED1D4 /* YXAddFriendViewController.swift in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
@@ -589,24 +571,22 @@
 				356123BB1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
 				35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */,
-				35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */,
 				359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */,
+				356123BE1DF7F2E300EED1D4 /* YXNavigationController.swift in Sources */,
 				35AF45CF1DF5427C003B8B56 /* User.swift in Sources */,
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
 				35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */,
+				356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */,
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
-				359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */,
 				356123B71DF7A87A00EED1D4 /* YXNewDetailViewController.swift in Sources */,
 				35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
-				359206D41DEEAE6A007C77A3 /* YXHomeDetailViewController.swift in Sources */,
-				359206D61DEEB2EE007C77A3 /* YXHomeDetailHeadView.swift in Sources */,
 				359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

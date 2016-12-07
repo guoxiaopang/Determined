@@ -8,6 +8,7 @@
 
 import UIKit
 import ObjectMapper
+import UIColor_Hex_Swift
 
 class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource
 {
@@ -18,16 +19,21 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
-           
+        
         dataManager.requestData();
         navigationItem.rightBarButtonItem = rightButton;
-//        self.navigationController?.setNavigationBarHidden(true, animated: false);
     }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle
+    {
+        return .lightContent;
+    }
+    
 // MARK: - 懒加载
     private lazy var tableView : UITableView =
     {
         let tableView = UITableView();
-        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height);
+        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 49 - 64);
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.rowHeight = UITableViewAutomaticDimension;
@@ -47,7 +53,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }()
     
     private lazy var rightButton : UIBarButtonItem = {
-        let rightButton : UIBarButtonItem = UIBarButtonItem.init(barButtonSystemItem: UIBarButtonSystemItem.add, target: self, action: #selector(YXHomeViewController.addValue));
+        let rightButton = UIBarButtonItem.init(image: #imageLiteral(resourceName: "addWhite"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(YXHomeViewController.addValue))
         return rightButton;
     }()
     
@@ -107,19 +113,21 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     func addValue()
     {
-        let user = User.mr_createEntity();
-        user?.name = self.randomString(length: 3);
-        user?.icon = "icon";
-        user?.companyName = self.randomString(length: 10);
-        let (number, type) = dataManager.addModel(user: user!);
-        if type == "row"
-        {
-            tableView.insertRows(at: [IndexPath(row: 0, section: number)], with: UITableViewRowAnimation.automatic);
-        }
-        else
-        {
-            tableView.insertSections(IndexSet.init(integer: number), with: UITableViewRowAnimation.automatic)
-        }
+        let controller = YXAddFriendViewController(style: UITableViewStyle.grouped);
+        self.present(controller, animated: true, completion: nil);
+//        let user = User.mr_createEntity();
+//        user?.name = self.randomString(length: 3);
+//        user?.icon = "icon";
+//        user?.companyName = self.randomString(length: 10);
+//        let (number, type) = dataManager.addModel(user: user!);
+//        if type == "row"
+//        {
+//            tableView.insertRows(at: [IndexPath(row: 0, section: number)], with: UITableViewRowAnimation.automatic);
+//        }
+//        else
+//        {
+//            tableView.insertSections(IndexSet.init(integer: number), with: UITableViewRowAnimation.automatic)
+//        }
     }
     
     func randomString(length:Int) -> String
