@@ -60,5 +60,6 @@ class YXHistoryDataManager: NSObject
     {
         item.remove(model);
         // 写入数据库 这里还没写
+        model.mr_deleteEntity();
     }
 }

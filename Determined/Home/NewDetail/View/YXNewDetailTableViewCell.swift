@@ -15,6 +15,7 @@ class YXNewDetailTableViewCell: UITableViewCell
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = UIColor.white;
+
         self.contentView.addSubview(titleLabel);
         self.contentView.addSubview(contentLabel);
         self.addLayout();
@@ -55,6 +56,8 @@ class YXNewDetailTableViewCell: UITableViewCell
             make.top.equalTo(titleLabel.snp.bottom).offset(10);
             make.bottom.equalTo(self.contentView).offset(-15);
         }
+        
+
     }
 
 }
