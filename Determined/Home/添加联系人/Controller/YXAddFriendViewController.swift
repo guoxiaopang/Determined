@@ -9,6 +9,7 @@
 import UIKit
 
 let YXAddFriendViewCellIdent = "YXAddFriendViewCellIdent";
+let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
 
 class YXAddFriendViewController: UITableViewController
 {
@@ -31,9 +32,10 @@ class YXAddFriendViewController: UITableViewController
         tableView.estimatedRowHeight = 55.0;
         //tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
         tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendViewCellIdent);
+        tableView.register(YXAddFriendOneTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendOneTableViewCellIdent);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
-        tableView.backgroundColor = UIColor.white;
+        tableView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         tableView.showsVerticalScrollIndicator = false;
         tableView.tableHeaderView = headView;
     }
@@ -66,6 +68,12 @@ class YXAddFriendViewController: UITableViewController
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
+        if indexPath.section == 0
+        {
+            let cell : YXAddFriendOneTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendOneTableViewCellIdent)! as! YXAddFriendOneTableViewCell;
+            cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            return cell;
+        }
         let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendViewCellIdent)!;
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
         return cell;
