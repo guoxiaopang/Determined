@@ -13,6 +13,9 @@
 		35606A2B1DED776C00302656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35606A2A1DED776C00302656 /* Assets.xcassets */; };
 		35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A2E1DED9EE700302656 /* YYFPSLabel.m */; };
 		35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A301DED9EE700302656 /* YYWeakProxy.m */; };
+		356123B71DF7A87A00EED1D4 /* YXNewDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123B61DF7A87A00EED1D4 /* YXNewDetailViewController.swift */; };
+		356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123B81DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift */; };
+		356123BB1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123BA1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift */; };
 		3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578B5B01DF122EB0012C5A1 /* CoreData.framework */; };
 		3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */; };
 		3582D7F71DEFD2B900FBA86D /* YXHomeDetailTextCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */; };
@@ -54,6 +57,10 @@
 		35606A2E1DED9EE700302656 /* YYFPSLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYFPSLabel.m; sourceTree = "<group>"; };
 		35606A2F1DED9EE700302656 /* YYWeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = YYWeakProxy.h; sourceTree = "<group>"; };
 		35606A301DED9EE700302656 /* YYWeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = YYWeakProxy.m; sourceTree = "<group>"; };
+		356123B61DF7A87A00EED1D4 /* YXNewDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXNewDetailViewController.swift; sourceTree = "<group>"; };
+		356123B81DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXNewDetailHeadView.swift; sourceTree = "<group>"; };
+		356123BA1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXNewDetailTableViewCell.swift; sourceTree = "<group>"; };
+		356123BC1DF7D88F00EED1D4 /* Roboto-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		3578B5B01DF122EB0012C5A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3578B5BC1DF127420012C5A1 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 		3582D7F61DEFD2B900FBA86D /* YXHomeDetailTextCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXHomeDetailTextCell.swift; path = ../../List/View/YXHomeDetailTextCell.swift; sourceTree = "<group>"; };
@@ -117,6 +124,40 @@
 				359206D71DEEC95D007C77A3 /* HEX.swift */,
 			);
 			path = "分类";
+			sourceTree = "<group>";
+		};
+		356123B21DF7A86500EED1D4 /* NewDetail */ = {
+			isa = PBXGroup;
+			children = (
+				356123B31DF7A86500EED1D4 /* Controller */,
+				356123B41DF7A86500EED1D4 /* Model */,
+				356123B51DF7A86500EED1D4 /* View */,
+			);
+			path = NewDetail;
+			sourceTree = "<group>";
+		};
+		356123B31DF7A86500EED1D4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				356123B61DF7A87A00EED1D4 /* YXNewDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		356123B41DF7A86500EED1D4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		356123B51DF7A86500EED1D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				356123B81DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift */,
+				356123BA1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		3578B5BA1DF127420012C5A1 /* CoreData */ = {
@@ -307,6 +348,7 @@
 		3595D21B1DEC629900179730 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				356123B21DF7A86500EED1D4 /* NewDetail */,
 				359206C11DEEAE44007C77A3 /* Detail */,
 				359206C51DEEAE44007C77A3 /* List */,
 			);
@@ -316,6 +358,7 @@
 		3595D21F1DEC62A000179730 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				356123BC1DF7D88F00EED1D4 /* Roboto-Bold.ttf */,
 				35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */,
 				3578B5BA1DF127420012C5A1 /* CoreData */,
 				3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */,
@@ -540,8 +583,10 @@
 				35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */,
 				35B5E7AF1DF696A800A30EDB /* YXTabBar.swift in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
+				356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
+				356123BB1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
 				35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */,
 				35A4BED51DEEEF5500F0AE2C /* YXHomeDetailPersonCell.swift in Sources */,
@@ -556,6 +601,7 @@
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
 				359206DE1DEED54D007C77A3 /* YXRecording.swift in Sources */,
+				356123B71DF7A87A00EED1D4 /* YXNewDetailViewController.swift in Sources */,
 				35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,

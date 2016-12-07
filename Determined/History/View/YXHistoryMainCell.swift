@@ -15,13 +15,13 @@ class YXHistoryMainCell: UITableViewCell
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
-//        self.contentView.backgroundColor = UIColor.init(hex6: 0xEBF4F5);
         self.contentView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.layer.cornerRadius = 2;
         self.contentView.clipsToBounds = true;
         self.contentView.addSubview(timeLabel);
         self.contentView.addSubview(nameLabel);
         self.contentView.addSubview(iconView);
+        self.contentView.isOpaque = true;
         self.addLayout();
     }
     
@@ -36,6 +36,7 @@ class YXHistoryMainCell: UITableViewCell
             timeLabel.text = "2016年12月1日 19:45 星期四";
             timeLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 14);
             timeLabel.textColor = UIColor(hex6: 0x7f8c8d);
+            timeLabel.backgroundColor = UIColor.init(hex6: 0xecf0f1);
             return timeLabel;
     }()
     
@@ -44,7 +45,7 @@ class YXHistoryMainCell: UITableViewCell
         nameLabel.text = "天天天蓝";
         nameLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 20);
         nameLabel.textColor = UIColor(hex6: 0x2c2c2c);
-//        nameLabel.textColor = UIColor(hex6: 0x7f8c8d);
+        nameLabel.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         return nameLabel;
     }()
     

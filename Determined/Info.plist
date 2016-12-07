@@ -4,6 +4,7 @@
 <dict>
 	<key>UIAppFonts</key>
 	<array>
+		<string>Roboto-Bold.ttf</string>
 		<string>SourceHanSansCN-Light.TTF</string>
 	</array>
 	<key>CFBundleDevelopmentRegion</key>

@@ -44,9 +44,55 @@ class YXMainTabbarController: UITabBarController, YXTabBarDelegate
     
     func click(tabbar: YXTabBar)
     {
-        print("点击中间按钮")
-        let controller = YXAddViewController();
-        self.present(controller, animated: true, completion: nil);
+       // 新增 还是 修改
+        
+//        let alertController = UIAlertController(title: nil, message: "", preferredStyle: UIAlertControllerStyle.actionSheet);
+//        let newAction = UIAlertAction.init(title: "添加联系人", style: UIAlertActionStyle.default, handler: {(action : UIAlertAction) in
+//            
+//            print("新增");
+//        })
+//        alertController.addAction(newAction);
+//        let changeAction = UIAlertAction.init(title: "修改联系人", style: UIAlertActionStyle.default, handler: {(action : UIAlertAction) in
+//            print("修改");
+//        })
+//        alertController.addAction(changeAction);
+//        let cancelAction = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.cancel, handler: {(action : UIAlertAction) in
+//            print("取消");
+//        })
+//        alertController.addAction(cancelAction);
+//        self.present(alertController, animated: true, completion: nil);
+//        let controller = YXAddViewController();
+//        self.present(controller, animated: true, completion: nil);
     }
+    
+//    func addValue()
+//    {
+//        let user = User.mr_createEntity();
+//        user?.name = self.randomString(length: 3);
+//        user?.icon = "icon";
+//        user?.companyName = self.randomString(length: 10);
+//        let (number, type) = dataManager.addModel(user: user!);
+//        if type == "row"
+//        {
+//            tableView.insertRows(at: [IndexPath(row: 0, section: number)], with: UITableViewRowAnimation.automatic);
+//        }
+//        else
+//        {
+//            tableView.insertSections(IndexSet.init(integer: number), with: UITableViewRowAnimation.automatic)
+//        }
+//    }
+//    
+//    func randomString(length:Int) -> String
+//    {
+//        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//        var c = charSet.characters.map { String($0) }
+//        var s:String = ""
+//        for _ in (1...length)
+//        {
+//            let temp = Int(arc4random())%(c.count);
+//            s.append(c[temp])
+//        }
+//        return s
+//    }
     
 }

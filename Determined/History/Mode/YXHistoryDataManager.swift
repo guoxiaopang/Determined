@@ -8,16 +8,30 @@
 
 import UIKit
 
+protocol YXHistoryDataManagerDelegate
+{
+    // 数据变动刷新数据
+    func reloadData(_ manager : YXHistoryDataManager);
+}
+
 class YXHistoryDataManager: NSObject
 {
+    var delegate : YXHistoryDataManagerDelegate?;
+    
     func requestData()
     {
-        let array = LastContact.mr_findAllSorted(by: "lastContactTime", ascending: true);
+        let array = LastContact.mr_findAllSorted(by: "lastContactTime", ascending: false);
+        if array?.count == item.count
+        {
+            return;
+        }
         item.removeAllObjects();
         for i in array!
         {
             item.add(i);
         }
+        
+        self.delegate?.reloadData(self);
     }
     
     private lazy var item : NSMutableArray = {

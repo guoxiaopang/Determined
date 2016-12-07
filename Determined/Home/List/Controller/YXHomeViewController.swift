@@ -33,7 +33,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 44.0;
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
-        tableView.sectionIndexColor = UIColor.init(hex6: 0x888888);
+        tableView.sectionIndexColor = UIColor.init(hex6: 0x7f8c8d);
         tableView.register(YXHomeTableViewCell.classForCoder() , forCellReuseIdentifier: "cell");
         tableView.sectionHeaderHeight = 0;
         tableView.sectionFooterHeight = 0;
@@ -71,7 +71,8 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let detailController : YXHomeDetailViewController = YXHomeDetailViewController();
+//        let detailController : YXHomeDetailViewController = YXHomeDetailViewController();
+         let detailController = YXNewDetailViewController();
         navigationController?.pushViewController(detailController, animated: true);
         tableView.deselectRow(at: indexPath, animated: true);
     }
@@ -119,7 +120,6 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         {
             tableView.insertSections(IndexSet.init(integer: number), with: UITableViewRowAnimation.automatic)
         }
-        
     }
     
     func randomString(length:Int) -> String

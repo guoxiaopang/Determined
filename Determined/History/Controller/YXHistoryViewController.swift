@@ -10,7 +10,7 @@ import UIKit
 
 let historyCell : String = "historyCell";
 
-class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
+class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, YXHistoryDataManagerDelegate
 {
     override func viewDidLoad()
     {   
@@ -18,9 +18,15 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
         self.navigationController?.setNavigationBarHidden(true, animated: false);
+//        dataManager.requestData();
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
         dataManager.requestData();
     }
     
+    // MARK: - 懒加载
     private lazy var tableView : UITableView = {
         let rect : CGRect = CGRect(x: 15, y: 0, width: self.view.frame.width - 30, height: self.view.frame.height - 49);
         let tableView = UITableView.init(frame: rect, style: UITableViewStyle.grouped);
@@ -33,15 +39,17 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         tableView.sectionHeaderHeight = 20;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.white;
+        tableView.showsVerticalScrollIndicator = false;
         return tableView;
     }();
     
     private lazy var dataManager : YXHistoryDataManager = {
         let data = YXHistoryDataManager();
+        data.delegate = self;
         return data;
     }()
     
-
+    // MARK: - UITableViewDelegate, UITableViewDataSource
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1;
     }
@@ -74,5 +82,10 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         return [deleteAction];
     }
 
+    // MARK: - YXHistoryDataManagerDelegate
+    func reloadData(_ manager: YXHistoryDataManager)
+    {
+        self.tableView.reloadData()
+    }
 }
 
