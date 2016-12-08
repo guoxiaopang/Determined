@@ -13,6 +13,8 @@ let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
 let YXAddFriendTwoTableViewCellIdent = "YXAddFriendTwoTableViewCellIdent";
 let YXAddFriendThreeTableViewCellIdent = "YXAddFriendThreeTableViewCellIdent";
 let YXAddFriendRemarkTableViewCellIdent = "YXAddFriendRemarkTableViewCellIdent";
+let YXAddFriendBirthdayTableViewCellIdent = "YXAddFriendBirthdayTableViewCellIdent";
+let YXAddHometownTableViewCellIdent = "YXAddHometownTableViewCellIdent";
 
 class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate
 {
@@ -41,6 +43,8 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         tableView.register(YXAddFriendTwoTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendTwoTableViewCellIdent);
         tableView.register(YXAddFriendThreeTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendThreeTableViewCellIdent);
         tableView.register(YXAddFriendRemarkTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendRemarkTableViewCellIdent);
+        tableView.register(YXAddFriendBirthdayTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendBirthdayTableViewCellIdent);
+        tableView.register(YXAddHometownTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddHometownTableViewCellIdent);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
@@ -65,23 +69,16 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     //MARK: - UITableViewDelegate, UITableViewDataSource
     
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if section == 0
+        if section == 1
         {
-            return 1;
+            return 2;
         }
-        else if section == 1
-        {
-            return 1;
-        }
-        else
-        {
-            return 1;
-        }
+        return 1;
     }
     
     public override func numberOfSections(in tableView: UITableView) -> Int
     {
-        return 3;
+        return 4;
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
@@ -94,15 +91,29 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         }
         else if indexPath.section == 1
         {
-//            let cell : YXAddFriendTwoTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendTwoTableViewCellIdent)! as! YXAddFriendTwoTableViewCell;
-//            let title = dataManager.numofRow(index: indexPath.row);
-//            cell.changePlaceholder(str: title!);
+            if indexPath.row == 0
+            {
+                let cell : YXAddFriendBirthdayTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendBirthdayTableViewCellIdent) as! YXAddFriendBirthdayTableViewCell;
+//                cell.selectionStyle = UITableViewCellSelectionStyle.none;
+                return cell;
+            }
+            else
+            {
+                let cell : YXAddHometownTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddHometownTableViewCellIdent) as! YXAddHometownTableViewCell;
+                cell.selectionStyle = UITableViewCellSelectionStyle.none;
+                return cell;
+                
+            }
+          
             
+        }
+        else if indexPath.section == 2
+        {
             let cell : YXAddFriendRemarkTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendRemarkTableViewCellIdent) as! YXAddFriendRemarkTableViewCell;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }
-        else if indexPath.section == 2
+        else if indexPath.section == 3
         {
             let cell : YXAddFriendThreeTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendThreeTableViewCellIdent)! as! YXAddFriendThreeTableViewCell;
             cell.delegate = self;
