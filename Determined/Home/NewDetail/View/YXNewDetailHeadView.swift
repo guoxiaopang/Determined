@@ -57,7 +57,7 @@ class YXNewDetailHeadView: UIView
     private lazy var nameLabel : UILabel = {
         let label = UILabel();
         label.text = "John Smith";
-        label.font = UIFont(name: "Roboto-Bold", size: 20);
+        label.font = UIFont.boldSystemFont(ofSize: 20);
         label.textColor = UIColor.white;
         return label;
     }()

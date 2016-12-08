@@ -12,6 +12,7 @@ let YXAddFriendViewCellIdent = "YXAddFriendViewCellIdent";
 let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
 let YXAddFriendTwoTableViewCellIdent = "YXAddFriendTwoTableViewCellIdent";
 let YXAddFriendThreeTableViewCellIdent = "YXAddFriendThreeTableViewCellIdent";
+let YXAddFriendRemarkTableViewCellIdent = "YXAddFriendRemarkTableViewCellIdent";
 
 class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate
 {
@@ -39,6 +40,7 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         tableView.register(YXAddFriendOneTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendOneTableViewCellIdent);
         tableView.register(YXAddFriendTwoTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendTwoTableViewCellIdent);
         tableView.register(YXAddFriendThreeTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendThreeTableViewCellIdent);
+        tableView.register(YXAddFriendRemarkTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendRemarkTableViewCellIdent);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
@@ -69,7 +71,7 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         }
         else if section == 1
         {
-            return dataManager.num();
+            return 1;
         }
         else
         {
@@ -92,9 +94,11 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         }
         else if indexPath.section == 1
         {
-            let cell : YXAddFriendTwoTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendTwoTableViewCellIdent)! as! YXAddFriendTwoTableViewCell;
-            let title = dataManager.numofRow(index: indexPath.row);
-            cell.changePlaceholder(str: title!);
+//            let cell : YXAddFriendTwoTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendTwoTableViewCellIdent)! as! YXAddFriendTwoTableViewCell;
+//            let title = dataManager.numofRow(index: indexPath.row);
+//            cell.changePlaceholder(str: title!);
+            
+            let cell : YXAddFriendRemarkTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendRemarkTableViewCellIdent) as! YXAddFriendRemarkTableViewCell;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }

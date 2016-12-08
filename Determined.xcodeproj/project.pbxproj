@@ -28,6 +28,8 @@
 		3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */; };
 		3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */; };
 		3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */; };
+		358752371DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358752361DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift */; };
+		358752391DF8FFA100591BAA /* YXTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358752381DF8FFA100591BAA /* YXTextView.swift */; };
 		359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */; };
 		359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */; };
 		359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */; };
@@ -73,6 +75,8 @@
 		3578B5BC1DF127420012C5A1 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
 		3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryMainCell.swift; sourceTree = "<group>"; };
 		3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.TTF"; sourceTree = "<group>"; };
+		358752361DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendRemarkTableViewCell.swift; sourceTree = "<group>"; };
+		358752381DF8FFA100591BAA /* YXTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTextView.swift; sourceTree = "<group>"; };
 		359206C71DEEAE44007C77A3 /* YXHomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeViewController.swift; sourceTree = "<group>"; };
 		359206CA1DEEAE44007C77A3 /* YXHomeDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDataManager.swift; sourceTree = "<group>"; };
 		359206CB1DEEAE44007C77A3 /* YXHomeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeModel.swift; sourceTree = "<group>"; };
@@ -194,6 +198,8 @@
 				356123C91DF82AF200EED1D4 /* YXTextField.swift */,
 				356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */,
 				356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */,
+				358752361DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift */,
+				358752381DF8FFA100591BAA /* YXTextView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -583,6 +589,7 @@
 				356123C81DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift in Sources */,
 				356123CC1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift in Sources */,
 				356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */,
+				358752371DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift in Sources */,
 				35606A221DED13C200302656 /* YXFindViewController.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
 				356123BB1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift in Sources */,
@@ -594,6 +601,7 @@
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				356123CA1DF82AF200EED1D4 /* YXTextField.swift in Sources */,
 				35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */,
+				358752391DF8FFA100591BAA /* YXTextView.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
 				35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */,
