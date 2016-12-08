@@ -23,7 +23,7 @@ class YXAddFriendRemarkTableViewCell: UITableViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var textView : YXTextView = {
+    lazy var textView : YXTextView = {
         let textView = YXTextView();
         textView.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
         textView.backgroundColor = UIColor.white;

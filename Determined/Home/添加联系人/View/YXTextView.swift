@@ -21,40 +21,15 @@ class YXTextView: UITextView
         NotificationCenter.default.addObserver(self, selector: #selector(textChange), name: .UITextViewTextDidChange , object: nil);
  
     }
-
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self);
+    }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-//    var _temp : String?;
-//    override var text: String!
-//    {
-//        
-//        willSet(name)
-//        {
-//            
-//        }
-    
-//        set
-//        {
-//            _temp = newValue;
-//        }
-        
-//        get
-//        {
-//            return _temp;
-////        }
-//    }
-//
-//    var placeholder : String = ""
-//    {
-//        didSet
-//        {
-//            // super
-//            self.showOrHide();
-//        }
-//    }
     
     func textChange(notification : NSNotification)
     {

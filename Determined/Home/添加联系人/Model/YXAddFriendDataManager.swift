@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 class YXAddFriendDataManager: NSObject
 {
@@ -30,5 +31,18 @@ class YXAddFriendDataManager: NSObject
         return item.count;
     }
     
+    func addUser(_ imagePath : String, _ name : String, _ phoneNumber : String,_ birthday : String,_ homeTown : String,_ remark : String)
+    {
+        let user = User.mr_createEntity();
+        user?.uuid = NSUUID().uuidString;
+        user?.name = name;
+        user?.birthday = birthday; // 这里应该是时间搓
+        user?.homeTown = homeTown;
+        user?.remark = remark;
+        
+        NSManagedObjectContext.mr_default().mr_save({ (ctx) in
+            print("增加User : \(user?.name)");
+        })
+    }
     
 }

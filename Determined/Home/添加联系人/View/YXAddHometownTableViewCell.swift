@@ -24,7 +24,7 @@ class YXAddHometownTableViewCell: UITableViewCell
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var titleField : YXTextField = {
+    lazy var titleField : YXTextField = {
         let field = YXTextField();
         field.placeholder = "家乡";
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;

@@ -8,17 +8,8 @@
 
 import UIKit
 
-let YXAddFriendViewCellIdent = "YXAddFriendViewCellIdent";
-let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
-let YXAddFriendTwoTableViewCellIdent = "YXAddFriendTwoTableViewCellIdent";
-let YXAddFriendThreeTableViewCellIdent = "YXAddFriendThreeTableViewCellIdent";
-let YXAddFriendRemarkTableViewCellIdent = "YXAddFriendRemarkTableViewCellIdent";
-let YXAddFriendBirthdayTableViewCellIdent = "YXAddFriendBirthdayTableViewCellIdent";
-let YXAddHometownTableViewCellIdent = "YXAddHometownTableViewCellIdent";
-
 class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate
 {
-
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -38,13 +29,6 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 55.0;
         tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendViewCellIdent);
-        tableView.register(YXAddFriendOneTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendOneTableViewCellIdent);
-        tableView.register(YXAddFriendTwoTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendTwoTableViewCellIdent);
-        tableView.register(YXAddFriendThreeTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendThreeTableViewCellIdent);
-        tableView.register(YXAddFriendRemarkTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendRemarkTableViewCellIdent);
-        tableView.register(YXAddFriendBirthdayTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendBirthdayTableViewCellIdent);
-        tableView.register(YXAddHometownTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddHometownTableViewCellIdent);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
@@ -85,44 +69,42 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     {
         if indexPath.section == 0
         {
-            let cell : YXAddFriendOneTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendOneTableViewCellIdent)! as! YXAddFriendOneTableViewCell;
+            let cell : YXAddFriendOneTableViewCell = YXAddFriendOneTableViewCell();
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
+            cell.one = {(_ name : String, _ phoneNumber : String, _ imagePath : String) in
+               
+               // 昨天写到这里
+            }
             return cell;
         }
         else if indexPath.section == 1
         {
             if indexPath.row == 0
             {
-                let cell : YXAddFriendBirthdayTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendBirthdayTableViewCellIdent) as! YXAddFriendBirthdayTableViewCell;
-//                cell.selectionStyle = UITableViewCellSelectionStyle.none;
+                let cell : YXAddFriendBirthdayTableViewCell = YXAddFriendBirthdayTableViewCell();
                 return cell;
             }
             else
             {
-                let cell : YXAddHometownTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddHometownTableViewCellIdent) as! YXAddHometownTableViewCell;
+                let cell : YXAddHometownTableViewCell = YXAddHometownTableViewCell();
                 cell.selectionStyle = UITableViewCellSelectionStyle.none;
                 return cell;
-                
             }
-          
             
         }
         else if indexPath.section == 2
         {
-            let cell : YXAddFriendRemarkTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendRemarkTableViewCellIdent) as! YXAddFriendRemarkTableViewCell;
+            let cell : YXAddFriendRemarkTableViewCell = YXAddFriendRemarkTableViewCell();
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }
-        else if indexPath.section == 3
+        else
         {
-            let cell : YXAddFriendThreeTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendThreeTableViewCellIdent)! as! YXAddFriendThreeTableViewCell;
+            let cell : YXAddFriendThreeTableViewCell = YXAddFriendThreeTableViewCell();
             cell.delegate = self;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }
-        let cell : UITableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendViewCellIdent)!;
-        cell.selectionStyle = UITableViewCellSelectionStyle.none;
-        return cell;
     }
     
     //MARK: - YXAddFriendHeadViewDelegate
@@ -139,6 +121,6 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     
     func submit(cell: YXAddFriendThreeTableViewCell)
     {
-        print("提交");
+
     }
 }

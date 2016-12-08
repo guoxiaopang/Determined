@@ -20,9 +20,12 @@ class User: NSManagedObject
      public var companyPhone: String?
      public var constellation: String?
      public var icon: String?
+     public var iconPath: String?
      public var contactInfo: NSArray?
 //     public var lastContact: NSArray?
      public var name: String?
      public var phone: String?
      public var uuid: String?
+     public var homeTown: String?
+     public var remark: String?
 }

@@ -26,9 +26,12 @@
         <attribute name="companyPhone" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="constellation" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="contactInfo" optional="YES" attributeType="Transformable" customClassName="NSArray" syncable="YES"/>
+        <attribute name="homeTown" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="icon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="iconPath" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="phone" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="remark" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uuid" optional="YES" attributeType="String" syncable="YES"/>
     </entity>
     <entity name="UserGroup" representedClassName="UserGroup" syncable="YES">
@@ -39,7 +42,7 @@
         <element name="BasicInfo" positionX="-522" positionY="63" width="128" height="73"/>
         <element name="ContactInfo" positionX="-720" positionY="180" width="128" height="133"/>
         <element name="LastContact" positionX="-486" positionY="204" width="128" height="90"/>
-        <element name="User" positionX="-576" positionY="-63" width="128" height="43"/>
+        <element name="User" positionX="-576" positionY="-63" width="128" height="270"/>
         <element name="UserGroup" positionX="-783" positionY="-0" width="128" height="73"/>
     </elements>
 </model>

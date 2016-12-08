@@ -10,23 +10,25 @@ import UIKit
 
 class YXAddFriendBirthdayTableViewCell: UITableViewCell, UITextFieldDelegate
 {
-
+    var timeInterval : String?;
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(titleField);
         self.addLayout();
-        datePick.sendValue = {(value : String) -> Void in(
-            self.titleField.text = value
-        )}
+        datePick.sendValue = {[weak weakSelf = self] (_ formatValue : String,_ value : String) -> Void in
+            weakSelf?.titleField.text = formatValue
+            weakSelf?.timeInterval = value
+        }
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var titleField : YXTextField = {
+    lazy var titleField : YXTextField = {
         let field = YXTextField();
         field.placeholder = "生日, 农历公历选择";
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;

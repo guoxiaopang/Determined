@@ -8,11 +8,10 @@
 
 import UIKit
 
-typealias sendValue = (_ value : String) -> Void;
+typealias sendValue = (_ formatValue : String,_ value : String) -> Void;
 
 class YXDatePickerView: UIView
 {
-//    var tempStr : String?;
     var sendValue : sendValue!;
     override init(frame: CGRect)
     {
@@ -98,7 +97,8 @@ class YXDatePickerView: UIView
     func done()
     {
         // 传输数据 关闭视图
-        sendValue(tempStr);
+        let sjc = Date().timeIntervalSince(datePicker.date);
+        sendValue(tempStr, String(sjc))
         self.closeView();
     }
     

@@ -8,9 +8,12 @@
 
 import UIKit
 
+typealias oneCellClsure = (_ name : String, _ phoneNumber : String, _ imagePath : String)-> Void;
+
 class YXAddFriendOneTableViewCell: UITableViewCell
 {
-
+    var one : oneCellClsure!;
+    
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,27 +23,32 @@ class YXAddFriendOneTableViewCell: UITableViewCell
         self.contentView.addSubview(nameField);
         self.contentView.addSubview(phoneField);
         self.addLayout();
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(change), name: .UITextFieldTextDidChange, object: nil);
+    }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self);
     }
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    private lazy var nameField : YXTextField = {
+    public lazy var nameField : YXTextField = {
         let field = YXTextField();
         field.backgroundColor = UIColor.white;
         field.placeholder = "姓名, 必填";
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
-//        field.font = UIFont(name: "Roboto-Bold", size: 18);
         field.layer.borderWidth = 1;
         return field;
     }()
     
-    private lazy var phoneField : YXTextField = {
+    lazy var phoneField : YXTextField = {
         let field = YXTextField();
         field.placeholder = "电话";
         field.backgroundColor = UIColor.white;
-//        field.font = UIFont(name: "Roboto-Bold", size: 18);
         field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
         field.layer.borderWidth = 1;
         field.keyboardType = UIKeyboardType.numberPad;
@@ -75,4 +83,11 @@ class YXAddFriendOneTableViewCell: UITableViewCell
             make.bottom.equalTo(iconView);
         }
     }
+    
+    func change()
+    {
+        one(nameField.text!, phoneField.text!, "");
+    }
+    
+
 }

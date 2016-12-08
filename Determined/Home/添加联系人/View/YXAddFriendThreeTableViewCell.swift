@@ -22,6 +22,7 @@ class YXAddFriendThreeTableViewCell: UITableViewCell
         self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(button);
         self.addLayout();
+        
     }
     
     required init?(coder aDecoder: NSCoder) {
