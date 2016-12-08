@@ -97,7 +97,7 @@ class YXDatePickerView: UIView
     func done()
     {
         // 传输数据 关闭视图
-        let sjc = Date().timeIntervalSince(datePicker.date);
+        let sjc = datePicker.date.timeIntervalSince1970;
         sendValue(tempStr, String(sjc))
         self.closeView();
     }
