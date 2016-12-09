@@ -60,20 +60,34 @@ class YXAddFriendDataManager: NSObject
                 if groupTitle.isEqual(to: group.groupString)
                 {
                     // 存在组 修改数据 并保存
-                    let array : NSMutableArray = [UserGroup .mr_find(byAttribute: "groupString", withValue: groupTitle)!];
-                    let userGroup : UserGroup = array.firstObject as! UserGroup;
-                    userGroup.groupItem.add(user!);
-                    NSManagedObjectContext.mr_default().mr_saveToPersistentStore { (success, error) in
-                        if success
+                    let array : NSArray = UserGroup.mr_find(byAttribute: "groupString", withValue: groupTitle)! as NSArray;
+                    for i in array
+                    {
+                        let i = i as! UserGroup;
+                        let temp : NSMutableArray =  i.groupItem;
+                        temp.add(user?.uuid as Any);
+                        
+                        // 写到这了 这个数组好像有问题
+                        for c in temp
                         {
-                            print("增加User :\(user?.name)");
+                            print(c);
                         }
-                        else if ((error) != nil)
-                        {
-                            print(error.debugDescription);
+                         i.groupItem = temp;
+                        NSManagedObjectContext.mr_default().mr_saveToPersistentStore { (success, error) in
+                            if success
+                            {
+                                print("增加User :\(user?.name)");
+                            }
+                            else if ((error) != nil)
+                            {
+                                print(error.debugDescription);
+                            }
                         }
+                        
+                        
+                        return;
                     }
-                    return;
+       
                 }
             }
         }
@@ -81,18 +95,29 @@ class YXAddFriendDataManager: NSObject
         // 不存在组 添加组 添加item
         let anewGroup = UserGroup.mr_createEntity();
         anewGroup?.groupString = groupTitle as String;
-        anewGroup?.groupItem.add(user!);
+        let temp : NSMutableArray = NSMutableArray();
+        temp.add(user?.uuid as Any);
+        anewGroup?.groupItem = temp;
+        
 
         NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
             if success
             {
                 print("新组增加User : \(groupTitle) \(user?.name)");
-                weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
+              //  weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
             }
             else if ((error) != nil)
             {
                 print(error.debugDescription);
             }
+        }
+        
+        let array = UserGroup.mr_findAllSorted(by: "groupString", ascending: true);
+        for i  in array!
+        {
+            let i = i as! UserGroup;
+            print(i.groupItem);
+         
         }
         
 }
