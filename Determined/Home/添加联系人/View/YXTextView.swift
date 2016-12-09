@@ -74,6 +74,7 @@ class YXTextView: UITextView
             placeholderLabel?.font = self.font;
             placeholderLabel?.textAlignment = self.textAlignment;
             placeholderLabel?.textColor = UIColor.init(red: 0, green: 0, blue: 0, alpha: 0.2);
+            placeholderLabel?.backgroundColor = self.backgroundColor;
             self.addSubview(placeholderLabel!);
             placeholderLabel?.text = placeholder;
             placeholderLabel?.sizeToFit();

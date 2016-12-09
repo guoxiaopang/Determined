@@ -8,8 +8,23 @@
 
 import UIKit
 
-class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate
+let YXAddFriendViewCellIdent = "YXAddFriendViewCellIdent";
+let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
+let YXAddFriendTwoTableViewCellIdent = "YXAddFriendTwoTableViewCellIdent";
+let YXAddFriendThreeTableViewCellIdent = "YXAddFriendThreeTableViewCellIdent";
+let YXAddFriendRemarkTableViewCellIdent = "YXAddFriendRemarkTableViewCellIdent";
+let YXAddFriendBirthdayTableViewCellIdent = "YXAddFriendBirthdayTableViewCellIdent";
+let YXAddHometownTableViewCellIdent = "YXAddHometownTableViewCellIdent";
+
+class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate, YXAddFriendDataManagerDelegate
 {
+    var name : String = "";
+    var phoneNum : String = "";
+    var imagePath : String = "";
+    var birthday : String = "";
+    var homeTown : String = "";
+    var remark : String = "";
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -34,6 +49,12 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         tableView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         tableView.showsVerticalScrollIndicator = false;
         tableView.tableHeaderView = headView;
+        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendViewCellIdent);
+        tableView.register(YXAddFriendOneTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendOneTableViewCellIdent);
+        tableView.register(YXAddFriendThreeTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendThreeTableViewCellIdent);
+        tableView.register(YXAddFriendRemarkTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendRemarkTableViewCellIdent);
+        tableView.register(YXAddFriendBirthdayTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddFriendBirthdayTableViewCellIdent);
+        tableView.register(YXAddHometownTableViewCell.classForCoder(), forCellReuseIdentifier: YXAddHometownTableViewCellIdent);
     }
     
     //MARK: - 懒加载
@@ -47,6 +68,7 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     
     private lazy var dataManager : YXAddFriendDataManager = {
         let dataManager = YXAddFriendDataManager();
+        dataManager.delegate = self;
         return dataManager;
     }()
 
@@ -69,10 +91,13 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     {
         if indexPath.section == 0
         {
-            let cell : YXAddFriendOneTableViewCell = YXAddFriendOneTableViewCell();
+            let cell : YXAddFriendOneTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendOneTableViewCellIdent)! as! YXAddFriendOneTableViewCell;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
-            cell.one = {(_ name : String, _ phoneNumber : String, _ imagePath : String) in
-               
+            cell.reloadData(name, phoneNum, imagePath)
+            cell.one = {[weak weakSlef = self](_ name : String, _ phoneNumber : String, _ imagePath : String) in
+                weakSlef?.name = name;
+                weakSlef?.phoneNum = phoneNumber;
+                weakSlef?.imagePath = imagePath;
                // 昨天写到这里
             }
             return cell;
@@ -81,12 +106,20 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         {
             if indexPath.row == 0
             {
-                let cell : YXAddFriendBirthdayTableViewCell = YXAddFriendBirthdayTableViewCell();
+                let cell : YXAddFriendBirthdayTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendBirthdayTableViewCellIdent) as! YXAddFriendBirthdayTableViewCell;
+                cell.titleField.text = birthday;
+                cell.bt = {[weak weakSlef = self] (_ birthdayValue : String) in
+                    weakSlef?.birthday = birthdayValue;
+                }
                 return cell;
             }
             else
             {
-                let cell : YXAddHometownTableViewCell = YXAddHometownTableViewCell();
+                let cell : YXAddHometownTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddHometownTableViewCellIdent) as! YXAddHometownTableViewCell;
+                cell.titleField.text = homeTown;
+                cell.ht = {[weak weakSlef = self](_ homeValue : String) in
+                    weakSlef?.homeTown = homeValue;
+                }
                 cell.selectionStyle = UITableViewCellSelectionStyle.none;
                 return cell;
             }
@@ -94,13 +127,17 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         }
         else if indexPath.section == 2
         {
-            let cell : YXAddFriendRemarkTableViewCell = YXAddFriendRemarkTableViewCell();
+            let cell : YXAddFriendRemarkTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendRemarkTableViewCellIdent) as! YXAddFriendRemarkTableViewCell;
+            cell.textView.text = remark;
+            cell.rm = {[weak weakSlef = self] (_ homeValue : String) in
+                weakSlef?.remark = homeValue;
+            }
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
         }
         else
         {
-            let cell : YXAddFriendThreeTableViewCell = YXAddFriendThreeTableViewCell();
+            let cell : YXAddFriendThreeTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendThreeTableViewCellIdent)! as! YXAddFriendThreeTableViewCell;
             cell.delegate = self;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             return cell;
@@ -121,6 +158,12 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     
     func submit(cell: YXAddFriendThreeTableViewCell)
     {
-
+        dataManager.addUser(imagePath, name, phoneNum, birthday, homeTown, remark);
+    }
+    
+    // MARK: - YXAddFriendDataManagerDelegate
+    func addUserSuccess(dataManager: YXAddFriendDataManager)
+    {
+        self.dismiss(animated: true, completion: nil);
     }
 }

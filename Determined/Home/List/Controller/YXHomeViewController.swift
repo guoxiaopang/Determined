@@ -10,7 +10,7 @@ import UIKit
 import ObjectMapper
 import UIColor_Hex_Swift
 
-class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource
+class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, YXHomeDataManagerDelegate
 {
     
     override func viewDidLoad()
@@ -20,13 +20,17 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
         
-        dataManager.requestData();
         navigationItem.rightBarButtonItem = rightButton;
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle
     {
         return .lightContent;
+    }
+    
+    override func viewWillAppear(_ animated: Bool)
+    {
+        dataManager.requestData();
     }
     
 // MARK: - 懒加载
@@ -49,6 +53,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     private lazy var dataManager : YXHomeDataManager =
     {
         let dataManager : YXHomeDataManager = YXHomeDataManager();
+        dataManager.delegate = self;
         return dataManager;
     }()
     
@@ -71,7 +76,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     {
         let cell : YXHomeTableViewCell = tableView.dequeueReusableCell(withIdentifier: "cell")! as! YXHomeTableViewCell;
         let user = dataManager.modelWithIndexPath(indexPath: indexPath);
-        cell .reloadData(user: user!);
+        cell.reloadData(user: user!);
         return cell;
     }
     
@@ -141,5 +146,11 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
             s.append(c[temp])
         }
         return s
+    }
+    
+    // MARK: - YXHomeDataManagerDelegate
+    func loadDataSuccess(dataManager: YXHomeDataManager)
+    {
+        self.tableView.reloadData();
     }
 }

@@ -8,15 +8,18 @@
 
 import UIKit
 
+typealias home = (_ homeValue : String) -> Void;
+
 class YXAddHometownTableViewCell: UITableViewCell
 {
+    var ht : home?;
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(titleField);
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(change), name: .UITextFieldTextDidChange, object: nil);
         self.addLayout();
     }
     
@@ -27,9 +30,9 @@ class YXAddHometownTableViewCell: UITableViewCell
     lazy var titleField : YXTextField = {
         let field = YXTextField();
         field.placeholder = "家乡";
-        field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
+//        field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
         field.backgroundColor = UIColor.white;
-        field.layer.borderWidth = 1;
+//        field.layer.borderWidth = 1;
         return field;
     }()
     
@@ -43,6 +46,9 @@ class YXAddHometownTableViewCell: UITableViewCell
             make.right.equalTo(self.contentView).offset(-25);
         }
     }
-
+    func change()
+    {
+        ht!(titleField.text!);
+    }
 
 }

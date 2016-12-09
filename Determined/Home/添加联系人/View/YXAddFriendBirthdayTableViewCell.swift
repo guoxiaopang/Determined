@@ -8,13 +8,17 @@
 
 import UIKit
 
+typealias birthday = (_ birthdayValue : String) -> Void;
+
 class YXAddFriendBirthdayTableViewCell: UITableViewCell, UITextFieldDelegate
 {
     var timeInterval : String?;
+    var bt : birthday?;
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        NotificationCenter.default.addObserver(self, selector: #selector(change), name: .UITextFieldTextDidChange, object: nil);
         self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(titleField);
         self.addLayout();
@@ -31,9 +35,7 @@ class YXAddFriendBirthdayTableViewCell: UITableViewCell, UITextFieldDelegate
     lazy var titleField : YXTextField = {
         let field = YXTextField();
         field.placeholder = "生日, 农历公历选择";
-        field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
         field.backgroundColor = UIColor.white;
-        field.layer.borderWidth = 1;
         field.delegate = self;
         return field;
     }()
@@ -60,6 +62,11 @@ class YXAddFriendBirthdayTableViewCell: UITableViewCell, UITextFieldDelegate
         self.superview?.endEditing(true);
         datePick.show();
         return false;
+    }
+    
+    func change()
+    {
+        bt!(titleField.text!);
     }
 
 }

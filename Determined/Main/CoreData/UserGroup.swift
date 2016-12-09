@@ -19,9 +19,9 @@ class UserGroup: NSManagedObject
         return array;
     }()
     
-    func compareGroupItem(group : UserGroup) -> ComparisonResult
-    {
-        let result : ComparisonResult = group.groupString!.compare(self.groupString!);
-        return result;
-    }
+//    func compareGroupItem(group : UserGroup) -> ComparisonResult
+//    {
+//        let result : ComparisonResult = group.groupString!.compare(self.groupString!);
+//        return result;
+//    }
 }

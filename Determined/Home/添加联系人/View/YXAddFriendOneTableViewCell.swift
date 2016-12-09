@@ -40,8 +40,6 @@ class YXAddFriendOneTableViewCell: UITableViewCell
         let field = YXTextField();
         field.backgroundColor = UIColor.white;
         field.placeholder = "姓名, 必填";
-        field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
-        field.layer.borderWidth = 1;
         return field;
     }()
     
@@ -49,8 +47,6 @@ class YXAddFriendOneTableViewCell: UITableViewCell
         let field = YXTextField();
         field.placeholder = "电话";
         field.backgroundColor = UIColor.white;
-        field.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
-        field.layer.borderWidth = 1;
         field.keyboardType = UIKeyboardType.numberPad;
         return field;
     }()
@@ -86,7 +82,13 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     
     func change()
     {
-        one(nameField.text!, phoneField.text!, "");
+        one(nameField.text!, phoneField.text!, "icon");
+    }
+    
+    func reloadData(_ name : String,_ phoneNumber : String,_ imagePath : String)
+    {
+        nameField.text = name;
+        phoneField.text = phoneNumber;
     }
     
 
