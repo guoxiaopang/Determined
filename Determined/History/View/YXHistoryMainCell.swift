@@ -78,6 +78,10 @@ class YXHistoryMainCell: UITableViewCell
     // MARK: - Void
     func reloadData(_ model : LastContact) -> Void
     {
+        if model.name == nil
+        {
+            return;
+        }
         iconView.image = self.type(type: model);
         timeLabel.text = self.timeToString(time: model.lastContactTime!);
         nameLabel.text = model.name;

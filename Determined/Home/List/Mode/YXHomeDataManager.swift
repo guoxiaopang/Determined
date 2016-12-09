@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 import ObjectMapper
-import MagicalRecord
+import MagicalRecord 
 
 protocol YXHomeDataManagerDelegate
 {
@@ -22,15 +22,18 @@ class YXHomeDataManager: NSObject
     
     func requestData() -> Void
     {
+
         let array = UserGroup.mr_findAllSorted(by: "groupString", ascending: true);
+
         item.removeAllObjects();
         itemTitle.removeAllObjects();
         
         for i in array!
         {
             item.add(i);
-            let group : UserGroup = i as! UserGroup; 
-            itemTitle.add(group.groupString!);
+            let group = i as! UserGroup;
+
+            itemTitle.add(group.groupString as Any);
         }
         self.delegate?.loadDataSuccess(dataManager: self);
     }
@@ -42,7 +45,7 @@ class YXHomeDataManager: NSObject
         item.sort(comparator: { (obj1, obj2) -> ComparisonResult in
             let obj1 = obj1 as! UserGroup;
             let obj2 = obj2 as! UserGroup;
-            return (obj1.groupString?.compare(obj2.groupString!))!;
+            return (obj1.groupString.compare(obj2.groupString));
         })
     
         // 排title
@@ -65,6 +68,7 @@ class YXHomeDataManager: NSObject
     
     // 返回每组数据
     func rowOfSection(_ section : Int) -> Int {
+
         if  section < item.count
         {
             let array : UserGroup = item[section] as! UserGroup;
@@ -124,7 +128,7 @@ class YXHomeDataManager: NSObject
             if gr == group
             {
                 item.remove(group);
-                itemTitle.remove(group.groupString!);
+                itemTitle.remove(group.groupString);
             }
         }
     }

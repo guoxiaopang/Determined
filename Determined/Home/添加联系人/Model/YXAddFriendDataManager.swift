@@ -43,10 +43,10 @@ class YXAddFriendDataManager: NSObject
     {
         let user = User.mr_createEntity();
         user?.uuid = NSUUID().uuidString;
-        user?.name = name;
+        user?.name = deleteBettwnSpace(name);
         user?.birthday = birthday; // 这里应该是时间搓
-        user?.homeTown = homeTown;
-        user?.remark = remark;
+        user?.homeTown = deleteBettwnSpace(homeTown);
+        user?.remark = deleteBettwnSpace(remark);
         user?.icon = imagePath;
         
         // 根据情况添加组
@@ -57,31 +57,46 @@ class YXAddFriendDataManager: NSObject
             for group  in item!
             {
                 let group = group as! UserGroup;
-                if groupTitle.isEqual(to: group.groupString!)
+                if groupTitle.isEqual(to: group.groupString)
                 {
                     // 存在组 修改数据 并保存
                     let array : NSMutableArray = [UserGroup .mr_find(byAttribute: "groupString", withValue: groupTitle)!];
                     let userGroup : UserGroup = array.firstObject as! UserGroup;
                     userGroup.groupItem.add(user!);
-                    NSManagedObjectContext.mr_default().mr_save({ (ctx) in
-                        print("已存在组保存User : \(user?.name)");
-                    })
+                    NSManagedObjectContext.mr_default().mr_saveToPersistentStore { (success, error) in
+                        if success
+                        {
+                            print("增加User :\(user?.name)");
+                        }
+                        else if ((error) != nil)
+                        {
+                            print(error.debugDescription);
+                        }
+                    }
                     return;
                 }
             }
         }
        
         // 不存在组 添加组 添加item
-        let newGroup = UserGroup.mr_createEntity();
-        newGroup?.groupString = groupTitle as String;
-        newGroup?.groupItem.add(user!);
+        let anewGroup = UserGroup.mr_createEntity();
+        anewGroup?.groupString = groupTitle as String;
+        anewGroup?.groupItem.add(user!);
 
-        NSManagedObjectContext.mr_default().mr_save({[weak weakSelf = self] (ctx) in
-            print("新组增加User : \(groupTitle) \(user?.name)");
-            weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
-        })
-    }
-    
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
+            if success
+            {
+                print("新组增加User : \(groupTitle) \(user?.name)");
+                weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
+            }
+            else if ((error) != nil)
+            {
+                print(error.debugDescription);
+            }
+        }
+        
+}
+        
     // 获取首字母
     func firstCharactor( str : String) -> NSString
     {
@@ -93,6 +108,13 @@ class YXAddFriendDataManager: NSObject
         let  pinYin : NSString = s as NSString;
         //获取并返回首字母
         return (pinYin.substring(to: 1) as NSString).uppercased as NSString;
+    }
+    
+    // 去除两端空格
+    func deleteBettwnSpace(_ string : String) -> String
+    {
+        let whiteSpace = NSCharacterSet.whitespacesAndNewlines;
+        return string.trimmingCharacters(in: whiteSpace);
     }
     
 }

@@ -47,6 +47,7 @@ class YXHomeTableViewCell: UITableViewCell
         nameLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 20);
         nameLabel.isOpaque = true;
         nameLabel.backgroundColor = UIColor.white;
+    
         return nameLabel;
             
     }()
@@ -71,6 +72,7 @@ class YXHomeTableViewCell: UITableViewCell
         button.titleLabel?.font = UIFont(name: "SourceHanSansCN-Light", size: 13);
         button.addTarget(self, action: #selector(YXHomeTableViewCell.clickMark), for: UIControlEvents.touchUpInside);
         button.isOpaque = true;
+        button.sizeToFit();
         return button;
     }()
     
@@ -97,6 +99,7 @@ class YXHomeTableViewCell: UITableViewCell
         button.snp.makeConstraints { (make) in
             make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-10);
+            make.width.equalTo(50);
         }
         
     }
@@ -109,17 +112,24 @@ class YXHomeTableViewCell: UITableViewCell
         contact?.uuid = tempUser?.uuid;
         contact?.name = tempUser?.name;
         contact?.lastContactTime = String(NSDate().timeIntervalSince1970);
-        NSManagedObjectContext.mr_default().mr_save(blockAndWait: { (cxt) in
-            print("mark");
-        })
-        // 刷新history  ps: 每次都获取，判断数量不对，重载数据
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
+            if success
+            {
+               print("mark")
+            }
+            else if ((error) != nil)
+            {
+                print(error.debugDescription);
+            }
+        }
+        
     }
     
     // 加载数据
     func reloadData(user : User) -> Void
     {
         tempUser = user;
-        iconView.image = UIImage.init(named: user.icon!);
+        iconView.image = UIImage.init(named: user.icon);
         nameLabel.text = user.name;
         workLabel.text = user.companyName;
     }

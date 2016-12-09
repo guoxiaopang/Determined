@@ -12,20 +12,20 @@ import CoreData
 @objc(User)
 class User: NSManagedObject
 {
-     public var age: String?
-     public var basicInformation: NSArray?
-     public var birthday: String?
-     public var companyAddress: String?
-     public var companyName: String?
-     public var companyPhone: String?
-     public var constellation: String?
-     public var icon: String?
-     public var iconPath: String?
-     public var contactInfo: NSArray?
-//     public var lastContact: NSArray?
-     public var name: String?
-     public var phone: String?
-     public var uuid: String?
-     public var homeTown: String?
-     public var remark: String?
+     @NSManaged var age: String
+     @NSManaged var basicInformation: NSArray
+     @NSManaged var birthday: String
+     @NSManaged var companyAddress: String
+     @NSManaged var companyName: String
+     @NSManaged var companyPhone: String
+     @NSManaged var constellation: String
+     @NSManaged var icon: String
+     @NSManaged var iconPath: String
+     @NSManaged var contactInfo: NSArray
+
+     @NSManaged var name: String
+     @NSManaged var phone: String
+     @NSManaged var uuid: String
+     @NSManaged var homeTown: String
+     @NSManaged var remark: String
 }

@@ -43,6 +43,6 @@
         <element name="ContactInfo" positionX="-720" positionY="180" width="128" height="133"/>
         <element name="LastContact" positionX="-486" positionY="204" width="128" height="90"/>
         <element name="User" positionX="-576" positionY="-63" width="128" height="270"/>
-        <element name="UserGroup" positionX="-783" positionY="-0" width="128" height="73"/>
+        <element name="UserGroup" positionX="-783" positionY="-0" width="128" height="75"/>
     </elements>
 </model>

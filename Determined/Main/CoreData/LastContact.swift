@@ -20,9 +20,9 @@ enum ContactType : Int
 @objc(LastContact)
 class LastContact: NSManagedObject
 {
-    var lastContactTime: String?;
-    var name : String?;
-    var uuid : String?;
+    @NSManaged var lastContactTime: String?;
+    @NSManaged var name : String?;
+    @NSManaged var uuid : String?;
 // FIXME: 这里应该好好看看
     var contactType : ContactType
     {
