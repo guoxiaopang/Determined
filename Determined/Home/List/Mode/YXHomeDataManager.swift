@@ -30,10 +30,14 @@ class YXHomeDataManager: NSObject
         
         for i in array!
         {
-            item.add(i);
             let group = i as! UserGroup;
+            if group.groupItem.count != 0 && group.groupString.characters.count != 0
+            {
+                item.add(i);
+                
+                itemTitle.add(group.groupString as Any);
+            }
 
-            itemTitle.add(group.groupString as Any);
         }
         self.delegate?.loadDataSuccess(dataManager: self);
     }
@@ -85,7 +89,10 @@ class YXHomeDataManager: NSObject
         if  indexPath.section < item.count
         {
             let array : UserGroup = item[indexPath.section] as! UserGroup;
-            return (array.groupItem[indexPath.row] as! User);
+            // 这里不是存的model了
+            let uuid : String = array.groupItem[indexPath.row] as! String;
+            let userArray : [NSManagedObject] = User.mr_find(byAttribute: "uuid", withValue: uuid)!;
+            return userArray[0] as? User;
         }
         return nil;
     }

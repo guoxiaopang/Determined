@@ -44,6 +44,7 @@ class YXAddFriendDataManager: NSObject
         let user = User.mr_createEntity();
         user?.uuid = NSUUID().uuidString;
         user?.name = deleteBettwnSpace(name);
+        user?.phone = deleteBettwnSpace(phoneNumber);
         user?.birthday = birthday; // 这里应该是时间搓
         user?.homeTown = deleteBettwnSpace(homeTown);
         user?.remark = deleteBettwnSpace(remark);
@@ -73,10 +74,11 @@ class YXAddFriendDataManager: NSObject
                             print(c);
                         }
                          i.groupItem = temp;
-                        NSManagedObjectContext.mr_default().mr_saveToPersistentStore { (success, error) in
+                        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
                             if success
                             {
                                 print("增加User :\(user?.name)");
+                                weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
                             }
                             else if ((error) != nil)
                             {
@@ -100,11 +102,11 @@ class YXAddFriendDataManager: NSObject
         anewGroup?.groupItem = temp;
         
 
-        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self](success, error) in
             if success
             {
                 print("新组增加User : \(groupTitle) \(user?.name)");
-              //  weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
+                weakSelf?.delegate?.addUserSuccess(dataManager: weakSelf!);
             }
             else if ((error) != nil)
             {

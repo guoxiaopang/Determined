@@ -20,8 +20,7 @@ class YXAddFriendRemarkTableViewCell: UITableViewCell
         self.backgroundColor = UIColor.init(hex6: 0xecf0f1);
         self.contentView.addSubview(textView);
         self.addLayout();
-        NotificationCenter.default.addObserver(self, selector: #selector(change), name: .UITextFieldTextDidChange, object: nil);
-
+        NotificationCenter.default.addObserver(self, selector: #selector(change), name: .UITextViewTextDidChange, object: nil);
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -30,9 +29,8 @@ class YXAddFriendRemarkTableViewCell: UITableViewCell
     
     lazy var textView : YXTextView = {
         let textView = YXTextView();
-//        textView.layer.borderColor = UIColor.init(hex6: 0xebebeb).cgColor;
+
         textView.backgroundColor = UIColor.white;
-//        textView.layer.borderWidth = 1;
         textView.font = UIFont.systemFont(ofSize: 18);
         textView.textContainerInset = UIEdgeInsets.init(top: 13, left: 8, bottom: 13, right: 8);
         textView.placeholder = "备注内容";
@@ -56,4 +54,11 @@ class YXAddFriendRemarkTableViewCell: UITableViewCell
         rm!(textView.text!);
     }
 
+    deinit
+    {
+         NotificationCenter.default.removeObserver(self);
+    }
+   
+    
+    
 }

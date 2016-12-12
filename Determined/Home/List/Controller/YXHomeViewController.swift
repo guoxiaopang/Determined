@@ -21,6 +21,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         self.view.addSubview(tableView);
         
         navigationItem.rightBarButtonItem = rightButton;
+        tableView.addSubview(refreshControl);
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle
@@ -34,6 +35,14 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }
     
 // MARK: - 懒加载
+    
+    private lazy var refreshControl : UIRefreshControl = {
+        let refreshControl = UIRefreshControl();
+        refreshControl.addTarget(self, action: #selector(refresh), for: UIControlEvents.valueChanged)
+        refreshControl.attributedTitle = NSAttributedString(string: "下拉刷新数据")
+        return refreshControl;
+    }()
+    
     private lazy var tableView : UITableView =
     {
         let tableView = UITableView();
@@ -134,23 +143,30 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
 //            tableView.insertSections(IndexSet.init(integer: number), with: UITableViewRowAnimation.automatic)
 //        }
     }
+//
+//    func randomString(length:Int) -> String
+//    {
+//        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
+//        var c = charSet.characters.map { String($0) }
+//        var s:String = ""
+//        for _ in (1...length)
+//        {
+//            let temp = Int(arc4random())%(c.count);
+//            s.append(c[temp])
+//        }
+//        return s
+//    }
     
-    func randomString(length:Int) -> String
+    // 下拉刷新
+    func refresh()
     {
-        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-        var c = charSet.characters.map { String($0) }
-        var s:String = ""
-        for _ in (1...length)
-        {
-            let temp = Int(arc4random())%(c.count);
-            s.append(c[temp])
-        }
-        return s
+        dataManager.requestData();
     }
     
     // MARK: - YXHomeDataManagerDelegate
     func loadDataSuccess(dataManager: YXHomeDataManager)
     {
         self.tableView.reloadData();
+        refreshControl.endRefreshing();
     }
 }

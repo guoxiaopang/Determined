@@ -112,7 +112,7 @@ class YXHomeTableViewCell: UITableViewCell
         contact?.uuid = tempUser?.uuid;
         contact?.name = tempUser?.name;
         contact?.lastContactTime = String(NSDate().timeIntervalSince1970);
-        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {(success, error) in
             if success
             {
                print("mark")

@@ -50,5 +50,10 @@ class YXAddHometownTableViewCell: UITableViewCell
     {
         ht!(titleField.text!);
     }
+    
+    deinit
+    {
+        NotificationCenter.default.removeObserver(self);
+    }
 
 }
