@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 let historyCell : String = "historyCell";
 
@@ -17,8 +18,18 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
         self.view.addSubview(tableView);
-        self.navigationController?.setNavigationBarHidden(true, animated: false);
         tableView.addSubview(refreshControl);
+        navigationItem.leftBarButtonItem = leftButton;
+        
+        let controller = YXMenuViewController();
+        controller.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height);
+        let menuLeftNavigationController = UISideMenuNavigationController.init(rootViewController: controller);
+        menuLeftNavigationController.leftSide = true;
+        SideMenuManager.menuLeftNavigationController = menuLeftNavigationController;
+        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        SideMenuManager.menuFadeStatusBar = false;
+        SideMenuManager.menuWidth = controller.view.frame.width;
     }
     
     override func viewWillAppear(_ animated: Bool)
@@ -27,6 +38,11 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     }
     
     // MARK: - 懒加载
+    private lazy var leftButton : UIBarButtonItem = {
+        let leftButton = UIBarButtonItem.init(title: "left", style: UIBarButtonItemStyle.done, target: self, action: #selector(showLeft));
+        
+        return leftButton;
+    }()
     
     private lazy var refreshControl : UIRefreshControl = {
         let refreshControl = UIRefreshControl();
@@ -105,6 +121,11 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     {
         dataManager.refreshData();
         refreshControl.endRefreshing();
+    }
+    
+    func showLeft()
+    {
+        present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil);
     }
 }
 

@@ -9,6 +9,7 @@
 import UIKit
 import ObjectMapper
 import UIColor_Hex_Swift
+import SideMenu
 
 class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDataSource, YXHomeDataManagerDelegate
 {
@@ -22,6 +23,18 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         navigationItem.rightBarButtonItem = rightButton;
         tableView.addSubview(refreshControl);
+        
+        navigationItem.leftBarButtonItem = leftButton;
+        
+        let controller = YXMenuViewController();
+        controller.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height);
+        let menuLeftNavigationController = UISideMenuNavigationController.init(rootViewController: controller);
+        menuLeftNavigationController.leftSide = true;
+        SideMenuManager.menuLeftNavigationController = menuLeftNavigationController;
+        SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
+        SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
+        SideMenuManager.menuFadeStatusBar = false;
+        SideMenuManager.menuWidth = controller.view.frame.width;
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle
@@ -35,6 +48,11 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }
     
 // MARK: - 懒加载
+    
+    private lazy var leftButton : UIBarButtonItem = {
+        let leftButton = UIBarButtonItem.init(title: "left", style: UIBarButtonItemStyle.done, target: self, action: #selector(showLeft));
+        return leftButton;
+    }()
     
     private lazy var refreshControl : UIRefreshControl = {
         let refreshControl = UIRefreshControl();
@@ -130,38 +148,18 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     {
         let controller = YXAddFriendViewController(style: UITableViewStyle.grouped);
         self.present(controller, animated: true, completion: nil);
-//        let user = User.mr_createEntity();
-//        user?.name = self.randomString(length: 3);
-//        user?.icon = "icon";
-//        user?.companyName = self.randomString(length: 10);
-//        let (number, type) = dataManager.addModel(user: user!);
-//        if type == "row"
-//        {
-//            tableView.insertRows(at: [IndexPath(row: 0, section: number)], with: UITableViewRowAnimation.automatic);
-//        }
-//        else
-//        {
-//            tableView.insertSections(IndexSet.init(integer: number), with: UITableViewRowAnimation.automatic)
-//        }
+
     }
-//
-//    func randomString(length:Int) -> String
-//    {
-//        let charSet = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
-//        var c = charSet.characters.map { String($0) }
-//        var s:String = ""
-//        for _ in (1...length)
-//        {
-//            let temp = Int(arc4random())%(c.count);
-//            s.append(c[temp])
-//        }
-//        return s
-//    }
     
     // 下拉刷新
     func refresh()
     {
         dataManager.requestData();
+    }
+    
+    func showLeft()
+    {
+        present(SideMenuManager.menuLeftNavigationController!, animated: true, completion: nil);
     }
     
     // MARK: - YXHomeDataManagerDelegate

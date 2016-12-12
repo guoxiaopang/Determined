@@ -7,5 +7,6 @@ pod 'Alamofire', '~> 4.0'
 pod 'UIColor_Hex_Swift', '~> 3.0.2'
 pod 'ObjectMapper', '~> 2.2'
 pod "MagicalRecord"
+pod 'SideMenu'
 end
 

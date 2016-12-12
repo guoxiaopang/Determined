@@ -29,6 +29,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SideMenu.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SnapKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -42,12 +47,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>54E870878437C61295F843781681090C</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>591657C8A5DBC523E10140CE8B00E9EE</key>
+		<key>0F8B346224AA263F8F89A8FB98CDEF9E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -62,6 +62,16 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A80913E598188E7A08F366C49F67EAF1</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>B0A0BE0E77BAF39B56AEC49535058891</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>B43918AB915242B851ABEFB5D70BE0AD</key>
 		<dict>
 			<key>primary</key>
@@ -72,7 +82,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>F8B64A5603A1828C95778E99C671AD34</key>
+		<key>FD4856039FDE2A154A7F3B49BE3D729D</key>
 		<dict>
 			<key>primary</key>
 			<true/>
