@@ -13,7 +13,7 @@ import CoreData
 class User: NSManagedObject
 {
      @NSManaged var age: String
-     @NSManaged var basicInformation: NSArray
+     @NSManaged var basicInformation: NSMutableArray
      @NSManaged var birthday: String
      @NSManaged var companyAddress: String
      @NSManaged var companyName: String

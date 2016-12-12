@@ -91,7 +91,7 @@ class YXHomeDataManager: NSObject
             let array : UserGroup = item[indexPath.section] as! UserGroup;
             // 这里不是存的model了
             let uuid : String = array.groupItem[indexPath.row] as! String;
-            let userArray : [NSManagedObject] = User.mr_find(byAttribute: "uuid", withValue: uuid)!;
+            let userArray = User.mr_find(byAttribute: "uuid", withValue: uuid)! ;
             return userArray[0] as? User;
         }
         return nil;
@@ -113,10 +113,10 @@ class YXHomeDataManager: NSObject
             for i in group.groupItem
             {
                 // 找到这个user
-                let i = i as! User;
-                if  i == user
+                let i = i as! String;
+                if  i == user.uuid
                 {
-                    group.groupItem.remove(user);
+                    group.groupItem.remove(i);
                     // 删除实体
                     user.mr_deleteEntity();
                     return group;
@@ -136,44 +136,8 @@ class YXHomeDataManager: NSObject
             {
                 item.remove(group);
                 itemTitle.remove(group.groupString);
+                group.mr_deleteEntity();
             }
         }
     }
-    
-//    // 添加数据和title 返回section Index
-//    func addModel(user : User) -> (Int, String)
-//    {
-//        // 判断属于哪一组
-//        let groupTitle = self.firstCharactor(str: user.name!);
-//        // 组存在和不存在
-//        for group in item
-//        {
-//            let group = group as! UserGroup;
-//            if groupTitle.isEqual(group.groupString)
-//            {
-//                // 存在 添加进item,添加进coreData
-//                group.groupItem.add(user);
-//                self.sotrData();
-//                NSManagedObjectContext.mr_default().mr_save(blockAndWait: { (cxt) in
-//                    print("保存完成 \(user.name)");
-//                })
-//                self.sotrData();
-//                return (item.index(of: group), "row");
-//            }
-//        }
-//        // 不存在 添加组，添加item,添加coreData
-//        let group = UserGroup.mr_createEntity();
-//        group?.groupString = groupTitle as String;
-//        group?.groupItem.add(user);
-//
-//        itemTitle.add(group?.groupString! as Any);
-//        NSManagedObjectContext.mr_default().mr_save(blockAndWait: { (cxt) in
-//            print("保存完成 \(user.name)");
-//        })
-//        item.add(group!);
-//        self.sotrData();
-//        return (item.index(of: group!), "section");
-//    }
-    
-
 }

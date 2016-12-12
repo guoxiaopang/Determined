@@ -56,8 +56,11 @@ class YXNewDetailTableViewCell: UITableViewCell
             make.top.equalTo(titleLabel.snp.bottom).offset(10);
             make.bottom.equalTo(self.contentView).offset(-15);
         }
-        
-
     }
 
+    func reloadData(_ infoModel : BasicInfo)
+    {
+        titleLabel.text = infoModel.title;
+        contentLabel.text = infoModel.info;
+    }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MagicalRecord
 
 protocol YXHistoryDataManagerDelegate
 {
@@ -70,7 +71,17 @@ class YXHistoryDataManager: NSObject
     func delete(model : LastContact)
     {
         item.remove(model);
-        // 写入数据库 这里还没写
+
         model.mr_deleteEntity();
+        NSManagedObjectContext.mr_default().mr_saveToPersistentStore {(success, error) in
+            if success
+            {
+                print("删除成功");
+            }
+            else if ((error) != nil)
+            {
+                print(error.debugDescription);
+            }
+        }
     }
 }

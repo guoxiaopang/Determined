@@ -12,7 +12,9 @@ import CoreData
 @objc(UserGroup)
 class UserGroup: NSManagedObject
 {
+    // 组名
     @NSManaged var groupString : String;
+    // 存放User的uuid
     @NSManaged var groupItem : NSMutableArray
 
 }

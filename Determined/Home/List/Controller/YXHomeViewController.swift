@@ -91,8 +91,9 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-//        let detailController : YXHomeDetailViewController = YXHomeDetailViewController();
-         let detailController = YXNewDetailViewController();
+        let detailController = YXNewDetailViewController();
+        let user = dataManager.modelWithIndexPath(indexPath: indexPath);
+        detailController.user = user;
         navigationController?.pushViewController(detailController, animated: true);
         tableView.deselectRow(at: indexPath, animated: true);
     }

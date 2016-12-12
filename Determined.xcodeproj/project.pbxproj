@@ -26,6 +26,7 @@
 		356123D01DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */; };
 		3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578B5B01DF122EB0012C5A1 /* CoreData.framework */; };
 		3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3578B5BB1DF127420012C5A1 /* data.xcdatamodeld */; };
+		357953021DFE44BF000EB346 /* YXHomeNewDetailDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 357953011DFE44BF000EB346 /* YXHomeNewDetailDataManager.swift */; };
 		3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */; };
 		3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */ = {isa = PBXBuildFile; fileRef = 3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */; };
 		358752371DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 358752361DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift */; };
@@ -76,6 +77,7 @@
 		356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendThreeTableViewCell.swift; sourceTree = "<group>"; };
 		3578B5B01DF122EB0012C5A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
 		3578B5BC1DF127420012C5A1 /* data.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = data.xcdatamodel; sourceTree = "<group>"; };
+		357953011DFE44BF000EB346 /* YXHomeNewDetailDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeNewDetailDataManager.swift; sourceTree = "<group>"; };
 		3582D7FB1DF0436F00FBA86D /* YXHistoryMainCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryMainCell.swift; sourceTree = "<group>"; };
 		3582D7FE1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceHanSansCN-Light.TTF"; sourceTree = "<group>"; };
 		358752361DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendRemarkTableViewCell.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		356123B41DF7A86500EED1D4 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				357953011DFE44BF000EB346 /* YXHomeNewDetailDataManager.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -622,6 +625,7 @@
 				35606A241DED13CD00302656 /* YXMeViewController.swift in Sources */,
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
+				357953021DFE44BF000EB346 /* YXHomeNewDetailDataManager.swift in Sources */,
 				356123B71DF7A87A00EED1D4 /* YXNewDetailViewController.swift in Sources */,
 				35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,

@@ -44,11 +44,30 @@ class YXAddFriendDataManager: NSObject
         let user = User.mr_createEntity();
         user?.uuid = NSUUID().uuidString;
         user?.name = deleteBettwnSpace(name);
-        user?.phone = deleteBettwnSpace(phoneNumber);
-        user?.birthday = birthday; // 这里应该是时间搓
-        user?.homeTown = deleteBettwnSpace(homeTown);
         user?.remark = deleteBettwnSpace(remark);
         user?.icon = imagePath;
+        user?.basicInformation = [];
+        // 暂时觉得这个应该放在子目录里面
+        if deleteBettwnSpace(phoneNumber).characters.count != 0
+        {
+            let info = deleteBettwnSpace(phoneNumber);
+            let phoneInfo : BasicInfo = BasicInfo.init(title: "电话", info: info);
+            user?.basicInformation.add(phoneInfo);
+        }
+     
+        if deleteBettwnSpace(birthday).characters.count != 0
+        {
+            let info = birthday;
+            let birthdayInfo : BasicInfo = BasicInfo.init(title: "生日", info: info);
+            user?.basicInformation.add(birthdayInfo);
+        }
+        
+        if deleteBettwnSpace(homeTown).characters.count != 0
+        {
+            let info = deleteBettwnSpace(homeTown);
+            let homeTownInfo : BasicInfo = BasicInfo.init(title: "家乡", info: info);
+            user?.basicInformation.add(homeTownInfo);
+        }
         
         // 根据情况添加组
         let groupTitle = self.firstCharactor(str: (user?.name)!);
@@ -68,11 +87,11 @@ class YXAddFriendDataManager: NSObject
                         let temp : NSMutableArray =  i.groupItem;
                         temp.add(user?.uuid as Any);
                         
-                        // 写到这了 这个数组好像有问题
-                        for c in temp
-                        {
-                            print(c);
-                        }
+//                        // 写到这了 这个数组好像有问题
+//                        for c in temp
+//                        {
+//                            print(c);
+//                        }
                          i.groupItem = temp;
                         NSManagedObjectContext.mr_default().mr_saveToPersistentStore {[weak weakSelf = self] (success, error) in
                             if success
@@ -99,6 +118,7 @@ class YXAddFriendDataManager: NSObject
         anewGroup?.groupString = groupTitle as String;
         let temp : NSMutableArray = NSMutableArray();
         temp.add(user?.uuid as Any);
+ 
         anewGroup?.groupItem = temp;
         
 
@@ -114,13 +134,13 @@ class YXAddFriendDataManager: NSObject
             }
         }
         
-        let array = UserGroup.mr_findAllSorted(by: "groupString", ascending: true);
-        for i  in array!
-        {
-            let i = i as! UserGroup;
-            print(i.groupItem);
-         
-        }
+//        let array = UserGroup.mr_findAllSorted(by: "groupString", ascending: true);
+//        for i  in array!
+//        {
+//            let i = i as! UserGroup;
+//            print(i.groupItem);
+//         
+//        }
         
 }
         

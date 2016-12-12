@@ -72,7 +72,8 @@ class YXNewDetailHeadView: UIView
         let label = UILabel();
         label.font = UIFont(name: "SourceHanSansCN-Light", size: 13);
         label.textColor = UIColor.white;
-        label.text = "Last Time : 2016年11月11日 15:30";
+        //label.text = "Last Time : 2016年11月11日 15:30";
+        label.isHidden = true;
         return label;
     }()
     
@@ -112,6 +113,26 @@ class YXNewDetailHeadView: UIView
             make.right.equalTo(self).offset(-10);
             make.width.height.equalTo(32);
         }
+    }
+    
+    func reloadData(user : User)
+    {
+        nameLabel.text = user.name;
+        
+        // 查询最后一次联系时间
+        let array = LastContact.mr_find(byAttribute: "uuid", withValue: user.uuid);
+        if (array?.count)! > 0
+        {
+            let last : LastContact = array!.first as! LastContact;
+            let fmt = DateFormatter();
+            fmt.dateFormat = "yyyy年MM月dd日 HH:mm";
+            let time = TimeInterval.init(last.lastContactTime!);
+            let date = Date.init(timeIntervalSince1970: time!);
+            let str = fmt.string(from: date);
+            lastContactLabel.text = "Last : \(str)";
+            lastContactLabel.isHidden = false;
+        }
+    
     }
 
 }
