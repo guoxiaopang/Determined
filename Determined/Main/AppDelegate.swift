@@ -29,9 +29,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationVC : YXNavigationController = YXNavigationController(rootViewController : history);
         window?.rootViewController = navigationVC;
         
-        let label : YYFPSLabel = YYFPSLabel();
-        label.frame = CGRect.init(x: 50, y: 20, width: 50, height: 30);
-        self.window?.addSubview(label);
+//        let label : YYFPSLabel = YYFPSLabel();
+//        label.frame = CGRect.init(x: 50, y: 20, width: 50, height: 30);
+//        self.window?.insertSubview(label, at: 10);
         
         MagicalRecord.setupCoreDataStack(withStoreNamed: "d.sqlite");
 

@@ -67,7 +67,8 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
         let cell = tableView.dequeueReusableCell(withIdentifier: YXMenuViewControllerCellIdent);
-        cell?.imageView?.image = #imageLiteral(resourceName: "set");
+//        cell?.imageView?.image = #imageLiteral(resourceName: "set");
+        cell?.textLabel?.font = UIFont(name: "PingFang SC", size: 15);
         if indexPath.section == 0
         {
             if indexPath.row == 0

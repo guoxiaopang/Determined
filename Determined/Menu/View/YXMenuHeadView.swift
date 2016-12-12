@@ -15,6 +15,7 @@ class YXMenuHeadView: UIView
         super.init(frame: frame);
         self.addSubview(iconView);
         self.addSubview(nameLabel);
+        self.addSubview(vipLabel);
         self.addLayout();
     }
     
@@ -30,8 +31,15 @@ class YXMenuHeadView: UIView
     
     private lazy var nameLabel : UILabel = {
         let label = UILabel();
-        label.font = UIFont(name: "SourceHanSansCN-Light", size: 14);
+        label.font = UIFont(name: "PingFang SC", size: 16);
         label.text = "Leo宇";
+        return label;
+    }()
+    
+    private lazy var vipLabel : UILabel = {
+        let label = UILabel();
+        label.font = UIFont(name: "PingFang SC", size: 12);
+        label.text = "个人免费版";
         return label;
     }()
     
@@ -45,6 +53,11 @@ class YXMenuHeadView: UIView
         
         nameLabel.snp.makeConstraints { (make) in
             make.top.equalTo(iconView.snp.bottom).offset(10);
+            make.centerX.equalTo(self);
+        }
+        
+        vipLabel.snp.makeConstraints { (make) in
+            make.top.equalTo(nameLabel.snp.bottom).offset(10);
             make.centerX.equalTo(self);
         }
     }

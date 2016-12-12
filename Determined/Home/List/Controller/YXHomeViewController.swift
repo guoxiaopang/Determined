@@ -26,6 +26,8 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         navigationItem.leftBarButtonItem = leftButton;
         
+        navigationItem.leftBarButtonItem = leftButton;
+        
         let controller = YXMenuViewController();
         controller.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height);
         let menuLeftNavigationController = UISideMenuNavigationController.init(rootViewController: controller);
@@ -35,6 +37,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
         SideMenuManager.menuFadeStatusBar = false;
         SideMenuManager.menuWidth = controller.view.frame.width;
+
     }
     
     override var preferredStatusBarStyle: UIStatusBarStyle
@@ -50,7 +53,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
 // MARK: - 懒加载
     
     private lazy var leftButton : UIBarButtonItem = {
-        let leftButton = UIBarButtonItem.init(title: "left", style: UIBarButtonItemStyle.done, target: self, action: #selector(showLeft));
+        let leftButton = UIBarButtonItem.init(image: #imageLiteral(resourceName: "menu"), style: UIBarButtonItemStyle.plain, target: self, action: #selector(showLeft));
         return leftButton;
     }()
     

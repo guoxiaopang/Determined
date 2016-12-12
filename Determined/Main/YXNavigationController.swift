@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SideMenu
 
 class YXNavigationController: UINavigationController
 {
@@ -21,9 +22,9 @@ class YXNavigationController: UINavigationController
                                    NSForegroundColorAttributeName : UIColor.white];
         
         self.interactivePopGestureRecognizer?.delegate = nil;
+    
+        
     }
-    
-    
 
 }
 
