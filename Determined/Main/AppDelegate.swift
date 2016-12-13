@@ -20,11 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame:UIScreen.main.bounds);
         window?.backgroundColor = UIColor.white;
         window?.makeKeyAndVisible();
-        
-//        tabbarVC = YXMainTabbarController();
-//        window?.rootViewController = tabbarVC;
-        
-        
+
         let history = YXHistoryViewController();
         let navigationVC : YXNavigationController = YXNavigationController(rootViewController : history);
         window?.rootViewController = navigationVC;
@@ -51,11 +47,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
     {
-        if (window?.rootViewController?.isKind(of: YXHomeViewController.classForCoder()))! || (window?.rootViewController?.isKind(of: YXHistoryViewController.classForCoder()))!
-        {
-             self.window?.bringSubview(toFront: label);
-        }
-       
+        self.window?.bringSubview(toFront: label);
+
     }
     
     deinit

@@ -8,11 +8,17 @@
 
 import UIKit
 
+protocol YXAddFriendOneTableViewCellDelegate
+{
+    func selectedPhoto(_ cell : YXAddFriendOneTableViewCell);
+}
+
 typealias oneCellClsure = (_ name : String, _ phoneNumber : String, _ imagePath : String)-> Void;
 
 class YXAddFriendOneTableViewCell: UITableViewCell
 {
     var one : oneCellClsure!;
+    var delegate : YXAddFriendOneTableViewCellDelegate?;
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?)
     {
@@ -54,6 +60,9 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     lazy var iconView: UIImageView = {
         let imageView = UIImageView();
         imageView.image = #imageLiteral(resourceName: "inputImage");
+        imageView.isUserInteractionEnabled = true;
+        let tap = UITapGestureRecognizer.init(target: self, action: #selector(uploadImage));
+        imageView.addGestureRecognizer(tap);
         return imageView;
     }()
     
@@ -82,6 +91,7 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     
     func change()
     {
+        // 图片应该存路径
         one(nameField.text!, phoneField.text!, "icon");
     }
     
@@ -91,5 +101,9 @@ class YXAddFriendOneTableViewCell: UITableViewCell
         phoneField.text = phoneNumber;
     }
     
-
+    // 选择图片
+    func uploadImage()
+    {
+        delegate?.selectedPhoto(self);
+    }
 }

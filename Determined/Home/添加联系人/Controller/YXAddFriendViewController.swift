@@ -7,6 +7,13 @@
 //
 
 import UIKit
+import Photos
+
+enum SelectType
+{
+    case camera;
+    case photoLibrary;
+}
 
 let YXAddFriendViewCellIdent = "YXAddFriendViewCellIdent";
 let YXAddFriendOneTableViewCellIdent = "YXAddFriendOneTableViewCellIdent";
@@ -16,7 +23,7 @@ let YXAddFriendRemarkTableViewCellIdent = "YXAddFriendRemarkTableViewCellIdent";
 let YXAddFriendBirthdayTableViewCellIdent = "YXAddFriendBirthdayTableViewCellIdent";
 let YXAddHometownTableViewCellIdent = "YXAddHometownTableViewCellIdent";
 
-class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate, YXAddFriendDataManagerDelegate
+class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDelegate, YXAddFriendThreeTableViewCellDelegate, YXAddFriendDataManagerDelegate, YXAddFriendOneTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate
 {
     var name : String = "";
     var phoneNum : String = "";
@@ -92,6 +99,7 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
         if indexPath.section == 0
         {
             let cell : YXAddFriendOneTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendOneTableViewCellIdent)! as! YXAddFriendOneTableViewCell;
+            cell.delegate = self;
             cell.selectionStyle = UITableViewCellSelectionStyle.none;
             cell.reloadData(name, phoneNum, imagePath)
             cell.one = {[weak weakSlef = self](_ name : String, _ phoneNumber : String, _ imagePath : String) in
@@ -165,5 +173,75 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     func addUserSuccess(dataManager: YXAddFriendDataManager)
     {
         self.dismiss(animated: true, completion: nil);
+    }
+    
+    // MARK: - YXAddFriendOneTableViewCellDelegate
+    private lazy var alertView : UIAlertController = {
+        let alertView = UIAlertController.init(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet);
+        let action1 = UIAlertAction.init(title: "拍照", style: UIAlertActionStyle.default, handler: {(action : UIAlertAction) in
+            self.showType(type: SelectType.camera);
+        })
+        
+        alertView.addAction(action1);
+        let action2 = UIAlertAction.init(title: "相册选择照片", style: UIAlertActionStyle.default, handler: { (action : UIAlertAction) in
+            self.showType(type: SelectType.photoLibrary);
+        })
+        
+        alertView.addAction(action2);
+        let action3 = UIAlertAction.init(title: "取消", style: UIAlertActionStyle.destructive, handler: { (action : UIAlertAction) in
+           
+        })
+        
+        alertView.addAction(action3);
+        
+        return alertView;
+    }()
+    
+    // 弹出选择框
+    func selectedPhoto(_ cell: YXAddFriendOneTableViewCell)
+    {
+        self.present(alertView, animated: true, completion: nil);
+    }
+    
+    
+    // 判断权限
+    func showType(type : SelectType)
+    {
+        let status : PHAuthorizationStatus = PHPhotoLibrary.authorizationStatus();
+        if status == PHAuthorizationStatus.restricted || status == PHAuthorizationStatus.denied
+        {
+            print("没有权限");
+            let alertView = UIAlertController.init(title: nil, message: "请在设置->隐私->相机中允许访问你的相机", preferredStyle: UIAlertControllerStyle.alert);
+            let action = UIAlertAction.init(title: "好的", style: UIAlertActionStyle.default, handler: nil)
+            alertView.addAction(action);
+            self.present(alertView, animated: true, completion: nil);
+            return;
+        }
+        
+        let imagePickController = UIImagePickerController();
+        imagePickController.delegate = self;
+        if type == SelectType.camera
+        {
+            imagePickController.sourceType = UIImagePickerControllerSourceType.camera;
+        }
+        else if type == SelectType.photoLibrary
+        {
+            imagePickController.sourceType = UIImagePickerControllerSourceType.photoLibrary;
+        }
+        self.present(imagePickController, animated: true, completion: nil);
+    }
+    
+    public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
+    {
+        let image : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage;
+        let cell : YXAddFriendOneTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendOneTableViewCellIdent)! as! YXAddFriendOneTableViewCell;
+        cell.iconView.image = image;
+        tableView.rectForRow(at: IndexPath.init(row: 0, section: 0));
+        picker.dismiss(animated: true, completion: nil);
+    }
+
+    public func imagePickerControllerDidCancel(_ picker: UIImagePickerController)
+    {
+        picker.dismiss(animated: true, completion: nil);
     }
 }

@@ -19,7 +19,6 @@
 		356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */; };
 		356123C81DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C71DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift */; };
 		356123CA1DF82AF200EED1D4 /* YXTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123C91DF82AF200EED1D4 /* YXTextField.swift */; };
-		356123CC1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */; };
 		356123CE1DF833BD00EED1D4 /* YXAddFriendDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CD1DF833BD00EED1D4 /* YXAddFriendDataManager.swift */; };
 		356123D01DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */; };
 		3578B5B11DF122EB0012C5A1 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3578B5B01DF122EB0012C5A1 /* CoreData.framework */; };
@@ -46,8 +45,9 @@
 		35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D41DF5480D003B8B56 /* BasicInfo.swift */; };
 		35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D61DF5482B003B8B56 /* ContactInfo.swift */; };
 		35B5E7AF1DF696A800A30EDB /* YXTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */; };
-		35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */; };
 		35B5E7B71DF6A39000A30EDB /* YXHistoryDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35B5E7B61DF6A39000A30EDB /* YXHistoryDataManager.swift */; };
+		35C13C5E1DFFC201007F8261 /* YXImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C13C5D1DFFC201007F8261 /* YXImagePicker.swift */; };
+		35C13C601DFFD733007F8261 /* YXFileManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35C13C5F1DFFD733007F8261 /* YXFileManager.swift */; };
 		35E014A41DFE9007000BBB5A /* YXMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E014A31DFE9007000BBB5A /* YXMenuViewController.swift */; };
 		35E014A61DFE9AE7000BBB5A /* YXMenuHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35E014A51DFE9AE7000BBB5A /* YXMenuHeadView.swift */; };
 		DA2F57B53ADD13DFB9A1F5E9 /* Pods_Determined.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */; };
@@ -72,7 +72,6 @@
 		356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendHeadView.swift; sourceTree = "<group>"; };
 		356123C71DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendOneTableViewCell.swift; sourceTree = "<group>"; };
 		356123C91DF82AF200EED1D4 /* YXTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXTextField.swift; sourceTree = "<group>"; };
-		356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendTwoTableViewCell.swift; sourceTree = "<group>"; };
 		356123CD1DF833BD00EED1D4 /* YXAddFriendDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendDataManager.swift; sourceTree = "<group>"; };
 		356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddFriendThreeTableViewCell.swift; sourceTree = "<group>"; };
 		3578B5B01DF122EB0012C5A1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
@@ -101,8 +100,9 @@
 		35AF45D41DF5480D003B8B56 /* BasicInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicInfo.swift; sourceTree = "<group>"; };
 		35AF45D61DF5482B003B8B56 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = YXTabBar.swift; path = "分类/YXTabBar.swift"; sourceTree = "<group>"; };
-		35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddViewController.swift; sourceTree = "<group>"; };
 		35B5E7B61DF6A39000A30EDB /* YXHistoryDataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryDataManager.swift; sourceTree = "<group>"; };
+		35C13C5D1DFFC201007F8261 /* YXImagePicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXImagePicker.swift; sourceTree = "<group>"; };
+		35C13C5F1DFFD733007F8261 /* YXFileManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXFileManager.swift; sourceTree = "<group>"; };
 		35E014A31DFE9007000BBB5A /* YXMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMenuViewController.swift; sourceTree = "<group>"; };
 		35E014A51DFE9AE7000BBB5A /* YXMenuHeadView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMenuHeadView.swift; sourceTree = "<group>"; };
 		657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Determined.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -207,7 +207,6 @@
 				356123C51DF80F1900EED1D4 /* YXAddFriendHeadView.swift */,
 				356123C71DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift */,
 				356123C91DF82AF200EED1D4 /* YXTextField.swift */,
-				356123CB1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift */,
 				356123CF1DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift */,
 				358752361DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift */,
 				358752381DF8FFA100591BAA /* YXTextView.swift */,
@@ -288,7 +287,6 @@
 			isa = PBXGroup;
 			children = (
 				35E0149F1DFE8FF9000BBB5A /* Menu */,
-				35B5E7B01DF6983600A30EDB /* Add */,
 				3595D21F1DEC62A000179730 /* Main */,
 				3595D2261DEC62A000179730 /* Me */,
 				3595D2131DEC629900179730 /* Find */,
@@ -393,6 +391,8 @@
 				3595D22E1DEC632600179730 /* YXMainTabbarController.swift */,
 				35606A2C1DED9EE600302656 /* Determined-Bridging-Header.h */,
 				356123BD1DF7F2E300EED1D4 /* YXNavigationController.swift */,
+				35C13C5D1DFFC201007F8261 /* YXImagePicker.swift */,
+				35C13C5F1DFFD733007F8261 /* YXFileManager.swift */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -423,38 +423,6 @@
 			sourceTree = "<group>";
 		};
 		3595D2291DEC62A000179730 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		35B5E7B01DF6983600A30EDB /* Add */ = {
-			isa = PBXGroup;
-			children = (
-				35B5E7B11DF6983600A30EDB /* Controller */,
-				35B5E7B21DF6983600A30EDB /* Model */,
-				35B5E7B31DF6983600A30EDB /* View */,
-			);
-			path = Add;
-			sourceTree = "<group>";
-		};
-		35B5E7B11DF6983600A30EDB /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				35B5E7B41DF6988400A30EDB /* YXAddViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
-		35B5E7B21DF6983600A30EDB /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		35B5E7B31DF6983600A30EDB /* View */ = {
 			isa = PBXGroup;
 			children = (
 			);
@@ -635,16 +603,17 @@
 				356123C41DF80E2500EED1D4 /* YXAddFriendViewController.swift in Sources */,
 				3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */,
 				356123C81DF823D700EED1D4 /* YXAddFriendOneTableViewCell.swift in Sources */,
-				356123CC1DF830E700EED1D4 /* YXAddFriendTwoTableViewCell.swift in Sources */,
 				356123B91DF7A9AD00EED1D4 /* YXNewDetailHeadView.swift in Sources */,
 				358752371DF8F1AE00591BAA /* YXAddFriendRemarkTableViewCell.swift in Sources */,
 				3582D7FC1DF0436F00FBA86D /* YXHistoryMainCell.swift in Sources */,
 				356123BB1DF7BFF500EED1D4 /* YXNewDetailTableViewCell.swift in Sources */,
 				35606A321DED9EE700302656 /* YYWeakProxy.m in Sources */,
 				35AF45D51DF5480D003B8B56 /* BasicInfo.swift in Sources */,
+				35C13C5E1DFFC201007F8261 /* YXImagePicker.swift in Sources */,
 				359206D01DEEAE44007C77A3 /* YXHomeDataManager.swift in Sources */,
 				356123BE1DF7F2E300EED1D4 /* YXNavigationController.swift in Sources */,
 				35AF45CF1DF5427C003B8B56 /* User.swift in Sources */,
+				35C13C601DFFD733007F8261 /* YXFileManager.swift in Sources */,
 				3587523F1DF9312C00591BAA /* YXDatePickerView.swift in Sources */,
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				356123CA1DF82AF200EED1D4 /* YXTextField.swift in Sources */,
@@ -654,7 +623,6 @@
 				3587523B1DF92D4A00591BAA /* YXAddFriendBirthdayTableViewCell.swift in Sources */,
 				3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */,
 				359206D81DEEC95D007C77A3 /* HEX.swift in Sources */,
-				35B5E7B51DF6988400A30EDB /* YXAddViewController.swift in Sources */,
 				356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */,
 				356123D01DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift in Sources */,
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
