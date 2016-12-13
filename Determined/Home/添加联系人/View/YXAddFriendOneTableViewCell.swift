@@ -102,7 +102,8 @@ class YXAddFriendOneTableViewCell: UITableViewCell
         phoneField.text = phoneNumber;
         if imagePath.characters.count > 0
         {
-            iconView.image = UIImage.init(contentsOfFile: imagePath);
+            let path = YXFileManager.share.relativePath("image",imagePath);
+            iconView.image = UIImage.init(contentsOfFile: path);
 
         }
     }

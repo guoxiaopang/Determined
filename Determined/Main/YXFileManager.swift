@@ -14,7 +14,7 @@ class YXFileManager: NSObject
     static let share = YXFileManager();
     
     // 返回文件路径 path文件夹名
-    func homeName(path : String, fileName : String?) -> String
+    func homeName(path : String, fileName : String?) -> (String, String)
     {
         let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last;
         let fileManager = FileManager.default;
@@ -30,15 +30,26 @@ class YXFileManager: NSObject
           
         }
         // 拼接目录 + 文件名
+        var tempPath = "";
         if fileName == nil
         {
-            newPath = newPath + "/" + self.randomString(length: 20);
+            tempPath = "/" + self.randomString(length: 20)
+            newPath = newPath + tempPath;
         }
         else
         {
-            newPath = newPath + fileName!;
+            newPath = newPath + "/" + fileName!;
+            tempPath = "/" + fileName!;
         }
-        return newPath;
+        return (newPath, tempPath);
+    }
+    
+    // 传入相对路径 返回绝对路径  文件夹名      文件名
+    func relativePath(_ path : String,_ str : String) -> String
+    {
+        let cachePath = NSSearchPathForDirectoriesInDomains(.cachesDirectory, .userDomainMask, true).last;
+        
+        return cachePath! + "/" + path + str;
     }
     
     // 返回随机字符串
@@ -62,15 +73,17 @@ class YXFileManager: NSObject
         {
             return "";
         }
-        let path = self.homeName(path: "/image", fileName: name);
+        let path =  self.homeName(path: "/image", fileName: name);
         let data : Data = UIImageJPEGRepresentation(image!, 1)!;
         do
         {
-            try  data.write(to: NSURL.fileURL(withPath: path));
+            
+            try  data.write(to: NSURL.fileURL(withPath: path.0));
         } catch
         {
             print("保存失败");
         }
-        return path;
+
+        return path.1;
     }
 }

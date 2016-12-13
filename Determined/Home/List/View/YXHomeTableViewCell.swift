@@ -129,7 +129,25 @@ class YXHomeTableViewCell: UITableViewCell
     func reloadData(user : User) -> Void
     {
         tempUser = user;
-        iconView.image = UIImage.init(named: user.icon);
+        if user.iconPath.characters.count > 0
+        {
+            let path = YXFileManager.share.relativePath("image", user.iconPath);
+            let data = NSData.init(contentsOfFile: path);
+            if data != nil
+            {
+                iconView.image = UIImage.init(data: data as! Data)
+            }
+            else
+            {
+                // 网络加载图片
+            }
+            
+        }
+        else
+        {
+            iconView.image = UIImage.init(named: user.icon);
+        }
+        
         nameLabel.text = user.name;
         workLabel.text = user.companyName;
     }
