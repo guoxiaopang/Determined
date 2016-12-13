@@ -105,7 +105,7 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
             cell.one = {[weak weakSlef = self](_ name : String, _ phoneNumber : String, _ imagePath : String) in
                 weakSlef?.name = name;
                 weakSlef?.phoneNum = phoneNumber;
-                weakSlef?.imagePath = imagePath;
+                //weakSlef?.imagePath = imagePath;
                // 昨天写到这里
             }
             return cell;
@@ -234,10 +234,12 @@ class YXAddFriendViewController: UITableViewController, YXAddFriendHeadViewDeleg
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any])
     {
         let image : UIImage = info[UIImagePickerControllerOriginalImage] as! UIImage;
-        let cell : YXAddFriendOneTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXAddFriendOneTableViewCellIdent)! as! YXAddFriendOneTableViewCell;
-        cell.iconView.image = image;
-        tableView.rectForRow(at: IndexPath.init(row: 0, section: 0));
+        let manager = YXFileManager.share;
+        let path = manager.saveImage(image: image, name: nil);
+        imagePath = path;
+        
         picker.dismiss(animated: true, completion: nil);
+        tableView.reloadRows(at: [IndexPath.init(row: 0, section: 0)], with: UITableViewRowAnimation.automatic)
     }
 
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController)

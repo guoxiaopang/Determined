@@ -19,26 +19,6 @@ class YXAddFriendDataManager: NSObject
 {
     var delegate : YXAddFriendDataManagerDelegate?;
     
-//    lazy var item : NSMutableArray = {
-//        let array = NSMutableArray();
-//        array.addObjects(from: ["Email", "生日", "公司名称", "公司地址"]);
-//        return array;
-//    }()
-//    
-//    func numofRow(index : Int) -> String?
-//    {
-//        if index < item.count
-//        {
-//            return item[index] as? String;
-//        }
-//        return nil;
-//    }
-    
-//    func num() -> Int
-//    {
-//        return item.count;
-//    }
-    
     func addUser(_ imagePath : String, _ name : String, _ phoneNumber : String,_ birthday : String,_ homeTown : String,_ remark : String)
     {
         let user = User.mr_createEntity();
@@ -47,6 +27,7 @@ class YXAddFriendDataManager: NSObject
         user?.remark = deleteBettwnSpace(remark);
         user?.icon = imagePath;
         user?.basicInformation = [];
+        user?.iconPath = imagePath;
         // 暂时觉得这个应该放在子目录里面
         if deleteBettwnSpace(phoneNumber).characters.count != 0
         {

@@ -91,14 +91,20 @@ class YXAddFriendOneTableViewCell: UITableViewCell
     
     func change()
     {
+      
         // 图片应该存路径
-        one(nameField.text!, phoneField.text!, "icon");
+        one(nameField.text!, phoneField.text!, "");
     }
     
     func reloadData(_ name : String,_ phoneNumber : String,_ imagePath : String)
     {
         nameField.text = name;
         phoneField.text = phoneNumber;
+        if imagePath.characters.count > 0
+        {
+            iconView.image = UIImage.init(contentsOfFile: imagePath);
+
+        }
     }
     
     // 选择图片
