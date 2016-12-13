@@ -13,7 +13,8 @@ let YXMenuViewControllerCellIdent = "YXMenuViewControllerCellIdent";
 
 class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
-
+    static let share = YXMenuViewController();
+    
     override func viewDidLoad()
     {
         super.viewDidLoad()
@@ -121,6 +122,7 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         {
             // 设置
         }
+        tableView.deselectRow(at: indexPath, animated: true);
 
     }
 

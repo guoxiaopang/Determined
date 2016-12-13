@@ -13,8 +13,6 @@ class YXMainTabbarController: UITabBarController, YXTabBarDelegate
     
     var history : YXHistoryViewController?;
     var home : YXHomeViewController?;
-    var find : YXFindViewController?;
-    var me : YXMeViewController?;
     var tabbar : YXTabBar?;
     override func viewDidLoad()
     {

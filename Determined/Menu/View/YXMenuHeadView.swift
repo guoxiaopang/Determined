@@ -25,7 +25,8 @@ class YXMenuHeadView: UIView
     
     private lazy var iconView : UIImageView = {
         let iconView = UIImageView();
-        iconView.image = #imageLiteral(resourceName: "t1");
+        iconView.image = #imageLiteral(resourceName: "placeholder");
+        iconView.sizeToFit();
         return iconView;
     }()
     
@@ -47,8 +48,8 @@ class YXMenuHeadView: UIView
     {
         iconView.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(60);
-            make.center.equalTo(self);
             make.width.height.equalTo(64);
+            make.centerX.equalTo(self);
         }
         
         nameLabel.snp.makeConstraints { (make) in
@@ -57,7 +58,7 @@ class YXMenuHeadView: UIView
         }
         
         vipLabel.snp.makeConstraints { (make) in
-            make.top.equalTo(nameLabel.snp.bottom).offset(10);
+            make.top.equalTo(nameLabel.snp.bottom).offset(5);
             make.centerX.equalTo(self);
         }
     }

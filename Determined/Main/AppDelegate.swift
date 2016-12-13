@@ -29,19 +29,38 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationVC : YXNavigationController = YXNavigationController(rootViewController : history);
         window?.rootViewController = navigationVC;
         
-//        let label : YYFPSLabel = YYFPSLabel();
-//        label.frame = CGRect.init(x: 50, y: 20, width: 50, height: 30);
-//        self.window?.insertSubview(label, at: 10);
-        
+     
+        window?.addObserver(self, forKeyPath: "rootViewController", options: NSKeyValueObservingOptions.new, context: nil);
         MagicalRecord.setupCoreDataStack(withStoreNamed: "d.sqlite");
-
-        //self.addData();
+        self.window?.addSubview(label);
+ 
         return true
     }
+    
+    private lazy var label : YYFPSLabel = {
+        let label : YYFPSLabel = YYFPSLabel();
+        label.frame = CGRect.init(x: 50, y: 20, width: 50, height: 30);
+        
+        return label;
+    }()
 
     public func applicationWillTerminate(_ application: UIApplication)
     {
         MagicalRecord.cleanUp();
+    }
+    
+    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?)
+    {
+        if (window?.rootViewController?.isKind(of: YXHomeViewController.classForCoder()))! || (window?.rootViewController?.isKind(of: YXHistoryViewController.classForCoder()))!
+        {
+             self.window?.bringSubview(toFront: label);
+        }
+       
+    }
+    
+    deinit
+    {
+        window?.removeObserver(self, forKeyPath: "rootViewController", context: nil);
     }
     
 }

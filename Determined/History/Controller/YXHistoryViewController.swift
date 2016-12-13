@@ -22,10 +22,11 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
         navigationItem.leftBarButtonItem = leftButton;
         
         // Mark这里建了很多个 是不对的
-        let controller = YXMenuViewController();
+        let controller = YXMenuViewController.share;
         controller.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height);
         let menuLeftNavigationController = UISideMenuNavigationController.init(rootViewController: controller);
         menuLeftNavigationController.leftSide = true;
+        
         SideMenuManager.menuLeftNavigationController = menuLeftNavigationController;
         SideMenuManager.menuAddPanGestureToPresent(toView: self.navigationController!.navigationBar)
         SideMenuManager.menuAddScreenEdgePanGesturesToPresent(toView: self.navigationController!.view)
