@@ -32,14 +32,15 @@ class YXMenuHeadView: UIView
     
     private lazy var nameLabel : UILabel = {
         let label = UILabel();
-        label.font = UIFont(name: "PingFang SC", size: 16);
+        label.font = UIFont(name: "Roboto Light", size: 16);
         label.text = "Leo宇";
         return label;
     }()
     
     private lazy var vipLabel : UILabel = {
         let label = UILabel();
-        label.font = UIFont(name: "PingFang SC", size: 12);
+        label.font = UIFont(name: "Roboto Light", size: 5);
+        label.textColor = UIColor.init(hex6: 0x616161);
         label.text = "个人免费版";
         return label;
     }()

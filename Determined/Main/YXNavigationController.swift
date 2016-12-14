@@ -24,7 +24,13 @@ class YXNavigationController: UINavigationController
         self.interactivePopGestureRecognizer?.delegate = nil;
     
         
+        // 设置状态栏颜色
+        let view : UIView = UIApplication.shared.value(forKey: "statusBarWindow") as! UIView;
+        let statuBar : UIView = view.value(forKey: "statusBar") as! UIView;
+        statuBar.backgroundColor = UIColor.init(hex6: 0x4e6cef);
     }
+    
+    
 
 }
 

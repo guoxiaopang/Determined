@@ -16,13 +16,13 @@ class YXHistoryMainCell: UITableViewCell
     {
         super.init(style: style, reuseIdentifier: reuseIdentifier);
 //        self.contentView.backgroundColor = UIColor.init(hex6: 0xecf0f1);
-        self.contentView.layer.cornerRadius = 2;
-        self.contentView.clipsToBounds = true;
+//        self.contentView.layer.cornerRadius = 2;
+//        self.contentView.clipsToBounds = true;
         self.contentView.addSubview(timeLabel);
         self.contentView.addSubview(nameLabel);
         self.contentView.addSubview(iconView);
         self.contentView.addSubview(timeIconView);
-        self.backgroundView = backgroundImageView;
+//        self.backgroundView = backgroundImageView;
         self.contentView.isOpaque = true;
         self.addLayout();
     }
@@ -36,18 +36,19 @@ class YXHistoryMainCell: UITableViewCell
     private lazy var timeLabel : UILabel = {
             let timeLabel = UILabel();
             timeLabel.text = "2016年12月1日 19:45 星期四";
-            timeLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 14);
-            timeLabel.textColor = UIColor(hex6: 0x7f8c8d);
-            timeLabel.backgroundColor = UIColor.init(hex6: 0xfafafa);
+            timeLabel.font = UIFont(name: "Roboto Light", size: 14);
+//            timeLabel.textColor = UIColor(hex6: 0x7f8c8d);
+            timeLabel.textColor = UIColor(hex6: 0xaeaeae);
+            timeLabel.backgroundColor = UIColor.white;
             return timeLabel;
     }()
     
     private lazy var nameLabel : UILabel = {
         let nameLabel = UILabel();
         nameLabel.text = "天天天蓝";
-        nameLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 20);
-        nameLabel.textColor = UIColor(hex6: 0x2c2c2c);
-        nameLabel.backgroundColor = UIColor.init(hex6: 0xfafafa);
+        nameLabel.font = UIFont(name: "Roboto Light", size: 20);
+        nameLabel.textColor = UIColor(hex6: 0x616161);
+        nameLabel.backgroundColor = UIColor.white;
         return nameLabel;
     }()
     

@@ -44,7 +44,7 @@ class YXHomeTableViewCell: UITableViewCell
     {
         let nameLabel = UILabel();
         nameLabel.text = "名字";
-        nameLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 20);
+        nameLabel.font = UIFont(name: "Roboto Light", size: 20);
         nameLabel.isOpaque = true;
         nameLabel.backgroundColor = UIColor.white;
     
@@ -56,7 +56,7 @@ class YXHomeTableViewCell: UITableViewCell
     {
         let workLabel = UILabel();
         workLabel.text = "这是工作";
-        workLabel.font = UIFont(name: "SourceHanSansCN-Light", size: 17);
+        workLabel.font = UIFont(name: "Roboto Light", size: 17);
         workLabel.textColor? = UIColor.init(red: 0.534, green: 0.534, blue: 0.534, alpha: 0.534);
         workLabel.backgroundColor = UIColor.white;
         return workLabel;
@@ -65,14 +65,14 @@ class YXHomeTableViewCell: UITableViewCell
     private lazy var button : UIButton =
     {
         let button = UIButton();
-        button.setTitle("Mark", for: UIControlState.normal);
-        button.setBackgroundImage(#imageLiteral(resourceName: "button"), for: UIControlState.normal)
-        button.setTitleColor(UIColor.black, for: UIControlState.normal);
-        button.backgroundColor = UIColor.white;
-        button.titleLabel?.font = UIFont(name: "SourceHanSansCN-Light", size: 13);
+//        button.setTitle("Mark", for: UIControlState.normal);
+//        button.setBackgroundImage(#imageLiteral(resourceName: "buttonBackground"), for: UIControlState.normal)
+        button.setTitleColor(UIColor.init(hex6: 0xFFFFFF), for: UIControlState.normal);
+        button.setImage(#imageLiteral(resourceName: "buttonHeart"), for: UIControlState.normal);
+//        button.titleLabel?.font = UIFont(name: "Roboto Light", size: 10);
+//        button.imageEdgeInsets = UIEdgeInsets.init(top: 0, left: -5, bottom: 0, right: 5);
         button.addTarget(self, action: #selector(YXHomeTableViewCell.clickMark), for: UIControlEvents.touchUpInside);
         button.isOpaque = true;
-        button.sizeToFit();
         return button;
     }()
     
@@ -97,9 +97,10 @@ class YXHomeTableViewCell: UITableViewCell
         }
         
         button.snp.makeConstraints { (make) in
+            make.width.equalTo(40);
+            make.height.equalTo(40);
             make.centerY.equalTo(self.contentView);
             make.right.equalTo(self.contentView).offset(-10);
-            make.width.equalTo(50);
         }
         
     }
@@ -145,7 +146,7 @@ class YXHomeTableViewCell: UITableViewCell
         }
         else
         {
-            iconView.image = UIImage.init(named: user.icon);
+            iconView.image = UIImage.init(named: "icon");
         }
         
         nameLabel.text = user.name;

@@ -39,6 +39,9 @@
 		3595D22A1DEC62A000179730 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D2201DEC62A000179730 /* AppDelegate.swift */; };
 		3595D22D1DEC62A000179730 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3595D2241DEC62A000179730 /* Main.storyboard */; };
 		3595D22F1DEC632600179730 /* YXMainTabbarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3595D22E1DEC632600179730 /* YXMainTabbarController.swift */; };
+		35982BAF1E00E76D007F9B04 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 356123BC1DF7D88F00EED1D4 /* Roboto-Bold.ttf */; };
+		35982BB11E00E89F007F9B04 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35982BB01E00E875007F9B04 /* Roboto-Light.ttf */; };
+		35982BB31E00FA1C007F9B04 /* YXMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35982BB21E00FA1C007F9B04 /* YXMenuTableViewCell.swift */; };
 		35AF45CF1DF5427C003B8B56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45CE1DF5427C003B8B56 /* User.swift */; };
 		35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D01DF54402003B8B56 /* UserGroup.swift */; };
 		35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D21DF547C6003B8B56 /* LastContact.swift */; };
@@ -94,6 +97,8 @@
 		3595D2201DEC62A000179730 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3595D2251DEC62A000179730 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		3595D22E1DEC632600179730 /* YXMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainTabbarController.swift; sourceTree = "<group>"; };
+		35982BB01E00E875007F9B04 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
+		35982BB21E00FA1C007F9B04 /* YXMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMenuTableViewCell.swift; sourceTree = "<group>"; };
 		35AF45CE1DF5427C003B8B56 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		35AF45D01DF54402003B8B56 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
 		35AF45D21DF547C6003B8B56 /* LastContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastContact.swift; sourceTree = "<group>"; };
@@ -376,6 +381,7 @@
 		3595D21F1DEC62A000179730 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				35982BB01E00E875007F9B04 /* Roboto-Light.ttf */,
 				356123BC1DF7D88F00EED1D4 /* Roboto-Bold.ttf */,
 				35B5E7AE1DF696A800A30EDB /* YXTabBar.swift */,
 				3578B5BA1DF127420012C5A1 /* CoreData */,
@@ -458,6 +464,7 @@
 			isa = PBXGroup;
 			children = (
 				35E014A51DFE9AE7000BBB5A /* YXMenuHeadView.swift */,
+				35982BB21E00FA1C007F9B04 /* YXMenuTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -536,6 +543,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				35982BB11E00E89F007F9B04 /* Roboto-Light.ttf in Resources */,
+				35982BAF1E00E76D007F9B04 /* Roboto-Bold.ttf in Resources */,
 				35606A2B1DED776C00302656 /* Assets.xcassets in Resources */,
 				3582D7FF1DF04C0F00FBA86D /* SourceHanSansCN-Light.TTF in Resources */,
 				3595D22D1DEC62A000179730 /* Main.storyboard in Resources */,
@@ -626,6 +635,7 @@
 				356123C61DF80F1900EED1D4 /* YXAddFriendHeadView.swift in Sources */,
 				356123D01DF8368500EED1D4 /* YXAddFriendThreeTableViewCell.swift in Sources */,
 				35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */,
+				35982BB31E00FA1C007F9B04 /* YXMenuTableViewCell.swift in Sources */,
 				3578B5BF1DF127420012C5A1 /* data.xcdatamodeld in Sources */,
 				357953021DFE44BF000EB346 /* YXHomeNewDetailDataManager.swift in Sources */,
 				356123B71DF7A87A00EED1D4 /* YXNewDetailViewController.swift in Sources */,

@@ -67,16 +67,19 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     private lazy var tableView : UITableView =
     {
         let tableView = UITableView();
-        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 49 - 64);
+        tableView.frame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 64);
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.rowHeight = UITableViewAutomaticDimension;
-        tableView.estimatedRowHeight = 44.0;
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
-        tableView.sectionIndexColor = UIColor.init(hex6: 0x7f8c8d);
+        tableView.estimatedRowHeight = 80.0;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine;
+        tableView.separatorInset = UIEdgeInsets.zero;
+        tableView.separatorColor = UIColor.init(hex6: 0xe0e0e0);
+        tableView.sectionIndexColor = UIColor.init(hex6: 0xaeaeae);
         tableView.register(YXHomeTableViewCell.classForCoder() , forCellReuseIdentifier: "cell");
         tableView.sectionHeaderHeight = 0;
         tableView.sectionFooterHeight = 0;
+        tableView.backgroundColor = UIColor.white;
         return tableView;
     }();
     
@@ -93,6 +96,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     }()
     
 // MARK: - UITableViewDelegate,UITableViewDataSource
+    
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
         return dataManager.rowOfSection(section);

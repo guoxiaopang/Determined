@@ -14,11 +14,12 @@ let YXMenuViewControllerCellIdent = "YXMenuViewControllerCellIdent";
 class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDataSource
 {
     static let share = YXMenuViewController();
-    
+    var tempCell : YXMenuTableViewCell?;
     override func viewDidLoad()
     {
         super.viewDidLoad()
         self.view.addSubview(tableView);
+
         
     }
     
@@ -41,12 +42,12 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tableView.dataSource = self;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 55.0;
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
-        tableView.register(UITableViewCell.classForCoder(), forCellReuseIdentifier: YXMenuViewControllerCellIdent);
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine;
+        tableView.separatorInset = UIEdgeInsets.zero;
+        tableView.register(YXMenuTableViewCell.classForCoder(), forCellReuseIdentifier: YXMenuViewControllerCellIdent);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
         tableView.backgroundColor = UIColor.white;
-        tableView.rowHeight = 50;
         tableView.showsVerticalScrollIndicator = false;
         tableView.tableHeaderView = self.headView;
         return tableView;
@@ -55,74 +56,68 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
   
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int
     {
-        if section == 0
-        {
-            return 2;
-        }
-        else
-        {
-            return 1;
-        }
+        return 3;
     }
 
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell
     {
-        let cell = tableView.dequeueReusableCell(withIdentifier: YXMenuViewControllerCellIdent);
-//        cell?.imageView?.image = #imageLiteral(resourceName: "set");
-        cell?.textLabel?.font = UIFont(name: "PingFang SC", size: 15);
-        if indexPath.section == 0
+        let cell : YXMenuTableViewCell = tableView.dequeueReusableCell(withIdentifier: YXMenuViewControllerCellIdent) as! YXMenuTableViewCell;
+        cell.selectionStyle = UITableViewCellSelectionStyle.none;
+        if indexPath.row == 0
         {
-            if indexPath.row == 0
-            {
-                cell?.textLabel?.text = "历史";
-            }
-            else if indexPath.row == 1
-            {
-                cell?.textLabel?.text = "联系人";
-            }
+            cell.reloadData(title: "历史", imageName: "");
         }
-        else if (indexPath.section == 1)
+        else if indexPath.row == 1
         {
-            cell?.textLabel?.text = "设置";
+            cell.reloadData(title: "联系人", imageName: "");
         }
-        return cell!;
+        else if (indexPath.row == 2)
+        {
+            cell.reloadData(title: "设置", imageName: "");
+        }
+        return cell;
     }
-    
+
     public func numberOfSections(in tableView: UITableView) -> Int
     {
-        return 2;
+        return 1;
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        if indexPath.section == 0
+        let cell : YXMenuTableViewCell = tableView.cellForRow(at: indexPath) as! YXMenuTableViewCell;
+        // 取消历史cell
+        tempCell?.changeStatus(false);
+        tempCell = cell;
+     
+        if indexPath.row == 1
         {
-            if indexPath.row == 1
-            {
-                self.dismiss(animated: true, completion: ({
-                    let homeController = YXHomeViewController();
-                    let navigationVC : YXNavigationController = YXNavigationController(rootViewController : homeController);
-                    // 切换rootViewController
-                    let window = UIApplication.shared.keyWindow;
-                    window?.rootViewController = navigationVC;
-                }))
-            }
-            else
-            {
-                self.dismiss(animated: true, completion: ({
-                    let history = YXHistoryViewController();
-                    let navigationVC : YXNavigationController = YXNavigationController(rootViewController : history);
-                    // 切换rootViewController
-                    let window = UIApplication.shared.keyWindow;
-                    window?.rootViewController = navigationVC;
-                }))
-            }
+            cell.changeStatus(true);
+            self.dismiss(animated: true, completion: ({
+                let homeController = YXHomeViewController();
+                let navigationVC : YXNavigationController = YXNavigationController(rootViewController : homeController);
+                // 切换rootViewController
+                let window = UIApplication.shared.keyWindow;
+                window?.rootViewController = navigationVC;
+            }))
+        }
+        else if indexPath.row == 0
+        {
+            cell.changeStatus(true);
+            self.dismiss(animated: true, completion: ({
+                let history = YXHistoryViewController();
+                let navigationVC : YXNavigationController = YXNavigationController(rootViewController : history);
+                // 切换rootViewController
+                let window = UIApplication.shared.keyWindow;
+                window?.rootViewController = navigationVC;
+            }))
         }
         else
         {
-            // 设置
+            
         }
-        tableView.deselectRow(at: indexPath, animated: true);
+
+//        tableView.deselectRow(at: indexPath, animated: true);
 
     }
 

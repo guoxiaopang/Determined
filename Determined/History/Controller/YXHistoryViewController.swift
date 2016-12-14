@@ -53,13 +53,14 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     }()
     
     private lazy var tableView : UITableView = {
-        let rect : CGRect = CGRect(x: 5, y: 0, width: self.view.frame.width - 10, height: self.view.frame.height - 49);
+        let rect : CGRect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height - 49);
         let tableView = UITableView.init(frame: rect, style: UITableViewStyle.grouped);
         tableView.delegate = self;
         tableView.dataSource = self;
         tableView.rowHeight = UITableViewAutomaticDimension;
         tableView.estimatedRowHeight = 55.0;
-        tableView.separatorStyle = UITableViewCellSeparatorStyle.none;
+        tableView.separatorStyle = UITableViewCellSeparatorStyle.singleLine;
+        tableView.separatorColor = UIColor.init(hex6: 0xe0e0e0);
         tableView.register(YXHistoryMainCell.classForCoder(), forCellReuseIdentifier: historyCell);
         tableView.sectionHeaderHeight = 10;
         tableView.sectionFooterHeight = 0;
