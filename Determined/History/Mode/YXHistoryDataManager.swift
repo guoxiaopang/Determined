@@ -27,10 +27,11 @@ class YXHistoryDataManager: NSObject
             return;
         }
         item.removeAllObjects();
-        for i in array!
+        for i : NSManagedObject in array!
         {
             item.add(i);
         }
+    
         self.delegate?.reloadData(self);
     }
     

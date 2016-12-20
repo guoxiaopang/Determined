@@ -32,7 +32,7 @@ class YXMenuTableViewCell: UITableViewCell
     
     private lazy var titleLabel : UILabel = {
         let label = UILabel();
-        label.font = UIFont(name: "Roboto Light", size: 17);
+        label.font = UIFont(name: "Roboto Light", size: 10);
         label.textColor = UIColor.init(hex6: 0x616161);
         return label;
     }()

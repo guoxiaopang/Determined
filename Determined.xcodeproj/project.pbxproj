@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3520D6741E03DA19003E2396 /* YXAddPersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3520D6731E03DA19003E2396 /* YXAddPersonViewController.swift */; };
 		35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35606A1F1DED13B600302656 /* YXHistoryViewController.swift */; };
 		35606A2B1DED776C00302656 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 35606A2A1DED776C00302656 /* Assets.xcassets */; };
 		35606A311DED9EE700302656 /* YYFPSLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 35606A2E1DED9EE700302656 /* YYFPSLabel.m */; };
@@ -57,6 +58,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3520D6731E03DA19003E2396 /* YXAddPersonViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXAddPersonViewController.swift; sourceTree = "<group>"; };
 		35606A1F1DED13B600302656 /* YXHistoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHistoryViewController.swift; sourceTree = "<group>"; };
 		35606A211DED13C200302656 /* YXFindViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXFindViewController.swift; sourceTree = "<group>"; };
 		35606A231DED13CD00302656 /* YXMeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMeViewController.swift; sourceTree = "<group>"; };
@@ -135,6 +137,38 @@
 				657471C9474F6CEEA0BDC7F1 /* Pods_Determined.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3520D66F1E03D9F8003E2396 /* AddFriend */ = {
+			isa = PBXGroup;
+			children = (
+				3520D6701E03D9F8003E2396 /* Controller */,
+				3520D6711E03D9F8003E2396 /* Model */,
+				3520D6721E03D9F8003E2396 /* View */,
+			);
+			path = AddFriend;
+			sourceTree = "<group>";
+		};
+		3520D6701E03D9F8003E2396 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3520D6731E03DA19003E2396 /* YXAddPersonViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		3520D6711E03D9F8003E2396 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		3520D6721E03D9F8003E2396 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		35606A271DED67AE00302656 /* 分类 */ = {
@@ -371,6 +405,7 @@
 		3595D21B1DEC629900179730 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				3520D66F1E03D9F8003E2396 /* AddFriend */,
 				356123BF1DF80E0100EED1D4 /* 添加联系人 */,
 				356123B21DF7A86500EED1D4 /* NewDetail */,
 				359206C51DEEAE44007C77A3 /* List */,
@@ -623,6 +658,7 @@
 				356123BE1DF7F2E300EED1D4 /* YXNavigationController.swift in Sources */,
 				35AF45CF1DF5427C003B8B56 /* User.swift in Sources */,
 				35C13C601DFFD733007F8261 /* YXFileManager.swift in Sources */,
+				3520D6741E03DA19003E2396 /* YXAddPersonViewController.swift in Sources */,
 				3587523F1DF9312C00591BAA /* YXDatePickerView.swift in Sources */,
 				359206D21DEEAE44007C77A3 /* YXHomeTableViewCell.swift in Sources */,
 				356123CA1DF82AF200EED1D4 /* YXTextField.swift in Sources */,
@@ -766,7 +802,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = K786QX52SJ;
 				INFOPLIST_FILE = Determined/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianlan.Determined;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -786,7 +822,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				DEVELOPMENT_TEAM = K786QX52SJ;
 				INFOPLIST_FILE = Determined/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.tianlan.Determined;
 				PRODUCT_NAME = "$(TARGET_NAME)";

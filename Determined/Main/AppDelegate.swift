@@ -28,7 +28,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
      
         window?.addObserver(self, forKeyPath: "rootViewController", options: NSKeyValueObservingOptions.new, context: nil);
         MagicalRecord.setupCoreDataStack(withStoreNamed: "d.sqlite");
-        self.window?.addSubview(label);
+       // self.window?.addSubview(label);
  
         return true
     }

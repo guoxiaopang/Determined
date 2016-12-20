@@ -23,7 +23,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         
         navigationItem.rightBarButtonItem = rightButton;
         tableView.addSubview(refreshControl);
-        
+        self.navigationItem.title = "联系人";
         navigationItem.leftBarButtonItem = leftButton;
         
         navigationItem.leftBarButtonItem = leftButton;
@@ -154,7 +154,9 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     func addValue()
     {
         let controller = YXAddFriendViewController(style: UITableViewStyle.grouped);
-        self.present(controller, animated: true, completion: nil);
+//        let controller = YXAddPersonViewController();
+        self.navigationController?.pushViewController(controller, animated: true);
+//        self.present(controller, animated: true, completion: nil);
 
     }
     

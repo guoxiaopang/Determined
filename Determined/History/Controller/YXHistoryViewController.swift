@@ -17,6 +17,7 @@ class YXHistoryViewController: UIViewController, UITableViewDelegate, UITableVie
     {   
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white;
+        self.navigationItem.title = "历史";
         self.view.addSubview(tableView);
         tableView.addSubview(refreshControl);
         navigationItem.leftBarButtonItem = leftButton;
