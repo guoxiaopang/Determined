@@ -26,7 +26,7 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
         self.navigationItem.title = "联系人";
         navigationItem.leftBarButtonItem = leftButton;
         
-        navigationItem.leftBarButtonItem = leftButton;
+        
         
         let controller = YXMenuViewController.share;
         controller.view.frame = CGRect.init(x: 0, y: 0, width: self.view.frame.size.width * 0.7, height: self.view.frame.size.height);
@@ -116,9 +116,9 @@ class YXHomeViewController: UIViewController, UITableViewDelegate,UITableViewDat
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath)
     {
-        let detailController = YXNewDetailViewController();
-        let user = dataManager.modelWithIndexPath(indexPath: indexPath);
-        detailController.user = user;
+        let detailController = YXDetailViewController();
+//        let user = dataManager.modelWithIndexPath(indexPath: indexPath);
+//        detailController.user = user;
         navigationController?.pushViewController(detailController, animated: true);
         tableView.deselectRow(at: indexPath, animated: true);
     }

@@ -27,7 +27,7 @@ class YXHistoryDataManager: NSObject
             return;
         }
         item.removeAllObjects();
-        for i : NSManagedObject in array!
+        for i in array!
         {
             item.add(i);
         }
@@ -48,8 +48,8 @@ class YXHistoryDataManager: NSObject
     }
     
     private lazy var item : NSMutableArray = {
-        let array = NSMutableArray();
-        return array;
+        let item = NSMutableArray();
+        return item;
     }()
     
     // 返回个数

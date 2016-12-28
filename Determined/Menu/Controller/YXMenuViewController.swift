@@ -65,11 +65,11 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.selectionStyle = UITableViewCellSelectionStyle.none;
         if indexPath.row == 0
         {
-            cell.reloadData(title: "历史", imageName: "");
+            cell.reloadData(title: "联系人", imageName: "");
         }
         else if indexPath.row == 1
         {
-            cell.reloadData(title: "联系人", imageName: "");
+            cell.reloadData(title: "历史", imageName: "");
         }
         else if (indexPath.row == 2)
         {
@@ -90,7 +90,7 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
         tempCell?.changeStatus(false);
         tempCell = cell;
      
-        if indexPath.row == 1
+        if indexPath.row == 0
         {
             cell.changeStatus(true);
             self.dismiss(animated: true, completion: ({
@@ -101,7 +101,7 @@ class YXMenuViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 window?.rootViewController = navigationVC;
             }))
         }
-        else if indexPath.row == 0
+        else if indexPath.row == 1
         {
             cell.changeStatus(true);
             self.dismiss(animated: true, completion: ({

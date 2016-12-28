@@ -20,7 +20,7 @@ class YXNewDetailViewController: UIViewController, UITableViewDelegate, UITableV
         self.view.backgroundColor = UIColor.white;
         self.edgesForExtendedLayout = UIRectEdge.init(rawValue: 0);
         dataManager.requestData(user: user!);
-        headView.reloadData(user: user!);
+//        headView.reloadData(user: user!);
     }
     
     

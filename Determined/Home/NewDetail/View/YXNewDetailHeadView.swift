@@ -28,7 +28,7 @@ class YXNewDetailHeadView: UIView
         self.addSubview(backButton);
         self.addSubview(nameLabel);
         self.addSubview(iconView);
-        self.addSubview(lastContactLabel);
+//        self.addSubview(lastContactLabel);
         self.addSubview(detailButton);
         self.addLayout();
     }
@@ -67,16 +67,16 @@ class YXNewDetailHeadView: UIView
         imageView.image = #imageLiteral(resourceName: "t1");
         return imageView;
     }()
-    
-    private lazy var lastContactLabel : UILabel = {
-        let label = UILabel();
-        label.font = UIFont(name: "SourceHanSansCN-Light", size: 13);
-        label.textColor = UIColor.white;
-        //label.text = "Last Time : 2016年11月11日 15:30";
-        label.isHidden = true;
-        return label;
-    }()
-    
+//    
+//    private lazy var lastContactLabel : UILabel = {
+//        let label = UILabel();
+//        label.font = UIFont(name: "SourceHanSansCN-Light", size: 13);
+//        label.textColor = UIColor.white;
+//        //label.text = "Last Time : 2016年11月11日 15:30";
+//        label.isHidden = true;
+//        return label;
+//    }()
+//    
     // MARK: - Void
     
     func clickBackButton()
@@ -103,10 +103,10 @@ class YXNewDetailHeadView: UIView
             make.width.height.equalTo(128);
         }
         
-        lastContactLabel.snp.makeConstraints { (make) in
-            make.centerX.equalTo(self);
-            make.top.equalTo(iconView.snp.bottom).offset(25);
-        }
+//        lastContactLabel.snp.makeConstraints { (make) in
+//            make.centerX.equalTo(self);
+//            make.top.equalTo(iconView.snp.bottom).offset(25);
+//        }
         
         detailButton.snp.makeConstraints { (make) in
             make.top.equalTo(self).offset(20);
@@ -115,24 +115,24 @@ class YXNewDetailHeadView: UIView
         }
     }
     
-    func reloadData(user : User)
-    {
-        nameLabel.text = user.name;
-        
-        // 查询最后一次联系时间
-        let array = LastContact.mr_find(byAttribute: "uuid", withValue: user.uuid);
-        if (array?.count)! > 0
-        {
-            let last : LastContact = array!.first as! LastContact;
-            let fmt = DateFormatter();
-            fmt.dateFormat = "yyyy年MM月dd日 HH:mm";
-            let time = TimeInterval.init(last.lastContactTime!);
-            let date = Date.init(timeIntervalSince1970: time!);
-            let str = fmt.string(from: date);
-            lastContactLabel.text = "Last : \(str)";
-            lastContactLabel.isHidden = false;
-        }
-    
-    }
+//    func reloadData(user : User)
+//    {
+//        nameLabel.text = user.name;
+//        
+//        // 查询最后一次联系时间
+//        let array = LastContact.mr_find(byAttribute: "uuid", withValue: user.uuid);
+//        if (array?.count)! > 0
+//        {
+//            let last : LastContact = array!.first as! LastContact;
+//            let fmt = DateFormatter();
+//            fmt.dateFormat = "yyyy年MM月dd日 HH:mm";
+//            let time = TimeInterval.init(last.lastContactTime!);
+//            let date = Date.init(timeIntervalSince1970: time!);
+//            let str = fmt.string(from: date);
+//            lastContactLabel.text = "Last : \(str)";
+//            lastContactLabel.isHidden = false;
+//        }
+//    
+//    }
 
 }

@@ -43,6 +43,8 @@
 		35982BAF1E00E76D007F9B04 /* Roboto-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 356123BC1DF7D88F00EED1D4 /* Roboto-Bold.ttf */; };
 		35982BB11E00E89F007F9B04 /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 35982BB01E00E875007F9B04 /* Roboto-Light.ttf */; };
 		35982BB31E00FA1C007F9B04 /* YXMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35982BB21E00FA1C007F9B04 /* YXMenuTableViewCell.swift */; };
+		35985D2D1E0BAAF100D13081 /* YXDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35985D2C1E0BAAF100D13081 /* YXDetailViewController.swift */; };
+		35985D2F1E0BAC1900D13081 /* YXHomeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35985D2E1E0BAC1900D13081 /* YXHomeDetailTableViewCell.swift */; };
 		35AF45CF1DF5427C003B8B56 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45CE1DF5427C003B8B56 /* User.swift */; };
 		35AF45D11DF54402003B8B56 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D01DF54402003B8B56 /* UserGroup.swift */; };
 		35AF45D31DF547C6003B8B56 /* LastContact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35AF45D21DF547C6003B8B56 /* LastContact.swift */; };
@@ -101,6 +103,8 @@
 		3595D22E1DEC632600179730 /* YXMainTabbarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMainTabbarController.swift; sourceTree = "<group>"; };
 		35982BB01E00E875007F9B04 /* Roboto-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Light.ttf"; sourceTree = "<group>"; };
 		35982BB21E00FA1C007F9B04 /* YXMenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXMenuTableViewCell.swift; sourceTree = "<group>"; };
+		35985D2C1E0BAAF100D13081 /* YXDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXDetailViewController.swift; sourceTree = "<group>"; };
+		35985D2E1E0BAC1900D13081 /* YXHomeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YXHomeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		35AF45CE1DF5427C003B8B56 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		35AF45D01DF54402003B8B56 /* UserGroup.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
 		35AF45D21DF547C6003B8B56 /* LastContact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LastContact.swift; sourceTree = "<group>"; };
@@ -405,6 +409,7 @@
 		3595D21B1DEC629900179730 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				35985D281E0BAAD700D13081 /* Detail */,
 				3520D66F1E03D9F8003E2396 /* AddFriend */,
 				356123BF1DF80E0100EED1D4 /* 添加联系人 */,
 				356123B21DF7A86500EED1D4 /* NewDetail */,
@@ -466,6 +471,39 @@
 		3595D2291DEC62A000179730 /* View */ = {
 			isa = PBXGroup;
 			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		35985D281E0BAAD700D13081 /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				35985D291E0BAAD700D13081 /* Controller */,
+				35985D2A1E0BAAD700D13081 /* Model */,
+				35985D2B1E0BAAD700D13081 /* View */,
+			);
+			path = Detail;
+			sourceTree = "<group>";
+		};
+		35985D291E0BAAD700D13081 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				35985D2C1E0BAAF100D13081 /* YXDetailViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		35985D2A1E0BAAD700D13081 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		35985D2B1E0BAAD700D13081 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				35985D2E1E0BAC1900D13081 /* YXHomeDetailTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -679,7 +717,9 @@
 				35AF45D71DF5482B003B8B56 /* ContactInfo.swift in Sources */,
 				359206CE1DEEAE44007C77A3 /* YXHomeViewController.swift in Sources */,
 				35606A201DED13B600302656 /* YXHistoryViewController.swift in Sources */,
+				35985D2D1E0BAAF100D13081 /* YXDetailViewController.swift in Sources */,
 				356123CE1DF833BD00EED1D4 /* YXAddFriendDataManager.swift in Sources */,
+				35985D2F1E0BAC1900D13081 /* YXHomeDetailTableViewCell.swift in Sources */,
 				35E014A61DFE9AE7000BBB5A /* YXMenuHeadView.swift in Sources */,
 				359206D11DEEAE44007C77A3 /* YXHomeModel.swift in Sources */,
 			);
